@@ -1,6 +1,6 @@
 # hltGetConfiguration --full --data /dev/CMSSW_12_3_0/PIon --type PIon --unprescale --process HLTPIon --globaltag auto:run3_hlt_PIon --input file:RelVal_Raw_PIon_DATA.root
 
-# /dev/CMSSW_12_3_0/PIon/V61 (CMSSW_12_3_0_pre6)
+# /dev/CMSSW_12_3_0/PIon/V72 (CMSSW_12_3_0)
 
 import FWCore.ParameterSet.Config as cms
 
@@ -9,7 +9,7 @@ from HeterogeneousCore.CUDACore.SwitchProducerCUDA import SwitchProducerCUDA
 process = cms.Process( "HLTPIon" )
 
 process.HLTConfigVersion = cms.PSet(
-  tableName = cms.string('/dev/CMSSW_12_3_0/PIon/V61')
+  tableName = cms.string('/dev/CMSSW_12_3_0/PIon/V72')
 )
 
 process.transferSystem = cms.PSet( 
@@ -2609,6 +2609,12 @@ process.GlobalTag = cms.ESSource( "PoolDBESSource",
     globaltag = cms.string( "None" ),
     snapshotTime = cms.string( "" ),
     toGet = cms.VPSet( 
+      cms.PSet(  record = cms.string( "BeamSpotOnlineLegacyObjectsRcd" ),
+        refreshTime = cms.uint64( 2 )
+      ),
+      cms.PSet(  record = cms.string( "BeamSpotOnlineHLTObjectsRcd" ),
+        refreshTime = cms.uint64( 2 )
+      )
     ),
     DumpStat = cms.untracked.bool( False ),
     ReconnectEachRun = cms.untracked.bool( False ),
@@ -4792,7 +4798,7 @@ process.hltGtStage2Digis = cms.EDProducer( "L1TRawToDigi",
 )
 process.hltGtStage2ObjectMap = cms.EDProducer( "L1TGlobalProducer",
     MuonInputTag = cms.InputTag( 'hltGtStage2Digis','Muon' ),
-    MuonShowerInputTag = cms.InputTag( "" ),
+    MuonShowerInputTag = cms.InputTag( 'hltGtStage2Digis','MuonShower' ),
     EGammaInputTag = cms.InputTag( 'hltGtStage2Digis','EGamma' ),
     TauInputTag = cms.InputTag( 'hltGtStage2Digis','Tau' ),
     JetInputTag = cms.InputTag( 'hltGtStage2Digis','Jet' ),
@@ -4803,7 +4809,8 @@ process.hltGtStage2ObjectMap = cms.EDProducer( "L1TGlobalProducer",
     AlgorithmTriggersUnprescaled = cms.bool( True ),
     RequireMenuToMatchAlgoBlkInput = cms.bool( True ),
     AlgorithmTriggersUnmasked = cms.bool( True ),
-    useMuonShowers = cms.bool( False ),
+    useMuonShowers = cms.bool( True ),
+    resetPSCountersEachLumiSec = cms.bool( True ),
     ProduceL1GtDaqRecord = cms.bool( True ),
     ProduceL1GtObjectMapRecord = cms.bool( True ),
     EmulateBxInEvent = cms.int32( 1 ),
@@ -4829,7 +4836,7 @@ process.hltOnlineBeamSpot = cms.EDProducer( "BeamSpotOnlineProducer",
     src = cms.InputTag( "hltScalersRawToDigi" ),
     gtEvmLabel = cms.InputTag( "" ),
     maxRadius = cms.double( 2.0 ),
-    useTransientRecord = cms.bool( False )
+    useTransientRecord = cms.bool( True )
 )
 process.hltPrePhysics = cms.EDFilter( "HLTPrescaler",
     offset = cms.uint32( 0 ),
@@ -4851,7 +4858,7 @@ process.hltL1sZeroBias = cms.EDFilter( "HLTL1TSeed",
     L1ObjectMapInputTag = cms.InputTag( "hltGtStage2ObjectMap" ),
     L1GlobalInputTag = cms.InputTag( "hltGtStage2Digis" ),
     L1MuonInputTag = cms.InputTag( 'hltGtStage2Digis','Muon' ),
-    L1MuonShowerInputTag = cms.InputTag( 'hltGmtStage2Digis','MuonShower' ),
+    L1MuonShowerInputTag = cms.InputTag( 'hltGtStage2Digis','MuonShower' ),
     L1EGammaInputTag = cms.InputTag( 'hltGtStage2Digis','EGamma' ),
     L1JetInputTag = cms.InputTag( 'hltGtStage2Digis','Jet' ),
     L1TauInputTag = cms.InputTag( 'hltGtStage2Digis','Tau' ),

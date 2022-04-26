@@ -49,6 +49,7 @@ The offsets currently in use are:
 * 0.595: Patatrack, full reco with pixel triplets, on CPU
 * 0.596: Patatrack, full reco with pixel triplets, with automatic offload to GPU if available
 * 0.6: HE Collapse (old depth segmentation for 2018)
+* 0.601: HLT as separate step
 * 0.7: trackingMkFit modifier
 * 0.8: BPH Parking (Run-2)
 * 0.9: Vector hits
@@ -59,6 +60,7 @@ The offsets currently in use are:
 * 0.21: Production-like sequence
 * 0.24: 0 Tesla (Run-2, Run-3)
 * 0.61: `phase2_ecal_devel` era
+* 0.75: Phase-2 HLT
 * 0.91: Track DNN modifier
 * 0.97: Premixing stage1
 * 0.98: Premixing stage2
