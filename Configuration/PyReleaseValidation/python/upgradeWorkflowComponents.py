@@ -517,6 +517,32 @@ upgradeWFs['mlpf'].step3 = {
     '--procModifiers': 'mlpf'
 }
 
+# photonDRN workflows
+class UpgradeWorkflow_photonDRN(UpgradeWorkflow):
+    def setup_(self, step, stepName, stepDict, k, properties):
+        if 'Reco' in step:
+            stepDict[stepName][k] = merge([self.step3, stepDict[step][k]])
+    def condition(self, fragment, stepList, key, hasHarvest):
+        return '2018' in key and "SingleGamma" in fragment
+
+upgradeWFs['photonDRN'] = UpgradeWorkflow_photonDRN(
+    steps = [
+        'Reco',
+        'RecoNano',
+        'RecoFakeHLT'
+    ],
+    PU = [
+        'Reco',
+        'RecoNano',
+        'RecoFakeHLT'
+    ],
+    suffix = '_photonDRN',
+    offset = 0.31,
+)
+upgradeWFs['photonDRN'].step3 = {
+    '--procModifiers': 'enableSonicTriton,photonDRN'
+}
+
 # Patatrack workflows:
 #   - 2018 conditions, TTbar
 #   - 2018 conditions, Z->mumu,
@@ -638,7 +664,8 @@ upgradeWFs['PatatrackPixelOnlyGPUValidation'] = PatatrackWorkflow(
         '--procModifiers': 'pixelNtupletFit,gpuValidation'
     },
     harvest = {
-        '-s': 'HARVESTING:@trackingOnlyValidation+@pixelTrackingOnlyDQM'
+        '-s': 'HARVESTING:@trackingOnlyValidation+@pixelTrackingOnlyDQM',
+        '--procModifiers': 'gpuValidation'
     },
     suffix = 'Patatrack_PixelOnlyGPU_Validation',
     offset = 0.503,
@@ -720,7 +747,8 @@ upgradeWFs['PatatrackPixelOnlyTripletsGPUValidation'] = PatatrackWorkflow(
         '--customise': 'RecoPixelVertexing/Configuration/customizePixelTracksForTriplets.customizePixelTracksForTriplets'
     },
     harvest = {
-        '-s': 'HARVESTING:@trackingOnlyValidation+@pixelTrackingOnlyDQM'
+        '-s': 'HARVESTING:@trackingOnlyValidation+@pixelTrackingOnlyDQM',
+        '--procModifiers': 'gpuValidation',
     },
     suffix = 'Patatrack_PixelOnlyTripletsGPU_Validation',
     offset = 0.507,
@@ -955,7 +983,8 @@ upgradeWFs['PatatrackAllGPUValidation'] = PatatrackWorkflow(
         '--procModifiers': 'pixelNtupletFit,gpuValidation'
     },
     harvest = {
-        '-s': 'HARVESTING:@trackingOnlyValidation+@pixelTrackingOnlyDQM+@ecalOnlyValidation+@ecal+@hcalOnlyValidation+@hcalOnly+@hcal2Only'
+        '-s': 'HARVESTING:@trackingOnlyValidation+@pixelTrackingOnlyDQM+@ecalOnlyValidation+@ecal+@hcalOnlyValidation+@hcalOnly+@hcal2Only',
+        '--procModifiers': 'gpuValidation'
     },
     suffix = 'Patatrack_AllGPU_Validation',
     offset = 0.583,
@@ -1021,7 +1050,8 @@ upgradeWFs['PatatrackAllTripletsGPUValidation'] = PatatrackWorkflow(
         '--procModifiers': 'pixelNtupletFit,gpuValidation'
     },
     harvest = {
-        '-s': 'HARVESTING:@trackingOnlyValidation+@pixelTrackingOnlyDQM+@ecalOnlyValidation+@ecal+@hcalOnlyValidation+@hcalOnly+@hcal2Only'
+        '-s': 'HARVESTING:@trackingOnlyValidation+@pixelTrackingOnlyDQM+@ecalOnlyValidation+@ecal+@hcalOnlyValidation+@hcalOnly+@hcal2Only',
+        '--procModifiers': 'gpuValidation'
     },
     suffix = 'Patatrack_AllTripletsGPU_Validation',
     offset = 0.587,

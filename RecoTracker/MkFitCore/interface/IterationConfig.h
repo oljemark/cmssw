@@ -115,6 +115,9 @@ namespace mkfit {
 
     //min pT cut
     float minPtCut = 0.0;
+
+    //max cluster size cut for SiStrip hits
+    unsigned int maxClusterSize = 8;
   };
 
   //==============================================================================
@@ -123,10 +126,12 @@ namespace mkfit {
 
   class IterationSeedPartition {
   public:
-    std::vector<int> m_region;
-    std::vector<float> m_sort_score;
+    using register_seed_phi_eta_foo = void(float, float);
 
-    IterationSeedPartition(int size) : m_region(size), m_sort_score(size) {}
+    std::vector<int> m_region;
+    std::function<register_seed_phi_eta_foo> m_phi_eta_foo;
+
+    IterationSeedPartition(int size) : m_region(size) {}
   };
 
   //==============================================================================
