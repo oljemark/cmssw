@@ -106,6 +106,7 @@ The argument 'corners' controls the types of wafers the user wants: for instance
 }
 
 bool HGCalWaferMask::goodCell(int u, int v, int n, int type, int rotn) {
+  // Needs extension for V17
   bool good(false);
   int n2 = n / 2;
   int n4 = n / 4;
@@ -395,6 +396,7 @@ bool HGCalWaferMask::goodCell(int u, int v, int n, int type, int rotn) {
 }
 
 int HGCalWaferMask::getRotation(int zside, int type, int rotn) {
+  // Needs extension for V17
   if (rotn >= HGCalTypes::WaferCornerMax)
     rotn = HGCalTypes::WaferCorner0;
   int newrotn(rotn);
@@ -441,6 +443,7 @@ std::pair<int, int> HGCalWaferMask::getTypeMode(const double& xpos,
                                                 const int& wType,
                                                 const int& mode,
                                                 bool debug) {
+  // No need to extend this for V17 -- use flat file information only
   int ncor(0), iok(0);
   int type(HGCalTypes::WaferFull), rotn(HGCalTypes::WaferCorner0);
 
@@ -680,6 +683,7 @@ std::pair<int, int> HGCalWaferMask::getTypeMode(const double& xpos,
 
 bool HGCalWaferMask::goodTypeMode(
     double xpos, double ypos, double delX, double delY, double rin, double rout, int part, int rotn, bool debug) {
+  // Needs extension for V17
   if (part < 0 || part > HGCalTypes::WaferSizeMax)
     return false;
   if (rotn < 0 || rotn > HGCalTypes::WaferCornerMax)
@@ -1002,11 +1006,35 @@ bool HGCalWaferMask::goodTypeMode(
 
 std::vector<std::pair<double, double> > HGCalWaferMask::waferXY(
     int part, int ori, int zside, double delX, double delY, double xpos, double ypos) {
+  // Good for V15 and V16 versions
   std::vector<std::pair<double, double> > xy;
   int orient = getRotation(-zside, part, ori);
 #ifdef EDM_ML_DEBUG
   edm::LogVerbatim("HGCalGeom") << "Part " << part << " zSide " << zside << " Orient " << ori << ":" << orient;
 #endif
+  /*
+    The exact contour of partial wafers are obtained by joining points on
+    the circumference of a full wafer.
+    Numbering the points along the edges of a hexagonal wafer, starting from
+    the bottom corner:
+
+                                   3
+                               15     18
+                             9           8
+                          19               14
+                        4                     2 
+                       16                    23
+                       10                     7
+                       20                    13
+                        5                     1
+                          17               22
+                            11           6
+                               21     12
+                                   0
+
+	Depending on the wafer type and orientation index, the corners
+	are chosen in the variable *np*
+  */
   double dx[24] = {HGCalTypes::c00 * delX,  HGCalTypes::c10 * delX,  HGCalTypes::c10 * delX,  HGCalTypes::c00 * delX,
                    -HGCalTypes::c10 * delX, -HGCalTypes::c10 * delX, HGCalTypes::c50 * delX,  HGCalTypes::c10 * delX,
                    HGCalTypes::c50 * delX,  -HGCalTypes::c50 * delX, -HGCalTypes::c10 * delX, -HGCalTypes::c50 * delX,
@@ -1155,9 +1183,33 @@ std::vector<std::pair<double, double> > HGCalWaferMask::waferXY(
 std::vector<std::pair<double, double> > HGCalWaferMask::waferXY(
     int part, int place, double delX, double delY, double xpos, double ypos) {
   std::vector<std::pair<double, double> > xy;
+  // Good for V17 version and uses partial wafer type & placement index
 #ifdef EDM_ML_DEBUG
   edm::LogVerbatim("HGCalGeom") << "Part " << part << " Placement Index " << place;
 #endif
+  /*
+    The exact contour of partial wafers are obtained by joining points on
+    the circumference of a full wafer.
+    Numbering the points along the edges of a hexagonal wafer, starting from
+    the bottom corner:
+
+                                   3
+                               15     18
+                             9           8
+                          19               14
+                        4                     2 
+                       16                    23
+                       10                     7
+                       20                    13
+                        5                     1
+                          17               22
+                            11           6
+                               21     12
+                                   0
+
+	Depending on the wafer type and placement index, the corners
+	are chosen in the variable *np*
+  */
   double dx[24] = {HGCalTypes::c00 * delX,  HGCalTypes::c10 * delX,  HGCalTypes::c10 * delX,  HGCalTypes::c00 * delX,
                    -HGCalTypes::c10 * delX, -HGCalTypes::c10 * delX, HGCalTypes::c50 * delX,  HGCalTypes::c10 * delX,
                    HGCalTypes::c50 * delX,  -HGCalTypes::c50 * delX, -HGCalTypes::c10 * delX, -HGCalTypes::c50 * delX,
@@ -1182,7 +1234,7 @@ std::vector<std::pair<double, double> > HGCalWaferMask::waferXY(
                      {4, 5, 2, 3, 4},
                      {5, 0, 3, 4, 5},
                      {0, 1, 2, 5, 0},
-                     {5, 0, 3, 4, 5},
+                     {5, 0, 1, 4, 5},
                      {4, 5, 0, 3, 4},
                      {3, 4, 5, 2, 3},
                      {2, 3, 4, 1, 2},
@@ -1222,7 +1274,7 @@ std::vector<std::pair<double, double> > HGCalWaferMask::waferXY(
                      {0, 6, 9, 4, 5, 0},
                      {5, 11, 8, 3, 4, 5},
                      {4, 10, 7, 2, 3, 4},
-                     {3, 9, 5, 1, 2, 3},
+                     {3, 9, 6, 1, 2, 3},
                      {2, 8, 11, 0, 1, 2},
                      {1, 7, 10, 5, 0, 1}};
     for (int k = 0; k < 6; ++k) {
@@ -1312,8 +1364,8 @@ std::vector<std::pair<double, double> > HGCalWaferMask::waferXY(
                      {2, 3, 4, 5, 17, 23, 2},
                      {3, 4, 5, 0, 12, 18, 3},
                      {4, 5, 0, 1, 13, 19, 4},
-                     {5, 0, 1, 5, 14, 20, 5},
-                     {0, 1, 2, 0, 15, 21, 0},
+                     {5, 0, 1, 2, 14, 20, 5},
+                     {0, 1, 2, 3, 15, 21, 0},
                      {5, 17, 23, 2, 3, 4, 5},
                      {4, 16, 22, 1, 2, 3, 4},
                      {3, 15, 21, 0, 1, 2, 3},

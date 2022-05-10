@@ -1,9 +1,6 @@
 import FWCore.ParameterSet.Config as cms
 
-# modifiers
-from Configuration.ProcessModifiers.gpu_cff import gpu
-
-# helper fuctions
+# helper functions
 from HLTrigger.Configuration.common import *
 
 # add one customisation function per PR
@@ -172,7 +169,27 @@ def customiseFor37231(process):
 
     return process
 
+def customiseFor37756(process):
+    """https://github.com/cms-sw/cmssw/pull/37756
+    Removal of use_preshower parameter from PFECALSuperClusterProducer
+    """
+    for prod in producers_by_type(process, 'PFECALSuperClusterProducer'):
+        if hasattr(prod, 'use_preshower'):
+            delattr(prod, 'use_preshower')
 
+    return process
+
+def customiseFor37646(process):
+    """ Customisation to remove a renamed parameter in HLTScoutingPFProducer
+     from PR 37646 (https://github.com/cms-sw/cmssw/pull/37646)
+    """
+    for prod in producers_by_type(process, 'HLTScoutingPFProducer'):
+        if hasattr(prod, 'doTrackRelVars'):
+            delattr(prod, 'doTrackRelVars')
+            
+    return process
+
+  
 def customiseForOffline(process):
 #   https://its.cern.ch/jira/browse/CMSHLT-2271
     for prod in producers_by_type(process, 'BeamSpotOnlineProducer'):
@@ -180,17 +197,17 @@ def customiseForOffline(process):
 
     return process
 
+
 # CMSSW version specific customizations
 def customizeHLTforCMSSW(process, menuType="GRun"):
 
-    # if the gpu modifier is enabled, make the Pixel, ECAL and HCAL reconstruction offloadable to a GPU
-    from HLTrigger.Configuration.customizeHLTforPatatrack import customizeHLTforPatatrack
-    gpu.makeProcessModifier(customizeHLTforPatatrack).apply(process)
     process = customiseForOffline(process)
 
     # add call to action function in proper order: newest last!
     # process = customiseFor12718(process)
 
     process = customiseFor37231(process)
-
+    process = customiseFor37646(process)
+    process = customiseFor37756(process)
+    
     return process
