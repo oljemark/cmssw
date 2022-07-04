@@ -4,6 +4,7 @@ from CalibPPS.ESProducers.totemDAQMappingESSourceXML_cfi import totemDAQMappingE
 
 totemDAQMappingESSourceXML = _xml.clone(
     subSystem = "TotemT2",
+    sampicSubDetId = cms.uint32(99),
     configuration = cms.VPSet(
         cms.PSet(
             validityRange = cms.EventRange("1:min - 999999999:max"),
