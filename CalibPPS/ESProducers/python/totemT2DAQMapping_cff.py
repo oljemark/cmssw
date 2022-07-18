@@ -10,5 +10,6 @@ totemDAQMappingESSourceXML = _xml.clone(
             mappingFileNames = cms.vstring("CondFormats/PPSObjects/xml/mapping_totem_nt2_2021.xml"),
             maskFileNames = cms.vstring()
         )
-    )
+    ),
+    sampicSubDetId = cms.uint32(6),
 )
