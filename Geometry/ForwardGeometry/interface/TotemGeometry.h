@@ -28,8 +28,8 @@ private:
   void browse(const DetGeomDesc*&, bool in_t2);
   void browseT2(const DetGeomDesc*&);
 
-  std::map<CTPPSDetId, const DetGeomDesc*> nt2_planes_;
-  std::map<CTPPSDetId, TotemT2Tile> nt2_tiles_;
+  std::map<TotemT2DetId, const DetGeomDesc*> nt2_planes_;
+  std::map<TotemT2DetId, TotemT2Tile> nt2_tiles_;
 };
 
 #endif
