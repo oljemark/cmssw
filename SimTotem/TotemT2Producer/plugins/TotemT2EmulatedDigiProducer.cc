@@ -56,6 +56,8 @@ private:
   std::string t2DataFile_;
   std::vector<std::vector<unsigned int>> testCasesVec_;
   std::unique_ptr<TChain> inputTree_;
+  // event counter for each id
+  std::unordered_map<unsigned int, unsigned int> event_counters_;
 };
 
 TotemT2EmulatedDigiProducer::TotemT2EmulatedDigiProducer(const edm::ParameterSet& iConfig)
@@ -88,33 +90,33 @@ void TotemT2EmulatedDigiProducer::produce(edm::Event& iEvent, const edm::EventSe
 
   inputTree_->GetEntry(iEvent.id().event());
 
-  if (channelNo_ == channelNumber_) {
-    unsigned short le = (unsigned short)floor(leadingEdge_ * sToNs_ * timeSliceNsInverted_);
-    unsigned short te = (unsigned short)floor(trailingEdge_ * sToNs_ * timeSliceNsInverted_);
-    TotemT2Digi digiTmp(dummyGeo_, dummyId_, dummyMarker_, le, te);
+  unsigned short le = (unsigned short)floor(leadingEdge_ * sToNs_ * timeSliceNsInverted_);
+  unsigned short te = (unsigned short)floor(trailingEdge_ * sToNs_ * timeSliceNsInverted_);
+  TotemT2Digi digiTmp(dummyGeo_, dummyId_, dummyMarker_, le, te);
 
-    for (auto vec : testCasesVec_) {
-      for (const auto& id : vec) {
-        // check if limit was reached
-        if (event_counters_[id] > 0) {
-          TotemT2DetId detId(id);
-          edmNew::DetSetVector<TotemT2Digi>::FastFiller(*digi, detId).push_back(digiTmp);
-        }
+  for (auto vec : testCasesVec_) {
+    for (const auto& id : vec) {
+      // check if limit was reached
+      if (event_counters_[id] > 0) {
+        TotemT2DetId detId(id);
+        edmNew::DetSetVector<TotemT2Digi>::FastFiller(*digi, detId).push_back(digiTmp);
       }
+      event_counters_[id]--;
     }
-    iEvent.put(std::move(digi), "TotemT2");
   }
+  iEvent.put(std::move(digi), "TotemT2");
+}
 
-  void TotemT2EmulatedDigiProducer::fillDescriptions(edm::ConfigurationDescriptions & descriptions) {
-    edm::ParameterSetDescription desc;
-    desc.add<std::string>("t2DataFile")->setComment("path to fake T2 root data");
+void TotemT2EmulatedDigiProducer::fillDescriptions(edm::ConfigurationDescriptions& descriptions) {
+  edm::ParameterSetDescription desc;
+  desc.add<std::string>("t2DataFile")->setComment("path to fake T2 root data");
 
-    edm::ParameterSetDescription idmap_valid;
-    idmap_valid.add<std::vector<unsigned int>>("detId")->setComment("mapped TotemT2DetId's for some test case");
+  edm::ParameterSetDescription idmap_valid;
+  idmap_valid.add<std::vector<unsigned int>>("detId")->setComment("mapped TotemT2DetId's for some test case");
+  idmap_valid.add<unsigned int>("eventLimit")->setComment("event limit for some test case");
+  desc.addVPSet("testCasesSet", idmap_valid);
 
-    desc.addVPSet("testCasesSet", idmap_valid);
+  descriptions.add("totemT2EmulatedDigis", desc);
+}
 
-    descriptions.add("totemT2EmulatedDigis", desc);
-  }
-
-  DEFINE_FWK_MODULE(TotemT2EmulatedDigiProducer);
+DEFINE_FWK_MODULE(TotemT2EmulatedDigiProducer);

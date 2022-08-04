@@ -88,21 +88,12 @@ ids_arm_1_plane_all_tile_1 = ids_arm_1[1::4]
 ids_arm_1_plane_all_tile_2 = ids_arm_1[2::4]
 ids_arm_1_plane_all_tile_3 = ids_arm_1[3::4]
 
-ids_arm_0_plane_0_tile_0 = ids_arm_0_plane_all_tile_0[0::2][:1]
-ids_arm_0_plane_02_tile_1 = ids_arm_0_plane_all_tile_1[0::2][:2]
-ids_arm_0_plane_024_tile_2 = ids_arm_0_plane_all_tile_2[0::2][:3]
-ids_arm_0_plane_0246_tile_3 = ids_arm_0_plane_all_tile_3[0::2]
-print(ids_arm_0_plane_0_tile_0, ids_arm_0_plane_02_tile_1, ids_arm_0_plane_024_tile_2)
 
-# [2113929216] [2113945600, 2114076672] [2113961984, 2114093056, 2114224128]
 test_cases = cms.VPSet(
-    #cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_all_tile_0), eventLimit = cms.uint32(100)),
-    cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_0_tile_0), eventLimit = cms.uint32(100)),
-    #cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_all_tile_1), eventLimit = cms.uint32(200)),
-    cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_02_tile_1), eventLimit = cms.uint32(200)),
-    #cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_all_tile_2), eventLimit = cms.uint32(500)),
-    cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_024_tile_2), eventLimit = cms.uint32(500)),
-    cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_0246_tile_3), eventLimit = cms.uint32(1000)),
+    cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_all_tile_0), eventLimit = cms.uint32(100)),
+    cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_all_tile_1), eventLimit = cms.uint32(200)),
+    cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_all_tile_2), eventLimit = cms.uint32(500)),
+    cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_all_tile_3), eventLimit = cms.uint32(1000)),
 
     cms.PSet(detId = cms.vuint32(*ids_arm_1_plane_all_tile_0), eventLimit = cms.uint32(10)),
     cms.PSet(detId = cms.vuint32(*ids_arm_1_plane_all_tile_1), eventLimit = cms.uint32(50)),
@@ -113,11 +104,9 @@ test_cases = cms.VPSet(
 test_cases_1 = cms.VPSet(
     cms.PSet(detId = cms.vuint32(*ids_arm_0_plane_all_tile_0)),
 )
-
 # fake digi producer
 process.totemT2Digis = cms.EDProducer('TotemT2DigiProducer',
-    t2DataFile = cms.string(PATH_TO_FAKE_T2_DATA),
-    # set of test cases
+    t2DataFile=cms.string(PATH_TO_FAKE_T2_DATA),
     testCasesSet = test_cases
 )
 
@@ -127,14 +116,19 @@ process.load('RecoPPS.Local.totemT2RecHits_cfi')
 process.load('DQM.CTPPS.totemT2DQMSource_cfi')
 
 process.path = cms.Path(
-    process.totemT2Digis *
-    process.totemT2RecHits *
-    process.totemT2DQMSource
+    process.totemT2Digis
+)
+
+process.output = cms.OutputModule("PoolOutputModule",
+    fileName = cms.untracked.string("file:emulated_digi_test.root"),
+    outputCommands = cms.untracked.vstring(
+        'drop *',
+        'keep *_totemT2*_*_*',
+    ),
 )
 
 process.end_path = cms.EndPath(
-    process.dqmEnv +
-    process.dqmSaver
+    process.output
 )
 
 process.schedule = cms.Schedule(
