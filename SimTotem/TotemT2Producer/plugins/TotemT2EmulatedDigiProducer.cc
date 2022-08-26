@@ -47,6 +47,8 @@ private:
   const double timeSliceNsInverted_ = 1024.0 / 25.0;
   // conversion constant between seconds and nanoseconds
   const double sToNs_ = std::pow(10, 9);
+  // constant to shift leading and trailing edge (in ns)
+  const double edgeShift_ = 1142.0;
 
   // variables to read data from branches
   int channelNo_;
@@ -90,18 +92,20 @@ void TotemT2EmulatedDigiProducer::produce(edm::Event& iEvent, const edm::EventSe
 
   inputTree_->GetEntry(iEvent.id().event());
 
-  unsigned short le = (unsigned short)floor(leadingEdge_ * sToNs_ * timeSliceNsInverted_);
-  unsigned short te = (unsigned short)floor(trailingEdge_ * sToNs_ * timeSliceNsInverted_);
-  TotemT2Digi digiTmp(dummyGeo_, dummyId_, dummyMarker_, le, te);
+  if(channelNo_ == channelNumber_){
+    unsigned short le = (unsigned short) floor((leadingEdge_ * sToNs_ - edgeShift_) * timeSliceNsInverted_);
+    unsigned short te = (unsigned short) floor((trailingEdge_ * sToNs_ - edgeShift_) * timeSliceNsInverted_);
+    TotemT2Digi digiTmp(dummyGeo_, dummyId_, dummyMarker_, le, te);
 
-  for (auto vec : testCasesVec_) {
-    for (const auto& id : vec) {
-      // check if limit was reached
-      if (event_counters_[id] > 0) {
-        TotemT2DetId detId(id);
-        edmNew::DetSetVector<TotemT2Digi>::FastFiller(*digi, detId).push_back(digiTmp);
+    for (auto vec : testCasesVec_) {
+      for (const auto& id : vec) {
+        // check if limit was reached
+        if (event_counters_[id] > 0) {
+          TotemT2DetId detId(id);
+          edmNew::DetSetVector<TotemT2Digi>::FastFiller(*digi, detId).push_back(digiTmp);
+          event_counters_[id]--;
+        }
       }
-      event_counters_[id]--;
     }
   }
   iEvent.put(std::move(digi), "TotemT2");
