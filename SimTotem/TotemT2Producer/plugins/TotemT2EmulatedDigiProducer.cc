@@ -54,6 +54,9 @@ private:
   int channelNo_;
   double leadingEdge_;
   double trailingEdge_;
+  // variables to set every nth edge to 0
+  unsigned int edgeCounter_ = 0;
+  unsigned int maxEdgeCounter_;
 
   std::string t2DataFile_;
   std::vector<std::vector<unsigned int>> testCasesVec_;
@@ -63,7 +66,8 @@ private:
 };
 
 TotemT2EmulatedDigiProducer::TotemT2EmulatedDigiProducer(const edm::ParameterSet& iConfig)
-    : t2DataFile_(iConfig.getParameter<std::string>("t2DataFile")) {
+    : maxEdgeCounter_(iConfig.getParameter<unsigned int>("nthZeroEdge")), 
+      t2DataFile_(iConfig.getParameter<std::string>("t2DataFile")) {
   for (const auto& idsAndLimits : iConfig.getParameter<std::vector<edm::ParameterSet>>("testCasesSet")) {
     std::vector<unsigned int> ids = idsAndLimits.getParameter<std::vector<unsigned int>>("detId");
     unsigned int limit = idsAndLimits.getParameter<unsigned int>("eventLimit");
@@ -95,6 +99,13 @@ void TotemT2EmulatedDigiProducer::produce(edm::Event& iEvent, const edm::EventSe
   if(channelNo_ == channelNumber_){
     unsigned short le = (unsigned short) floor((leadingEdge_ * sToNs_ - edgeShift_) * timeSliceNsInverted_);
     unsigned short te = (unsigned short) floor((trailingEdge_ * sToNs_ - edgeShift_) * timeSliceNsInverted_);
+    if(edgeCounter_ % maxEdgeCounter_ == 0){
+      le = 0;
+    }else if(edgeCounter_ % maxEdgeCounter_ == 1){
+      te = 0;
+    }
+    edgeCounter_ += 1;
+
     TotemT2Digi digiTmp(dummyGeo_, dummyId_, dummyMarker_, le, te);
 
     for (auto vec : testCasesVec_) {
@@ -119,6 +130,8 @@ void TotemT2EmulatedDigiProducer::fillDescriptions(edm::ConfigurationDescription
   idmap_valid.add<std::vector<unsigned int>>("detId")->setComment("mapped TotemT2DetId's for some test case");
   idmap_valid.add<unsigned int>("eventLimit")->setComment("event limit for some test case");
   desc.addVPSet("testCasesSet", idmap_valid);
+
+  desc.add<unsigned int>("nthZeroEdge")->setComment("every nth edge will be set to 0");
 
   descriptions.add("totemT2EmulatedDigis", desc);
 }
