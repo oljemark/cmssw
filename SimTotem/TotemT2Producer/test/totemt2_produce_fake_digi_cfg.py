@@ -57,7 +57,8 @@ test_cases_1 = cms.VPSet(
 # fake digi producer
 process.totemT2Digis = process.totemT2EmulatedDigis.clone(
     t2DataFile = cms.string("/eos/cms/store/group/dpg_ctpps/comm_ctpps/TotemT2/RecoTest/nT2_Nino.root"),
-    testCasesSet = test_cases
+    testCasesSet = test_cases,
+    nthZeroEdge = cms.uint32(20)
 )
 
 process.path = cms.Path(
@@ -65,7 +66,7 @@ process.path = cms.Path(
 )
 
 process.output = cms.OutputModule("PoolOutputModule",
-    fileName = cms.untracked.string("file:emulated_digi_test_edgeShift_edmNew.root"),
+    fileName = cms.untracked.string("file:emulated_digi_test_edgeShift_edmNew_wrongEdges.root"),
     outputCommands = cms.untracked.vstring(
         'drop *',
         'keep *_totemT2*_*_*',
