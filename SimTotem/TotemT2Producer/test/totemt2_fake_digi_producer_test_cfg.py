@@ -39,7 +39,8 @@ test_cases = cms.VPSet(
 # fake digi producer
 process.totemT2Digis = process.totemT2EmulatedDigis.clone(
     t2DataFile = cms.string("/eos/cms/store/group/dpg_ctpps/comm_ctpps/TotemT2/RecoTest/nT2_Nino.root"),
-    testCasesSet = test_cases
+    testCasesSet = test_cases,
+    nthZeroEdge = cms.uint32(20)
 )
 
 # fake digi analyzer

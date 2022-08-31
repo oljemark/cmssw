@@ -64,7 +64,8 @@ test_cases_1 = cms.VPSet(
 process.totemT2Digis = process.totemT2EmulatedDigis.clone(
     t2DataFile = cms.string('/eos/cms/store/group/dpg_ctpps/comm_ctpps/TotemT2/RecoTest/nT2_Nino.root'),
     # set of test cases
-    testCasesSet = test_cases
+    testCasesSet = test_cases,
+    nthZeroEdge = cms.uint32(20)
 )
 
 process.path = cms.Path(
