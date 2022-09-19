@@ -60,8 +60,6 @@ private:
   const unsigned int nbinsx_, nbinsy_;
   const unsigned int windowsNum_;
 
-
-
   struct SectorPlots {
     MonitorElement* activePlanes = nullptr;
     MonitorElement* activePlanesCount = nullptr;
@@ -154,7 +152,6 @@ TotemT2DQMSource::TotemT2DQMSource(const edm::ParameterSet& iConfig)
       nbinsx_(iConfig.getParameter<unsigned int>("nbinsx")),
       nbinsy_(iConfig.getParameter<unsigned int>("nbinsy")),
       windowsNum_(iConfig.getParameter<unsigned int>("windowsNum")) {}
-
 
 void TotemT2DQMSource::dqmBeginRun(const edm::Run&, const edm::EventSetup&) {}
 
