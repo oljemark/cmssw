@@ -391,8 +391,6 @@ void RawToDigiConverter::run(const VFATFrameCollection &coll,
   // common processing - frame validation
   runCommon(coll, mapping, records);
 
-  static constexpr size_t num_channels_per_payload = 2;  // multiplicity of channels combined into a single payload
-
   // second loop over data
   for (auto &p : records) {
     Record &record = p.second;
@@ -404,7 +402,7 @@ void RawToDigiConverter::run(const VFATFrameCollection &coll,
       // update Event Counter in status
       record.status.setEC(record.frame->getEC() & 0xFF);
 
-      for (size_t frame_id = 0; frame_id < num_channels_per_payload; ++frame_id)
+      for (size_t frame_id = 0; frame_id < totem::nt2::vfat::num_channels_per_payload; ++frame_id)
         if (const auto hw_id = totem::nt2::vfat::channelId(*record.frame, frame_id);
             hw_id == record.info->hwID)  // only unpack the payload associated to this hardware ID
           // create the digi
