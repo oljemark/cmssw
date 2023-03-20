@@ -69,7 +69,8 @@ int RawDataUnpacker::processOptoRxFrame(const word *buf,
     return 0;
   }
 
-  LogDebug("Totem") << "RawDataUnpacker::processOptoRxFrame: "
+  if (verbosity)
+	  LogWarning("Totem") << "RawDataUnpacker::processOptoRxFrame: "
                     << "OptoRxId = " << optoRxId << ", BX = " << bx << ", LV1 = " << lv1
                     << ", frameSize = " << frameSize << ", fov = " << fov;
 
