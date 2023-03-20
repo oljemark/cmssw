@@ -33,7 +33,7 @@ process.source = cms.Source("NewEventStreamFileReader",
 #)
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(25)
+    input = cms.untracked.int32(5)
 )
 
 # raw-to-digi conversion
@@ -51,7 +51,7 @@ process.load('Geometry.ForwardGeometry.totemGeometryESModule_cfi')
 process.load('RecoPPS.Local.totemT2RecHits_cfi')
 
 process.output = cms.OutputModule("PoolOutputModule",
-        fileName = cms.untracked.string("file:output-miniDaq2303-T2testFile1-Sun19Mar-sampic-rightLocalCodeArea-printVFAT1-2-25ev.root"),
+        fileName = cms.untracked.string("file:output-miniDaq2303-T2testFile1-Sun19Mar-sampic-printUnknownVFATs-T2mapFrom0-5ev.root"),
     outputCommands = cms.untracked.vstring(
         'drop *',
         'keep *_totemT2*_*_*',

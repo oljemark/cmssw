@@ -55,16 +55,16 @@
   </arm>
   <arm id="1">  <!-- sector 56, CMS positive z -->
     <nt2_plane id="0">
-      <nt2_tile id="0" hwId="0x306" FEDId="577" GOHId="0" IdxInFiber="6"/>
-      <nt2_tile id="1" hwId="0x301" FEDId="577" GOHId="0" IdxInFiber="1"/>
-      <nt2_tile id="2" hwId="0x305" FEDId="577" GOHId="0" IdxInFiber="5"/>
-      <nt2_tile id="3" hwId="0x30D" FEDId="577" GOHId="0" IdxInFiber="13"/>
+      <nt2_tile id="0" hwId="0x0" FEDId="577" GOHId="0" IdxInFiber="1"/>
+      <nt2_tile id="1" hwId="0x1" FEDId="577" GOHId="0" IdxInFiber="2"/>
+      <nt2_tile id="2" hwId="0x2" FEDId="577" GOHId="0" IdxInFiber="3"/>
+      <nt2_tile id="3" hwId="0x3" FEDId="577" GOHId="0" IdxInFiber="4"/>
     </nt2_plane>
     <nt2_plane id="1">
-      <nt2_tile id="0" hwId="0x30A" FEDId="577" GOHId="0" IdxInFiber="10"/>
-      <nt2_tile id="1" hwId="0x302" FEDId="577" GOHId="0" IdxInFiber="2"/>
-      <nt2_tile id="2" hwId="0x304" FEDId="577" GOHId="0" IdxInFiber="4"/>
-      <nt2_tile id="3" hwId="0x30C" FEDId="577" GOHId="0" IdxInFiber="12"/>
+      <nt2_tile id="0" hwId="0x4" FEDId="577" GOHId="0" IdxInFiber="5"/>
+      <nt2_tile id="1" hwId="0x5" FEDId="577" GOHId="0" IdxInFiber="6"/>
+      <nt2_tile id="2" hwId="0x6" FEDId="577" GOHId="0" IdxInFiber="7"/>
+      <nt2_tile id="3" hwId="0x7" FEDId="577" GOHId="0" IdxInFiber="8"/>
     </nt2_plane>
     <nt2_plane id="2">
       <nt2_tile id="0" hwId="0x30B" FEDId="577" GOHId="0" IdxInFiber="11"/>
