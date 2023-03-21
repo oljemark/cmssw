@@ -69,10 +69,13 @@ int RawDataUnpacker::processOptoRxFrame(const word *buf,
     return 0;
   }
 
+  unsigned int hFlag2 = (buf[0] >> 8) & 0xFF;
+  if (verbosity)
+    LogWarning("Totem") << "hFlag "<<hFlag2<<" in RawDataUnpacker::processOptoRxFrame  " <<endl;
   if (verbosity)
 	  LogWarning("Totem") << "RawDataUnpacker::processOptoRxFrame: "
                     << "OptoRxId = " << optoRxId << ", BX = " << bx << ", LV1 = " << lv1
-                    << ", frameSize = " << frameSize << ", fov = " << fov;
+                    << ", frameSize = " << frameSize << ", fov = " << fov << endl;
 
   if ((optoRxId >= FEDNumbering::MINTotemRPTimingVerticalFEDID &&
        optoRxId <= FEDNumbering::MAXTotemRPTimingVerticalFEDID) |
@@ -218,6 +221,8 @@ int RawDataUnpacker::processVFATDataParallel(const uint16_t *buf,
 
   // check header flag
   unsigned int hFlag = (buf[0] >> 8) & 0xFF;
+  if (verbosity)
+    LogWarning("Totem") << "hFlag "<<hFlag<<" in RawDataUnpacker::processVFATDataParallel > " <<endl;
   if (hFlag != vmCluster && hFlag != vmRaw && hFlag != vmDiamondCompact) {
     if (verbosity)
       LogWarning("Totem") << "Error in RawDataUnpacker::processVFATDataParallel > "
