@@ -77,6 +77,13 @@ void RawToDigiConverter::runCommon(const VFATFrameCollection &input,
       continue;
     }
 
+     if (verbosity>0) {
+        LogWarning("Totem")<<"Printing mapped, known VFAT frame"<<endl;
+        fr.Data()->Print(false);
+        fr.Data()->Print(true);
+      }
+
+
     // update record
     Record &record = records_it->second;
     record.frame = fr.Data();
