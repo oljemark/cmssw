@@ -51,7 +51,7 @@ process.load('Geometry.ForwardGeometry.totemGeometryESModule_cfi')
 process.load('RecoPPS.Local.totemT2RecHits_cfi')
 
 process.output = cms.OutputModule("PoolOutputModule",
-        fileName = cms.untracked.string("file:output-miniDaq2303-T2testFile1-Sun19Mar-sampic-printT2RawToDigiStats3-T2mapFrom0To15,0-offset0x20-5ev.root"),
+        fileName = cms.untracked.string("file:output-miniDaq2303-T2testFile1-Sun19Mar-sampic-printT2RawToDigiStats3-T2mapFrom0To15,twice-VFATHeaderoffsetPlus3-5ev.root"),
     outputCommands = cms.untracked.vstring(
         'drop *',
         'keep *_totemT2*_*_*',
