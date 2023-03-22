@@ -418,6 +418,8 @@ void RawToDigiConverter::run(const VFATFrameCollection &coll,
       record.status.setEC(record.frame->getEC() & 0xFF);
       goodF++;
       LogWarning("Totem") << "RawToDigiConverter::runT2() good record, record HWID/channelID0/1: "<<(record.info->hwID)<<"/"<<((unsigned int) totem::nt2::vfat::channelId(*record.frame, 0))<<"/"<<((unsigned int) totem::nt2::vfat::channelId(*record.frame, 1))<<endl;
+      for (size_t y=0;y<2;y++)
+            LogWarning("Totem") << "RawToDigiConverter::runT2() good record, leading/trailing edge,channel "<<((unsigned int) y)<<": "<<((unsigned int) totem::nt2::vfat::leadingEdgeTime(*record.frame, y))<<"/"<<((unsigned int) totem::nt2::vfat::trailingEdgeTime(*record.frame, y))<<endl;
 
       for (size_t frame_id = 0; frame_id < totem::nt2::vfat::num_channels_per_payload; ++frame_id)
         if (const auto hw_id = totem::nt2::vfat::channelId(*record.frame, frame_id);
