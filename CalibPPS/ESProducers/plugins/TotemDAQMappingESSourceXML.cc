@@ -866,7 +866,7 @@ void TotemDAQMappingESSourceXML::ParseTreeTotemT2(ParseType pType,
       for (unsigned int j = 0; j < attr->getLength(); j++) {
         DOMNode *a = attr->item(j);
         if (!strcmp(cms::xerces::toString(a->getNodeName()).c_str(), "hwId")) {
-          sscanf(cms::xerces::toString(a->getNodeValue()).c_str(), "%u", &hw_id);
+          sscanf(cms::xerces::toString(a->getNodeValue()).c_str(), "%x", &hw_id);
           hw_id_set = true;
         }
       }
