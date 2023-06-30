@@ -25,7 +25,13 @@ void TotemT2RecHitProducerAlgorithm::build(const TotemGeometry& geom,
       // don't skip no-edge digis
       double tot = 0.;
       if (digi.hasLE() && digi.hasTE()) {
-        tot = (t_trail - t_lead) * ts_to_ns_;  // in ns
+        const auto ch = detid.channel();
+        const auto pl = detid.plane();
+        double flipped = 1.;
+        if ((ch == 1) &&
+            (pl == 3))  //plane 3, channel 1 had LE & TE values and bits swapped, in both arms, in the 120m TOTEM run
+          flipped = -1.;
+        tot = flipped * (t_trail - t_lead) * ts_to_ns_;  // in ns
       }
       double ch_t_precis = ts_to_ns_ / 2.0;  //without a calibration, assume LE/TE precision is +-0.5
 
