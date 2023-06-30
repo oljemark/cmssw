@@ -21,14 +21,13 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 # raw data source
 process.source = cms.Source("PoolSource",
 fileNames = cms.untracked.vstring(
-#    'http://cmsrep.cern.ch/cmssw/download/data/RecoPPS/Local/V1/run364983_ls0001_streamA_StorageManager.dat'
 #        '/store/t0streamer/Data/PhysicsZeroBias2/000/369/585/run369585_ls0042_streamPhysicsZeroBias2_StorageManager.dat',
         '/store/data/Run2023C/ZeroBiasNonColliding/AOD/PromptReco-v4/000/369/585/00000/82e14c5e-2b94-49c9-9fad-1259bca1d2ae.root',
     )
 )
 
 process.maxEvents = cms.untracked.PSet(
-    input = cms.untracked.int32(1000)
+    input = cms.untracked.int32(100000)
 )
 
 
@@ -49,7 +48,7 @@ process.load('Geometry.ForwardGeometry.totemGeometryESModule_cfi')
 process.load('RecoPPS.Local.totemT2RecHits_cfi')
 
 process.output = cms.OutputModule("PoolOutputModule",
-        fileName = cms.untracked.string("file:output-2023Jun25-GoodRun369585-T2RecHitOnTheFlyAOD-ls0042-ZBStream2-1000ev.root"),
+        fileName = cms.untracked.string("file:output-GoodRun369585-ZeroBiasNonCollide-100000ev.root"),
         outputCommands = RecoCTPPSAOD.outputCommands,
 )
 
