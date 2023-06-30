@@ -29,16 +29,15 @@ process.dqmEnv.eventInfoFolder = "EventInfo"
 process.dqmSaver.path = ""
 process.dqmSaver.tag = "CTPPS"
 
-# raw data source, 25.6. Zero bias, good run
-process.source = cms.Source("NewEventStreamFileReader",
+process.source = cms.Source('PoolSource',
     fileNames = cms.untracked.vstring(
-#        '/store/t0streamer/Minidaq/A/000/368/593/run368593_ls0001_streamA_StorageManager.dat',
-        '/store/t0streamer/Data/PhysicsZeroBias0/000/369/585/run369585_ls0041_streamPhysicsZeroBias0_StorageManager.dat',
-        '/store/t0streamer/Data/PhysicsZeroBias0/000/369/585/run369585_ls0042_streamPhysicsZeroBias0_StorageManager.dat',
-    )
+#TOTEM 120m run AOD
+        '/store/data/Run2023C/ZeroBiasNonColliding/AOD/PromptReco-v4/000/369/585/00000/82e14c5e-2b94-49c9-9fad-1259bca1d2ae.root',
+    ),
 )
+
 process.maxEvents = cms.untracked.PSet(
-  input = cms.untracked.int32(-1)
+  input = cms.untracked.int32(5000)
 )
 
 # raw-to-digi conversion
@@ -54,9 +53,13 @@ process.load("RecoPPS.Configuration.recoCTPPS_cff")
 # CTPPS DQM modules
 process.load("DQM.CTPPS.ctppsDQM_cff")
 
+#process.totemT2Digis.RawToDigi.testCRC = 2
+#process.totemT2Digis.RawToDigi.verbosity = 0
+#process.totemT2Digis.RawToDigi.printErrorSummary = True
+
 process.path = cms.Path(
-  process.ctppsRawToDigi *
-  process.recoCTPPS *
+#  process.ctppsRawToDigi *
+#  process.recoCTPPS *
   process.ctppsDQMCalibrationSource *
   process.ctppsDQMCalibrationHarvest
 )
