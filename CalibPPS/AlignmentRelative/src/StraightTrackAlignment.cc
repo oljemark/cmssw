@@ -571,7 +571,7 @@ void StraightTrackAlignment::processEvent(const edm::EventID &eventId,
   // -------------------- STEP 5: ENOUGH TRACKS?
 
   if (eventsSelected == maxEvents)
-    throw "StraightTrackAlignment: Number of tracks processed reached maximum";
+    throw cms::Exception("PPS") << "StraightTrackAlignment: Number of tracks processed reached maximum";
 }
 
 //----------------------------------------------------------------------------------------------------
