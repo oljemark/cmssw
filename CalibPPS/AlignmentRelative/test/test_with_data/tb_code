@@ -129,6 +129,12 @@ function AddInputFiles()
 		file_list_raw=`nsls "$reco_dir" | grep "run_${run}.*.root"`
 	fi
 
+	if [[ "$reco_dir" == "/ZeroBias"* ]]
+	then
+		prefix="Z"
+		file_list_raw=`dasgoclient -query="file dataset=$reco_dir" | grep ".root"`
+	fi
+
 	if [ "$prefix" == "" ]
 	then
 		prefix="file://"
@@ -143,7 +149,12 @@ function AddInputFiles()
             file_list="$file_list,\n"
         fi
 
-        file_list="$file_list        '$prefix$reco_dir/$file'"
+	if [ "$prefix" == "Z" ]
+	then
+		file_list="$file_list        '$file'"
+	else
+	        file_list="$file_list        '$prefix$reco_dir/$file'"
+	fi
     done
 }
 

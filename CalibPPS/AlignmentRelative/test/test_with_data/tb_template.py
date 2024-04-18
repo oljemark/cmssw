@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
-process = cms.Process("trackBasedAlignment", eras.Run2_2018)
+process = cms.Process("trackBasedAlignment", eras.Run3)
 
 # minimum of logs
 process.MessageLogger = cms.Service("MessageLogger",
@@ -20,11 +20,35 @@ $inputFiles
     ),
     lumisToProcess = cms.untracked.VLuminosityBlockRange($lsList),
     inputCommands = cms.untracked.vstring(
-      "drop *",
+      "keep *",
       "keep TotemRPRecHitedmDetSetVector_*_*_*",
       "keep CTPPSPixelRecHitedmDetSetVector_*_*_*",
     )
 )
+
+#process.load("CondCore.CondDB.CondDB_cfi")
+#process.CondDB.connect = 'sqlite_file:/afs/cern.ch/user/f/foljemar/CTPPSPixel_DAQMapping_AnalysisMask.db'
+#process.PoolDBESSource = cms.ESSource("PoolDBESSource",
+#    process.CondDB,
+#    DumpStat=cms.untracked.bool(True),
+#    toGet = cms.VPSet(
+##      cms.PSet(
+##       record = cms.string('CTPPSPixelDAQMappingRcd'),
+##      tag = cms.string("PixelDAQMapping"),
+##     label = cms.untracked.string("RPix")
+##  ),
+#      cms.PSet(
+#        record = cms.string('CTPPSPixelAnalysisMaskRcd'),
+#        tag = cms.string("PixelAnalysisMask"),
+#        label = cms.untracked.string("")
+#      )
+#    )
+#)
+
+process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
+
+from Configuration.AlCa.GlobalTag import GlobalTag
+process.GlobalTag.globaltag = "130X_dataRun3_Prompt_Candidate_2023_06_06_21_34_08"
 
 # geometry
 process.load("Geometry.VeryForwardGeometry.geometryRPFromDD_2018_cfi")
@@ -34,6 +58,8 @@ process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Be
 # initial alignments
 process.load("CalibPPS.ESProducers.ctppsRPAlignmentCorrectionsDataESSourceXML_cfi")
 process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = cms.vstring($alignmentFiles)
+
+process.alignPref=cms.ESPrefer("CTPPSRPAlignmentCorrectionsDataESSourceXML","ctppsRPAlignmentCorrectionsDataESSourceXML")
 
 # reco modules
 process.load("RecoPPS.Local.totemRPLocalReconstruction_cff")

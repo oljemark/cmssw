@@ -39,7 +39,7 @@ useEqualMeanUMeanVRotZConstraints="True"
 iterationsWithDiagnostics="1"
 
 # input settings
-reco_dir="/eos/totem/data/offline/2018/450GeV/beta11/ZeroBias/version1"
+reco_dir="/ZeroBias/Run2023C-PromptReco-v4/AOD run=369585"
 
 # geometry settings
 geometry="CalibPPS/AlignmentRelative/test/test_with_data"
@@ -52,10 +52,7 @@ label=""  # for non-standard settings, e.g. ",test"
 
 NewDataSet
 tasks=(
-	324579.1-25
-	324579.26-50
-	324579.51-75
-	324579.76-99
+	369585.1-25
 )
 
 SubmitTrackBasedAlignment
