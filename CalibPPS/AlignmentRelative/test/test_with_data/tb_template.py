@@ -26,24 +26,6 @@ $inputFiles
     )
 )
 
-#process.load("CondCore.CondDB.CondDB_cfi")
-#process.CondDB.connect = 'sqlite_file:/afs/cern.ch/user/f/foljemar/CTPPSPixel_DAQMapping_AnalysisMask.db'
-#process.PoolDBESSource = cms.ESSource("PoolDBESSource",
-#    process.CondDB,
-#    DumpStat=cms.untracked.bool(True),
-#    toGet = cms.VPSet(
-##      cms.PSet(
-##       record = cms.string('CTPPSPixelDAQMappingRcd'),
-##      tag = cms.string("PixelDAQMapping"),
-##     label = cms.untracked.string("RPix")
-##  ),
-#      cms.PSet(
-#        record = cms.string('CTPPSPixelAnalysisMaskRcd'),
-#        tag = cms.string("PixelAnalysisMask"),
-#        label = cms.untracked.string("")
-#      )
-#    )
-#)
 
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
