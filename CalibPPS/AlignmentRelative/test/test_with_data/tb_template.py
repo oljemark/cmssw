@@ -41,7 +41,7 @@ process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Be
 process.load("CalibPPS.ESProducers.ctppsRPAlignmentCorrectionsDataESSourceXML_cfi")
 process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = cms.vstring($alignmentFiles)
 
-process.alignPref=cms.ESPrefer("CTPPSRPAlignmentCorrectionsDataESSourceXML","ctppsRPAlignmentCorrectionsDataESSourceXML")
+process.alignPref=cms.ESPrefer("CTPPSRPAlignmentCorrectionsDataESSourceXML","ctppsRPAlignmentCorrectionsDataESSourceXML",RPRealAlignmentRecord=cms.vstring("CTPPSRPAlignmentCorrectionsData"))
 
 # reco modules
 process.load("RecoPPS.Local.totemRPLocalReconstruction_cff")
