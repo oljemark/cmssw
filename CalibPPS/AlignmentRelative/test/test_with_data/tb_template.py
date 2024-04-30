@@ -30,10 +30,12 @@ $inputFiles
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag.globaltag = "130X_dataRun3_Prompt_Candidate_2023_06_06_21_34_08"
+#process.GlobalTag.globaltag = "130X_dataRun3_Prompt_Candidate_2023_06_06_21_34_08"
+process.GlobalTag.globaltag = "140X_dataRun3_Prompt_v2"
 
 # geometry
 process.load("Geometry.VeryForwardGeometry.geometryRPFromDD_2018_cfi")
+process.ctppsGeometryESModule.buildMisalignedGeometry=cms.bool(True)
 del(process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles[-1])
 process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Beam_Cent.xml")
 
