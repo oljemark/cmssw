@@ -30,8 +30,8 @@ $inputFiles
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 
 from Configuration.AlCa.GlobalTag import GlobalTag
-#process.GlobalTag.globaltag = "130X_dataRun3_Prompt_Candidate_2023_06_06_21_34_08"
-process.GlobalTag.globaltag = "140X_dataRun3_Prompt_v2"
+#process.GlobalTag.globaltag = "140X_dataRun3_Prompt_v2"
+process.GlobalTag.globaltag = "140X_dataRun2_v1"
 
 # geometry
 process.load("Geometry.VeryForwardGeometry.geometryRPFromDD_2018_cfi")
