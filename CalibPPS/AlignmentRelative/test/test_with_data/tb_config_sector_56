@@ -12,7 +12,7 @@ excludePlanes=""
 minimumHitsPerProjectionPerRP=3
 requireNumberOfUnits="2"
 requireOverlap="False"
-requireAtLeast3PotsInOverlap="False"
+requireAtLeast3PotsInOverlap="True"
 
 additionalAcceptedRPSets=""
 
@@ -21,13 +21,13 @@ additionalAcceptedRPSets=""
 maxEvents="4E4"
 
 # iteration settings
-iterations=5
-optimize=("s" "s" "sr")
+iterations=6
+optimize=("s" "s" "s" "sr")
 iterationsWithOneRotZPerPot=0
-maxResidualToSigma=(30 10 10 3)
-chiSqPerNdfCut=(500 50 50 5)
-maxTrackAx=("5E-2")
-maxTrackAy=("5E-2")
+maxResidualToSigma=(300 30 10 10 3)
+chiSqPerNdfCut=(5000 500 50 50 5)
+maxTrackAx=("2E-3")
+maxTrackAy=("2E-3")
 
 # constraint settings
 constraintsType="standard"
