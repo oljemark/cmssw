@@ -5,8 +5,8 @@ sector="56"
 z0="+217000"
 rps="103,104,105,123,124,125"
 
-# nothing to exclude
-excludePlanes=""
+# exclude planes 124.8 and 124.9
+excludePlanes="2007236608,2007269376"
 
 # event selection
 minimumHitsPerProjectionPerRP=3
