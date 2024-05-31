@@ -42,6 +42,7 @@ process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Be
 # initial alignments
 process.load("CalibPPS.ESProducers.ctppsRPAlignmentCorrectionsDataESSourceXML_cfi")
 process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = cms.vstring($alignmentFiles)
+process.ctppsRPAlignmentCorrectionsDataESSourceXML.verbosity = 1
 
 process.alignPref=cms.ESPrefer("CTPPSRPAlignmentCorrectionsDataESSourceXML","ctppsRPAlignmentCorrectionsDataESSourceXML",RPRealAlignmentRecord=cms.vstring("CTPPSRPAlignmentCorrectionsData"))
 
