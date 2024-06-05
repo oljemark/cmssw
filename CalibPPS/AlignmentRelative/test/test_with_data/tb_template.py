@@ -57,7 +57,7 @@ process.ctppsLocalTrackLiteProducer.includeDiamonds = False
 # aligner
 process.load("CalibPPS.AlignmentRelative.ppsStraightTrackAligner_cfi")
 
-process.ppsStraightTrackAligner.verbosity = 1
+process.ppsStraightTrackAligner.verbosity = 2
 
 process.ppsStraightTrackAligner.tagUVPatternsStrip = cms.InputTag("totemRPUVPatternFinder")
 process.ppsStraightTrackAligner.tagDiamondHits = cms.InputTag("")
