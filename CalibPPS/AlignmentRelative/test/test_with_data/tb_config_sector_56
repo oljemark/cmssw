@@ -18,7 +18,7 @@ additionalAcceptedRPSets=""
 
 # even number limit
 #maxEvents="-1" # process all events
-maxEvents="4E4"
+maxEvents="4E3"
 
 # iteration settings
 iterations=5
