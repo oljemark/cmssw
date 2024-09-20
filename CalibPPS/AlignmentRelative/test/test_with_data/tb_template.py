@@ -36,8 +36,8 @@ process.GlobalTag.globaltag = "140X_dataRun3_Prompt_v2"
 # geometry
 process.load("Geometry.VeryForwardGeometry.geometryRPFromDD_2022_cfi")
 process.ctppsGeometryESModule.buildMisalignedGeometry=cms.bool(True)
-#del(process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles[-1])
-#process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Beam_Cent.xml")
+del(process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles[-1])
+process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Beam_Cent.xml")
 
 # initial alignments
 process.load("CalibPPS.ESProducers.ctppsRPAlignmentCorrectionsDataESSourceXML_cfi")

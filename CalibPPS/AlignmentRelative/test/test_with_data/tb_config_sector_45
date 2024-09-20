@@ -44,7 +44,7 @@ reco_dir="/ZeroBias1/Run2023C-PromptReco-v4/AOD run=369585"
 # geometry settings
 geometry="CalibPPS/AlignmentRelative/test/test_with_data"
 
-initial_alignment=("CalibPPS/AlignmentRelative/test/test_with_data/alignment_internal_2024.xml")
+initial_alignment=()
 
 # output settings
 subdir="data"
