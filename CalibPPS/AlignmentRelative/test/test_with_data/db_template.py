@@ -1,0 +1,135 @@
+import FWCore.ParameterSet.Config as cms
+
+from Configuration.StandardSequences.Eras import eras
+process = cms.Process("trackBasedAlignment", eras.Run3)
+
+# minimum of logs
+process.MessageLogger = cms.Service("MessageLogger",
+  statistics = cms.untracked.vstring(),
+  destinations = cms.untracked.vstring('cout'),
+  cout = cms.untracked.PSet(
+    threshold = cms.untracked.string('WARNING')
+  )
+)
+
+# input data
+process.source = cms.Source("PoolSource",
+    skipBadFiles = cms.untracked.bool(True),
+    fileNames = cms.untracked.vstring(
+$inputFiles
+    ),
+    lumisToProcess = cms.untracked.VLuminosityBlockRange($lsList),
+    inputCommands = cms.untracked.vstring(
+      "keep *",
+      "keep TotemRPRecHitedmDetSetVector_*_*_*",
+      "keep CTPPSPixelRecHitedmDetSetVector_*_*_*",
+    )
+)
+
+
+process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
+
+from Configuration.AlCa.GlobalTag import GlobalTag
+process.GlobalTag.globaltag = "140X_dataRun3_Prompt_v2"
+#process.GlobalTag.globaltag = "140X_dataRun2_v1"
+
+# geometry
+process.load("Geometry.VeryForwardGeometry.geometryRPFromDD_2022_cfi")
+process.ctppsGeometryESModule.buildMisalignedGeometry=cms.bool(True)
+#del(process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles[-1])
+#process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Beam_Cent.xml")
+
+process.GlobalTag.toGet = cms.VPSet(
+
+  cms.PSet(record = cms.string("VeryForwardIdealGeometryRecord"),
+
+           tag = cms.string("PPSGeometry_IntAligned"),
+
+           connect = cms.string("sqlite_file:/afs/cern.ch/user/f/foljemar/toteostest/CMSSW_13_0_7_TOTEM/src/CalibPPS/AlignmentRelative/test/test_with_data/Geometry_internally_aligned_fromFile_2023fixed.db")
+
+          )
+
+)
+# initial alignments
+process.load("CalibPPS.ESProducers.ctppsRPAlignmentCorrectionsDataESSourceXML_cfi")
+process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = cms.vstring($alignmentFiles)
+process.ctppsRPAlignmentCorrectionsDataESSourceXML.verbosity = 1
+
+process.alignPref=cms.ESPrefer("CTPPSRPAlignmentCorrectionsDataESSourceXML","ctppsRPAlignmentCorrectionsDataESSourceXML",RPRealAlignmentRecord=cms.vstring("CTPPSRPAlignmentCorrectionsData"))
+
+# reco modules
+process.load("RecoPPS.Local.totemRPLocalReconstruction_cff")
+
+process.load("RecoPPS.Local.ctppsPixelLocalReconstruction_cff")
+
+process.load("RecoPPS.Local.ctppsLocalTrackLiteProducer_cff")
+process.ctppsLocalTrackLiteProducer.includeDiamonds = False
+
+# aligner
+process.load("CalibPPS.AlignmentRelative.ppsStraightTrackAligner_cfi")
+
+process.ppsStraightTrackAligner.verbosity = 3
+
+process.ppsStraightTrackAligner.tagUVPatternsStrip = cms.InputTag("totemRPUVPatternFinder")
+process.ppsStraightTrackAligner.tagDiamondHits = cms.InputTag("")
+process.ppsStraightTrackAligner.tagPixelHits = cms.InputTag("")
+process.ppsStraightTrackAligner.tagPixelLocalTracks = cms.InputTag("ctppsPixelLocalTracks")
+
+process.ppsStraightTrackAligner.maxEvents = int($maxEvents)
+
+process.ppsStraightTrackAligner.rpIds = [$rps]
+process.ppsStraightTrackAligner.excludePlanes = cms.vuint32($excludePlanes)
+process.ppsStraightTrackAligner.z0 = $z0
+
+process.ppsStraightTrackAligner.maxResidualToSigma = $maxResidualToSigma
+process.ppsStraightTrackAligner.minimumHitsPerProjectionPerRP = $minimumHitsPerProjectionPerRP
+
+process.ppsStraightTrackAligner.removeImpossible = True
+process.ppsStraightTrackAligner.requireNumberOfUnits = $requireNumberOfUnits
+process.ppsStraightTrackAligner.requireOverlap = $requireOverlap
+process.ppsStraightTrackAligner.requireAtLeast3PotsInOverlap = $requireAtLeast3PotsInOverlap
+process.ppsStraightTrackAligner.additionalAcceptedRPSets = "$additionalAcceptedRPSets"
+
+process.ppsStraightTrackAligner.cutOnChiSqPerNdf = True
+process.ppsStraightTrackAligner.chiSqPerNdfCut = $chiSqPerNdfCut
+
+process.ppsStraightTrackAligner.maxTrackAx = $maxTrackAx
+process.ppsStraightTrackAligner.maxTrackAy = $maxTrackAy
+
+optimize="$optimize"
+process.ppsStraightTrackAligner.resolveShR = $resolveShR
+process.ppsStraightTrackAligner.resolveShZ = False
+process.ppsStraightTrackAligner.resolveRotZ = $resolveRotZ
+
+process.ppsStraightTrackAligner.constraintsType = "standard"
+process.ppsStraightTrackAligner.standardConstraints.units = cms.vuint32($final_constraints_units)
+process.ppsStraightTrackAligner.oneRotZPerPot = $oneRotZPerPot
+process.ppsStraightTrackAligner.useEqualMeanUMeanVRotZConstraints = $useEqualMeanUMeanVRotZConstraints
+
+process.ppsStraightTrackAligner.algorithms = cms.vstring("Jan")
+
+process.ppsStraightTrackAligner.JanAlignmentAlgorithm.stopOnSingularModes = False
+
+results_dir="$results_dir"
+
+process.ppsStraightTrackAligner.taskDataFileName = "" # results_dir + "/task_data.root"
+
+process.ppsStraightTrackAligner.fileNamePrefix = results_dir + "/results_iteration_"
+process.ppsStraightTrackAligner.expandedFileNamePrefix = results_dir + "/results_cumulative_expanded_"
+process.ppsStraightTrackAligner.factoredFileNamePrefix = results_dir + "/results_cumulative_factored_"
+
+process.ppsStraightTrackAligner.diagnosticsFile = results_dir + '/diagnostics.root'
+process.ppsStraightTrackAligner.buildDiagnosticPlots = $buildDiagnosticPlots
+process.ppsStraightTrackAligner.JanAlignmentAlgorithm.buildDiagnosticPlots = $buildDiagnosticPlots
+
+# processing sequence
+process.p = cms.Path(
+  # it is important to re-run part of the reconstruction as it may influence
+  # the choice of rec-hits used in the alignment
+  process.totemRPUVPatternFinder
+  * process.totemRPLocalTrackFitter
+  * process.ctppsPixelLocalTracks
+  * process.ctppsLocalTrackLiteProducer
+
+  * process.ppsStraightTrackAligner
+)
