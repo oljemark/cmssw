@@ -5,7 +5,7 @@ process = cms.Process("ppsTrackBasedAlignmentTest")
 # minimum of logs
 process.MessageLogger = cms.Service("MessageLogger",
     cerr = cms.untracked.PSet(
-        enable = cms.untracked.bool(False)
+        enable = cms.untracked.bool(True)
     ),
     cout = cms.untracked.PSet(
         enable = cms.untracked.bool(True),
@@ -56,7 +56,7 @@ process.ppsStraightTrackAligner.tagUVPatternsStrip = cms.InputTag("totemRPUVPatt
 process.ppsStraightTrackAligner.tagDiamondHits = cms.InputTag("")
 process.ppsStraightTrackAligner.tagPixelHits = cms.InputTag("ppsFastLocalSimulation")
 
-process.ppsStraightTrackAligner.maxEvents = 1000
+process.ppsStraightTrackAligner.maxEvents = 10001
 
 process.ppsStraightTrackAligner.rpIds = [103, 104, 105, 123, 124, 125]
 process.ppsStraightTrackAligner.excludePlanes = cms.vuint32()

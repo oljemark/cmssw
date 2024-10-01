@@ -40,6 +40,8 @@ iterationsWithDiagnostics="1"
 
 # input settings
 reco_dir="/eos/totem/data/offline/2018/450GeV/beta11/ZeroBias/version1"
+# no offsets
+horizontalOffsets=""
 
 # geometry settings
 geometry="CalibPPS/AlignmentRelative/test/test_with_data"

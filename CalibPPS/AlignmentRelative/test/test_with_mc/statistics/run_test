@@ -40,6 +40,7 @@ wait
 
 echo "* analysis"
 cd "data"
+echo $SCRAM_ARCH
 $CMSSW_BASE/test/$SCRAM_ARCH/ppsTrackBasedAligAnalRes \
 	./results_factored_Jan.xml\
 	./results_factored_Ideal.xml\

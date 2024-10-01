@@ -1,7 +1,7 @@
 import FWCore.ParameterSet.Config as cms
 
 ppsFastLocalSimulation = cms.EDProducer("PPSFastLocalSimulation",
-    verbosity = cms.untracked.uint32(0),
+    verbosity = cms.untracked.uint32(3),
 
     makeHepMC = cms.bool(False),
     makeHits = cms.bool(True),
