@@ -58,8 +58,7 @@ TGraph *newGraph(const string &name, const string &title) {
   return g;
 }
 
-
-DetGeometry shiftAlongAxis(DetGeometry geometry, unsigned int axisID, double shiftY){
+DetGeometry shiftAlongAxis(DetGeometry geometry, unsigned int axisID, double shiftY) {
   auto axis = geometry.getDirectionData(axisID);
   geometry.sx += axis.dx * shiftY;
   geometry.sy += axis.dy * shiftY;
@@ -67,14 +66,13 @@ DetGeometry shiftAlongAxis(DetGeometry geometry, unsigned int axisID, double shi
   return geometry;
 }
 
-
-TH2F *graphToHistogram(TGraph* graph){
+TH2F *graphToHistogram(TGraph *graph) {
   auto h = new TH2F("hist", ";x (mm);y (mm)", 150, -40, 40, 150, -40, 40);
-  auto nPoints = graph->GetN(); // number of points in your TGraph
-  for(int i=0; i < nPoints; ++i) {
-    double x,y;
+  auto nPoints = graph->GetN();  // number of points in your TGraph
+  for (int i = 0; i < nPoints; ++i) {
+    double x, y;
     graph->GetPoint(i, x, y);
-    h->Fill(x,y);
+    h->Fill(x, y);
   }
   return h;
 }
@@ -105,8 +103,8 @@ void StraightTrackAlignment::RPSetPlots::free() {
   delete fitBxVsByGraph_fitted;
   delete fitBxVsByGraph_selected;
 
-  for (auto& pair : hit_patterns)
-      delete pair.second;
+  for (auto &pair : hit_patterns)
+    delete pair.second;
   hit_patterns.clear();
 }
 
@@ -129,9 +127,9 @@ void StraightTrackAlignment::RPSetPlots::write() const {
   char buf[30];
   sprintf(buf, "hit pattern; %s", name.c_str());
   TCanvas *canvas = new TCanvas(buf, ";x (mm);y (mm)");
-  auto mg = new TMultiGraph(buf,";x (mm);y (mm)");
+  auto mg = new TMultiGraph(buf, ";x (mm);y (mm)");
 
-  for(auto& hit_patternIt : hit_patterns)
+  for (auto &hit_patternIt : hit_patterns)
     mg->Add(hit_patternIt.second, "AP");
   mg->Draw();
   canvas->BuildLegend();
@@ -144,8 +142,8 @@ void StraightTrackAlignment::RPSetPlots::write() const {
 StraightTrackAlignment::StraightTrackAlignment(const ParameterSet &ps)
     : verbosity(ps.getUntrackedParameter<unsigned int>("verbosity", 0)),
 
-      rpIds(ps.getParameter<vector<unsigned int> >("rpIds")),
-      excludePlanes(ps.getParameter<vector<unsigned int> >("excludePlanes")),
+      rpIds(ps.getParameter<vector<unsigned int>>("rpIds")),
+      excludePlanes(ps.getParameter<vector<unsigned int>>("excludePlanes")),
       z0(ps.getParameter<double>("z0")),
 
       maxEvents(ps.getParameter<signed int>("maxEvents")),
@@ -194,7 +192,7 @@ StraightTrackAlignment::StraightTrackAlignment(const ParameterSet &ps)
 
   // instantiate algorithm objects
   // (and save them)
-  vector<string> alNames(ps.getParameter<vector<string> >("algorithms"));
+  vector<string> alNames(ps.getParameter<vector<string>>("algorithms"));
   for (unsigned int i = 0; i < alNames.size(); i++) {
     AlignmentAlgorithm *a = nullptr;
 
@@ -257,18 +255,18 @@ StraightTrackAlignment::StraightTrackAlignment(const ParameterSet &ps)
 
   // parse RP offsets
   vector<std::string> rawhorizontalOffsets = ps.getParameter<vector<std::string>>("horizontalOffsets");
-  for (const auto& entry : rawhorizontalOffsets) {
+  for (const auto &entry : rawhorizontalOffsets) {
     std::stringstream ss(entry);
     std::string idStr, offsetStr;
 
     if (std::getline(ss, idStr, ':') && std::getline(ss, offsetStr)) {
-        unsigned int RPid = std::stoi(idStr);
-        double offset = std::stod(offsetStr);
-        horizontalOffsets[RPid] = offset;
+      unsigned int RPid = std::stoi(idStr);
+      double offset = std::stod(offsetStr);
+      horizontalOffsets[RPid] = offset;
     } else {
-        std::cerr << "Invalid format: " << entry << std::endl;
+      std::cerr << "Invalid format: " << entry << std::endl;
     }
-}
+  }
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -311,7 +309,7 @@ StraightTrackAlignment::~StraightTrackAlignment() {
 }
 
 void StraightTrackAlignment::AdjustGeometry() {
-  for(auto& it: task.geometry.getSensorMap()) {
+  for (auto &it : task.geometry.getSensorMap()) {
     CTPPSDetId detId(it.first);
     const unsigned int decRPId = detId.arm() * 100 + detId.station() * 10 + detId.rp();
     auto geometry = it.second;
@@ -322,7 +320,7 @@ void StraightTrackAlignment::AdjustGeometry() {
 
     geometry = shiftAlongAxis(geometry, 1, horizontalOffsets[decRPId]);
 
-    for (auto& it: geometry.directionData) {
+    for (auto &it : geometry.directionData) {
       geometry.setDirection(it.first, it.second.dx, it.second.dy, it.second.dz);
     }
     task.geometry.insert(detId, geometry);
@@ -370,19 +368,17 @@ void StraightTrackAlignment::begin(edm::ESHandle<CTPPSRPAlignmentCorrectionsData
 
 //----------------------------------------------------------------------------------------------------
 
+void StraightTrackAlignment::getHitPosition(Hit hit, LocalTrackFit track, double &x, double &y) {
+  const DetGeometry &geom = task.geometry.get(hit.id);
+  const auto dirData = geom.getDirectionData(hit.dirIdx);
 
-void StraightTrackAlignment::getHitPosition(Hit hit, LocalTrackFit track, double& x, double& y) {
-    const DetGeometry &geom = task.geometry.get(hit.id);
-    const auto dirData = geom.getDirectionData(hit.dirIdx);
-
-    double m = hit.position + dirData.s - (hit.z - geom.z) * dirData.dz;
-    x = track.ax * hit.z + track.bx;
-    y = track.ay * hit.z + track.by;
+  double m = hit.position + dirData.s - (hit.z - geom.z) * dirData.dz;
+  x = track.ax * hit.z + track.bx;
+  y = track.ay * hit.z + track.by;
 }
 
-
 bool StraightTrackAlignment::filtered(HitCollection hitSelection, map<int, LocalTrackFit> trackFitMapping) {
-    for (auto hit1 : hitSelection){
+  for (auto hit1 : hitSelection) {
     const CTPPSDetId det1Id(hit1.id);
     const unsigned int rpDec1Id = det1Id.arm() * 100 + det1Id.station() * 10 + det1Id.rp();
     auto track1 = trackFitMapping[rpDec1Id];
@@ -390,28 +386,28 @@ bool StraightTrackAlignment::filtered(HitCollection hitSelection, map<int, Local
     double x1, y1;
     getHitPosition(hit1, track1, x1, y1);
 
+    for (auto hit2 : hitSelection) {
+      const CTPPSDetId det2Id(hit2.id);
+      const unsigned int rpDec2Id = det2Id.arm() * 100 + det2Id.station() * 10 + det2Id.rp();
+      if (rpDec1Id >= rpDec2Id)
+        continue;
 
-      for (auto hit2 : hitSelection){
-        const CTPPSDetId det2Id(hit2.id);
-        const unsigned int rpDec2Id = det2Id.arm() * 100 + det2Id.station() * 10 + det2Id.rp();
-        if (rpDec1Id >= rpDec2Id) continue;
+      std::set<unsigned int> key = {rpDec1Id, rpDec2Id};
 
-        std::set<unsigned int> key = {rpDec1Id, rpDec2Id};
+      if (meanDxValue.find(key) == meanDxValue.end())
+        continue;
 
-        if (meanDxValue.find(key) == meanDxValue.end())
-          continue;
+      auto track2 = trackFitMapping[rpDec2Id];
+      double x2, y2;
+      getHitPosition(hit2, track2, x2, y2);
 
-        auto track2 = trackFitMapping[rpDec2Id];
-        double x2, y2;
-        getHitPosition(hit2, track2, x2, y2);
+      double deltaX = x1 - x2;
+      double deltaY = y1 - y2;
 
-        double deltaX = x1 - x2;
-        double deltaY = y1 - y2;
-
-        double allowedDelta = 0.3;
-        if((fabs(deltaX - meanDxValue[key]) > allowedDelta) || (fabs(deltaY - meanDyValue[key]) > allowedDelta))
-          return true;
-      }
+      double allowedDelta = 0.3;
+      if ((fabs(deltaX - meanDxValue[key]) > allowedDelta) || (fabs(deltaY - meanDyValue[key]) > allowedDelta))
+        return true;
+    }
   }
   return false;
 }
@@ -482,7 +478,7 @@ void StraightTrackAlignment::processEvent(const edm::EventID &eventId,
           continue;
 
         const double &z = task.geometry.get(hitsDetSet.detId()).z;
-        for (auto &hit : hitsDetSet){
+        for (auto &hit : hitsDetSet) {
           hitSelectionMapping[rpDecId].emplace_back(Hit(hitsDetSet.detId(), 2, hit.position(), hit.sigma(), z));
           hitSelection.emplace_back(Hit(hitsDetSet.detId(), 2, hit.position(), hit.sigma(), z));
         }
@@ -510,9 +506,9 @@ void StraightTrackAlignment::processEvent(const edm::EventID &eventId,
 
     const double &z = task.geometry.get(pv.detId()).z;
 
-    for (const auto &h : pv){
-       hitSelectionMapping[rpDecId].emplace_back(Hit(pv.detId(), 1, h.x(), h.xWidth() / sqrt(12.), z));
-       hitSelection.emplace_back(Hit(pv.detId(), 1, h.x(), h.xWidth() / sqrt(12.), z));
+    for (const auto &h : pv) {
+      hitSelectionMapping[rpDecId].emplace_back(Hit(pv.detId(), 1, h.x(), h.xWidth() / sqrt(12.), z));
+      hitSelection.emplace_back(Hit(pv.detId(), 1, h.x(), h.xWidth() / sqrt(12.), z));
     }
   }
 
@@ -647,7 +643,7 @@ void StraightTrackAlignment::processEvent(const edm::EventID &eventId,
   }
 
   map<int, LocalTrackFit> trackFitMapping;
-  for(auto &rpHits : hitSelectionMapping) {
+  for (auto &rpHits : hitSelectionMapping) {
     trackFitMapping[rpHits.first] = LocalTrackFit();
     fitter.fit(rpHits.second, task.geometry, trackFitMapping[rpHits.first]);
   }
@@ -655,7 +651,6 @@ void StraightTrackAlignment::processEvent(const edm::EventID &eventId,
   // Filter unwanted events
   // if (filtered(hitSelection, trackFitMapping))
   //   return;
-
 
   eventsFitted++;
   fittedTracksPerRPSet[selectedRPs]++;
@@ -836,34 +831,32 @@ void StraightTrackAlignment::updateDiagnosticHistograms(const HitCollection &sel
       sprintf(buf, "RP %u: plane %u", rpDecId, id);
       it->second.hit_pattern_isolated = newGraph(buf, titleBuf);
       it->second.hit_pattern_isolated->SetMarkerStyle(20);
-      it->second.hit_pattern_isolated->SetMarkerColor(detId.rp() + (rpDecId%100)*3/10);
+      it->second.hit_pattern_isolated->SetMarkerColor(detId.rp() + (rpDecId % 100) * 3 / 10);
     }
 
     it->second.total_fitted->Fill(R);
     it->second.hit_pattern->Fill(x, y);
 
     bool keyWithinDistance = false;
-    for (const auto& kv : trackFitMapping) {
-      int key = (int) kv.first;
-      int value = (int) rpDecId;
-      if (key != value && abs(key - value) <= 2){
+    for (const auto &kv : trackFitMapping) {
+      int key = (int)kv.first;
+      int value = (int)rpDecId;
+      if (key != value && abs(key - value) <= 2) {
         keyWithinDistance = true;
         break;
       }
     }
 
-
     if (keyWithinDistance && trackSelected) {
-        // Reconstructing hit position of single RP
-        auto isolatedTrackFit = trackFitMapping[rpDecId];
-        double x_is = isolatedTrackFit.ax * hit.z + isolatedTrackFit.bx;
-        double y_is = isolatedTrackFit.ay * hit.z + isolatedTrackFit.by;
+      // Reconstructing hit position of single RP
+      auto isolatedTrackFit = trackFitMapping[rpDecId];
+      double x_is = isolatedTrackFit.ax * hit.z + isolatedTrackFit.bx;
+      double y_is = isolatedTrackFit.ay * hit.z + isolatedTrackFit.by;
 
-        it->second.hit_pattern_isolated->AddPoint(x_is, y_is);
-        hits[id].first = x_is;
-        hits[id].second = y_is;
+      it->second.hit_pattern_isolated->AddPoint(x_is, y_is);
+      hits[id].first = x_is;
+      hits[id].second = y_is;
     }
-
 
     if (trackSelected) {
       it->second.total_selected->Fill(R);
@@ -904,7 +897,7 @@ void StraightTrackAlignment::updateDiagnosticHistograms(const HitCollection &sel
 
   std::map<unsigned int, DetGeometry> frontDetectors;
 
-  for (auto& sensorIt : task.geometry.getSensorMap()) {
+  for (auto &sensorIt : task.geometry.getSensorMap()) {
     const unsigned int id = sensorIt.first;
 
     const CTPPSDetId detId(id);
@@ -917,14 +910,13 @@ void StraightTrackAlignment::updateDiagnosticHistograms(const HitCollection &sel
 
     if (frontDetectors.find(rpDecId) == frontDetectors.end()) {
       frontDetectors[rpDecId] = sensor;
-    }
-    else if (fabs(frontDetectors[rpDecId].z) > fabs(sensor.z)) {
+    } else if (fabs(frontDetectors[rpDecId].z) > fabs(sensor.z)) {
       frontDetectors[rpDecId] = sensor;
     }
   }
 
-  auto& rpSetPlot = rpSetPlots[selectedRPs];
-  for (auto& trackIt : trackFitMapping) {
+  auto &rpSetPlot = rpSetPlots[selectedRPs];
+  for (auto &trackIt : trackFitMapping) {
     const unsigned int rpDecId = trackIt.first;
 
     if (selectedRPs.find(rpDecId) == selectedRPs.end())
@@ -936,19 +928,16 @@ void StraightTrackAlignment::updateDiagnosticHistograms(const HitCollection &sel
     double x = trackFit.ax * detector.z + trackFit.bx;
     double y = trackFit.ay * detector.z + trackFit.by;
 
-
-    if (rpSetPlot.hit_patterns.find(rpDecId) == rpSetPlot.hit_patterns.end()){
+    if (rpSetPlot.hit_patterns.find(rpDecId) == rpSetPlot.hit_patterns.end()) {
       char buf[30];
       sprintf(buf, "%u;x (mm);y (mm)", rpDecId);
-      TGraph* graph = newGraph("hit pattern", buf);
+      TGraph *graph = newGraph("hit pattern", buf);
       graph->SetMarkerStyle(20);
-      graph->SetMarkerColor(rpDecId%10 + (rpDecId%100)*3);
+      graph->SetMarkerColor(rpDecId % 10 + (rpDecId % 100) * 3);
       rpSetPlot.hit_patterns[rpDecId] = graph;
     }
     rpSetPlot.hit_patterns[rpDecId]->AddPoint(x, y);
   }
-
-
 
   for (auto it1 : hits) {
     auto id = it1.first;
@@ -956,16 +945,17 @@ void StraightTrackAlignment::updateDiagnosticHistograms(const HitCollection &sel
     auto it = residuaHistograms.find(id);
     const unsigned int rpDec1Id = det1Id.arm() * 100 + det1Id.station() * 10 + det1Id.rp();
 
-    for (auto it2 : hits){
+    for (auto it2 : hits) {
       const CTPPSDetId det2Id(it2.first);
       const unsigned int rpDec2Id = det2Id.arm() * 100 + det2Id.station() * 10 + det2Id.rp();
-      if (rpDec1Id >= rpDec2Id || rpDec2Id - rpDec1Id > 2) continue;
+      if (rpDec1Id >= rpDec2Id || rpDec2Id - rpDec1Id > 2)
+        continue;
 
       double deltaX = it1.second.first - it2.second.first;
       double deltaY = it1.second.second - it2.second.second;
 
       auto graphY = it->second.yDeltaVsY.find(it2.first);
-      if(graphY == it->second.yDeltaVsY.end()){
+      if (graphY == it->second.yDeltaVsY.end()) {
         char buf[30];
         sprintf(buf, "%u vs %u, dYvsY", it1.first, it2.first);
         char titleBuf[30];
@@ -975,7 +965,7 @@ void StraightTrackAlignment::updateDiagnosticHistograms(const HitCollection &sel
       }
 
       auto graphX = it->second.xDeltaVsX.find(it2.first);
-      if(graphX == it->second.xDeltaVsX.end()){
+      if (graphX == it->second.xDeltaVsX.end()) {
         char buf[30];
         sprintf(buf, "%u vs %u, dXvsX", it1.first, it2.first);
         char titleBuf[30];
@@ -987,7 +977,6 @@ void StraightTrackAlignment::updateDiagnosticHistograms(const HitCollection &sel
       it->second.xDeltaVsX.at(it2.first)->AddPoint(it1.second.first, deltaX);
     }
   }
-
 }
 
 //----------------------------------------------------------------------------------------------------
@@ -1061,7 +1050,7 @@ void StraightTrackAlignment::finish() {
   }
 
   // solve
-  vector<map<unsigned int, AlignmentResult> > results;
+  vector<map<unsigned int, AlignmentResult>> results;
   for (auto algorithm : algorithms) {
     TDirectory *dir = nullptr;
     if (taskDataFile && saveIntermediateResults)
@@ -1274,7 +1263,7 @@ void StraightTrackAlignment::printN(const char *str, unsigned int N) {
 
 //----------------------------------------------------------------------------------------------------
 
-void StraightTrackAlignment::printLineSeparator(const std::vector<std::map<unsigned int, AlignmentResult> > &results) {
+void StraightTrackAlignment::printLineSeparator(const std::vector<std::map<unsigned int, AlignmentResult>> &results) {
   printf("═════════════════════════╬");
   for (unsigned int q = 0; q < task.quantityClasses.size(); q++) {
     for (unsigned int a = 0; a < results.size(); a++) {
@@ -1289,7 +1278,7 @@ void StraightTrackAlignment::printLineSeparator(const std::vector<std::map<unsig
 
 //----------------------------------------------------------------------------------------------------
 
-void StraightTrackAlignment::printQuantitiesLine(const std::vector<std::map<unsigned int, AlignmentResult> > &results) {
+void StraightTrackAlignment::printQuantitiesLine(const std::vector<std::map<unsigned int, AlignmentResult>> &results) {
   printf("                         ║");
 
   for (unsigned int q = 0; q < task.quantityClasses.size(); q++) {
@@ -1310,7 +1299,7 @@ void StraightTrackAlignment::printQuantitiesLine(const std::vector<std::map<unsi
 
 //----------------------------------------------------------------------------------------------------
 
-void StraightTrackAlignment::printAlgorithmsLine(const std::vector<std::map<unsigned int, AlignmentResult> > &results) {
+void StraightTrackAlignment::printAlgorithmsLine(const std::vector<std::map<unsigned int, AlignmentResult>> &results) {
   printf("                         ║");
 
   for (unsigned int q = 0; q < task.quantityClasses.size(); q++) {
@@ -1356,7 +1345,6 @@ void StraightTrackAlignment::saveDiagnostics() const {
     gDirectory = commonDir->mkdir("plots global");
     globalPlots.write();
 
-
     gDirectory = commonDir->mkdir("plots per RP station");
 
     // std::vector<std::array<unsigned int, 3>> triplets = {
@@ -1373,24 +1361,25 @@ void StraightTrackAlignment::saveDiagnostics() const {
         // {{2031616000, 2040004608, 2014838784}},
     };
 
-    for (const auto& triplet : triplets) {
+    for (const auto &triplet : triplets) {
       bool found = false;
 
       // Check if at least one of the IDs exists in residuaHistograms
-      for (const auto& id : triplet) {
-          if (residuaHistograms.find(id) != residuaHistograms.end()) {
-              found = true;
-              break;
-          }
+      for (const auto &id : triplet) {
+        if (residuaHistograms.find(id) != residuaHistograms.end()) {
+          found = true;
+          break;
+        }
       }
 
-      if (!found) continue;
+      if (!found)
+        continue;
 
       char buf[100];
       sprintf(buf, "%u, %u, %u: reconstructed hit pattern", triplet[0], triplet[1], triplet[2]);
       TH2F *combined = new TH2F(buf, ";x (mm);y (mm)", 150, -40, 40, 150, -40, 40);
 
-      for (const auto& id: triplet) {
+      for (const auto &id : triplet) {
         if (residuaHistograms.find(id) == residuaHistograms.end())
           continue;
         combined->Add(residuaHistograms.at(id).hit_pattern);
@@ -1400,9 +1389,9 @@ void StraightTrackAlignment::saveDiagnostics() const {
 
       sprintf(buf, "%u, %u, %u: reconstructed isolated hit pattern 2", triplet[0], triplet[1], triplet[2]);
       TCanvas *combinedIsolatedCanvas = new TCanvas(buf, ";x (mm);y (mm)");
-      auto combinedIsolated = new TMultiGraph(buf,";x (mm);y (mm)");
+      auto combinedIsolated = new TMultiGraph(buf, ";x (mm);y (mm)");
 
-      for (const auto& id: triplet) {
+      for (const auto &id : triplet) {
         if (residuaHistograms.find(id) == residuaHistograms.end())
           continue;
         combinedIsolated->Add(residuaHistograms.at(id).hit_pattern_isolated, "AP");
@@ -1415,36 +1404,36 @@ void StraightTrackAlignment::saveDiagnostics() const {
       if (residuaHistograms.find(triplet[2]) == residuaHistograms.end())
         continue;
 
-      auto drawAndSaveGraph = [](TGraph* graph, const char* buf) {
+      auto drawAndSaveGraph = [](TGraph *graph, const char *buf) {
         if (graph) {
-            TCanvas *canvas = new TCanvas(buf);
-            graph->SetMinimum(-10);
-            graph->SetMaximum(10);
-            graph->SetMarkerStyle(20);
-            graph->Draw("AP");
-            canvas->Write();
-            delete canvas;
+          TCanvas *canvas = new TCanvas(buf);
+          graph->SetMinimum(-10);
+          graph->SetMaximum(10);
+          graph->SetMarkerStyle(20);
+          graph->Draw("AP");
+          canvas->Write();
+          delete canvas;
         }
       };
 
       // Function to check if a graph exists for a given triplet combination
-      auto getGraph = [&](unsigned int first, unsigned int second, const auto& histogram, bool isXDelta) {
-          if (isXDelta) {
-              if (histogram.xDeltaVsX.find(first) != histogram.xDeltaVsX.end()) {
-                  return histogram.xDeltaVsX.at(first);
-              }
-          } else {
-              if (histogram.yDeltaVsY.find(first) != histogram.yDeltaVsY.end()) {
-                  return histogram.yDeltaVsY.at(first);
-              }
+      auto getGraph = [&](unsigned int first, unsigned int second, const auto &histogram, bool isXDelta) {
+        if (isXDelta) {
+          if (histogram.xDeltaVsX.find(first) != histogram.xDeltaVsX.end()) {
+            return histogram.xDeltaVsX.at(first);
           }
-          return static_cast<TGraph*>(nullptr);  // Return nullptr if graph does not exist
+        } else {
+          if (histogram.yDeltaVsY.find(first) != histogram.yDeltaVsY.end()) {
+            return histogram.yDeltaVsY.at(first);
+          }
+        }
+        return static_cast<TGraph *>(nullptr);  // Return nullptr if graph does not exist
       };
 
-      const auto& histogram = residuaHistograms.at(triplet[2]);
+      const auto &histogram = residuaHistograms.at(triplet[2]);
 
       sprintf(buf, "%u, %u: Dy vs y", triplet[0], triplet[2]);
-      TGraph* graph = getGraph(triplet[0], triplet[2], histogram, false);
+      TGraph *graph = getGraph(triplet[0], triplet[2], histogram, false);
       drawAndSaveGraph(graph, buf);
 
       sprintf(buf, "%u, %u: Dy vs y", triplet[1], triplet[2]);
@@ -1459,7 +1448,6 @@ void StraightTrackAlignment::saveDiagnostics() const {
       graph = getGraph(triplet[1], triplet[2], histogram, true);
       drawAndSaveGraph(graph, buf);
     }
-
 
     TDirectory *ppsDir = commonDir->mkdir("plots per RP set");
     for (map<set<unsigned int>, RPSetPlots>::const_iterator it = rpSetPlots.begin(); it != rpSetPlots.end(); ++it) {

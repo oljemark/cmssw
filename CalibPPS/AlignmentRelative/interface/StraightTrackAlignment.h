@@ -242,7 +242,7 @@ protected:
   bool filtered(HitCollection hitSelection, std::map<int, LocalTrackFit> trackFitMapping);
 
   // Calculate x and y position of the hit
-  void getHitPosition(Hit hit, LocalTrackFit track, double& x, double& y);
+  void getHitPosition(Hit hit, LocalTrackFit track, double &x, double &y);
 
   /// fits the collection of hits and removes hits with too high residual/sigma ratio
   /// \param failed whether the fit has failed
@@ -273,7 +273,6 @@ protected:
 
   /// saves a ROOT file with diagnostic plots
   void saveDiagnostics() const;
-
 };
 
 #endif
