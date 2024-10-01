@@ -67,6 +67,8 @@ public:
   /// retrieves sensor geometry
   const DetGeometry& get(unsigned int id) const;
 
+  DetGeometry& getMutable(unsigned int id);
+
   const std::map<unsigned int, DetGeometry>& getSensorMap() const { return sensorGeometry; }
 
   /// returns the number of detectors in the collection

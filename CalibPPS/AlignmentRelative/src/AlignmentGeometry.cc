@@ -22,6 +22,13 @@ const DetGeometry &AlignmentGeometry::get(unsigned int id) const {
   return it->second;
 }
 
+DetGeometry& AlignmentGeometry::getMutable(unsigned int id) {
+    auto it = sensorGeometry.find(id);
+    if (it == sensorGeometry.end())
+        throw cms::Exception("PPS") << "Sensor ID " << id << " not in the map.";
+    return it->second;
+}
+
 //----------------------------------------------------------------------------------------------------
 
 void AlignmentGeometry::insert(unsigned int id, const DetGeometry &g) { sensorGeometry[id] = g; }
