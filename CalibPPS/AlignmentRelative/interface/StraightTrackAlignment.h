@@ -79,6 +79,9 @@ protected:
   /// to keep values of z small - this helps the numerical solution
   double z0;
 
+  //// Offets to be applaied to chosen RPs along horizontal axis on top of the initial geometry
+  std::map<unsigned int, double> horizontalOffsets;
+
   /// the collection of the alignment algorithms
   std::vector<AlignmentAlgorithm *> algorithms;
 
@@ -170,6 +173,7 @@ protected:
   signed int eventsFitted;    ///< counter of processed tracks
   signed int eventsSelected;  ///< counter of processed tracks
 
+  std::map<std::set<unsigned int>, double> meanDxValue, meanDyValue;
   std::map<std::set<unsigned int>, unsigned long> fittedTracksPerRPSet;  ///< counter of fitted tracks in a certain RP set
   std::map<std::set<unsigned int>, unsigned long>
       selectedTracksPerRPSet;  ///< counter of selected tracks in a certain RP set
@@ -196,6 +200,9 @@ protected:
     /// plots bx vs. by
     TGraph *fitBxVsByGraph_fitted = nullptr, *fitBxVsByGraph_selected = nullptr;
 
+    //// plots of hits, per RP
+    std::map<unsigned int, TGraph *> hit_patterns;
+
     RPSetPlots() {}
 
     RPSetPlots(const std::string &_name);
@@ -214,7 +221,10 @@ protected:
   /// map: detector id --> residua histogram
   struct ResiduaHistogramSet {
     TH1D *total_fitted, *total_selected;
+    TH2F *hit_pattern;
+    TGraph *hit_pattern_isolated;
     TGraph *selected_vs_chiSq;
+    std::map<unsigned int, TGraph *> yDeltaVsY, xDeltaVsX;
     std::map<std::set<unsigned int>, TH1D *> perRPSet_fitted, perRPSet_selected;
   };
 
@@ -225,6 +235,14 @@ protected:
 
   /// creates a new residua histogram
   TH1D *newResiduaHist(const char *name);
+
+  /// adjust the geometry of some RP
+  void AdjustGeometry();
+
+  bool filtered(HitCollection hitSelection, std::map<int, LocalTrackFit> trackFitMapping);
+
+  // Calculate x and y position of the hit
+  void getHitPosition(Hit hit, LocalTrackFit track, double& x, double& y);
 
   /// fits the collection of hits and removes hits with too high residual/sigma ratio
   /// \param failed whether the fit has failed
@@ -241,7 +259,8 @@ protected:
   void updateDiagnosticHistograms(const HitCollection &selection,
                                   const std::set<unsigned int> &selectedRPs,
                                   const LocalTrackFit &trackFit,
-                                  bool trackSelected);
+                                  bool trackSelected,
+                                  std::map<int, LocalTrackFit> &trackFitMapping);
 
   /// converts a set to string
   static std::string setToString(const std::set<unsigned int> &);
@@ -254,6 +273,7 @@ protected:
 
   /// saves a ROOT file with diagnostic plots
   void saveDiagnostics() const;
+
 };
 
 #endif
