@@ -252,6 +252,7 @@ function MakeCfgFiles()
 				s|\$rps|$rps|;\
 				s|\$excludePlanes|$excludePlanes|;\
 				s|\$z0|$z0|;\
+				s|\$horizontalOffsets|$horizontalOffsets|;\
 				s|\$resolveShR|$resolveShR|;\
 				s|\$resolveRotZ|$resolveRotZ|;\
 				s|\$constraintsType|$constraintsType|;\

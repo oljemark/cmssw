@@ -59,6 +59,7 @@ process.ppsStraightTrackAligner.maxEvents = int($maxEvents)
 process.ppsStraightTrackAligner.rpIds = [$rps]
 process.ppsStraightTrackAligner.excludePlanes = cms.vuint32($excludePlanes)
 process.ppsStraightTrackAligner.z0 = $z0
+process.ppsStraightTrackAligner.horizontalOffsets = cms.vstring($horizontalOffsets)
 
 process.ppsStraightTrackAligner.maxResidualToSigma = $maxResidualToSigma
 process.ppsStraightTrackAligner.minimumHitsPerProjectionPerRP = $minimumHitsPerProjectionPerRP
