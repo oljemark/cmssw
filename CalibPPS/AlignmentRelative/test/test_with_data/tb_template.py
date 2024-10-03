@@ -1,8 +1,14 @@
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
+from Configuration.AlCa.GlobalTag import GlobalTag
 process = cms.Process("trackBasedAlignment", eras.Run2_2018)
 
+# =================== GlobalTag ===================
+process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
+process.GlobalTag.globaltag = '101X_dataRun2_HLT_v7'
+# process.prefer("GlobalTag")
+# =================== GlobalTag ===================
 # minimum of logs
 process.MessageLogger = cms.Service("MessageLogger",
   statistics = cms.untracked.vstring(),
@@ -35,6 +41,7 @@ process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Be
 # initial alignments
 process.load("CalibPPS.ESProducers.ctppsRPAlignmentCorrectionsDataESSourceXML_cfi")
 process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = cms.vstring($alignmentFiles)
+process.prefer("ctppsRPAlignmentCorrectionsDataESSourceXML")
 
 # reco modules
 process.load("RecoPPS.Local.totemRPLocalReconstruction_cff")
