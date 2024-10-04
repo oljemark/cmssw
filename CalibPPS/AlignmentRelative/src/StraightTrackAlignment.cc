@@ -368,6 +368,60 @@ void StraightTrackAlignment::begin(edm::ESHandle<CTPPSRPAlignmentCorrectionsData
 
 //----------------------------------------------------------------------------------------------------
 
+void StraightTrackAlignment::collectMeanDelta(const std::string &sourceFile) {
+  TFile file(sourceFile.c_str());
+  if (file.IsZombie()) {
+    std::cerr << "Error opening file: " << sourceFile << std::endl;
+    return;
+  }
+
+  TDirectory *dir = file.GetDirectory("common/plots per RP station");
+
+  if (!dir) {
+    std::cerr << "Directory not found: common/plots per RP station" << std::endl;
+    return;
+  }
+
+  // Regular expression to extract IDs from plot names
+  std::regex idRegex(R"((\d+),\s*(\d+):\s*(Dx vs x|Dy vs y))");
+  std::map<std::set<unsigned int>, double> meanMap;
+
+  // Loop over the keys in the directory
+  TList *list = dir->GetListOfKeys();
+  TIter next(list);
+  TKey *key;
+
+  while ((key = (TKey *)next())) {
+    TGraph *graph = (TGraph *)(key->ReadObj());
+    if (!graph)
+      continue;  // Skip non-TGraph objects
+
+    std::string name = graph->GetName();
+
+    // Match the plot name to extract IDs and the Dx or Dy
+    std::smatch match;
+    std::cout << "name: \"" << name << "\"" << std::endl;
+    if (std::regex_search(name, match, idRegex)) {
+      unsigned int id1 = std::stoi(match[1].str());
+      unsigned int id2 = std::stoi(match[2].str());
+      std::string dxOrDy = match[3].str();
+      std::cout << "dxOrDy: " << dxOrDy << " id1: " << id1 << " id2: " << id2 << std::endl;
+      std::cout << "Here1" << std::endl;
+      // std::set<unsigned int> ids = {id1, id2};
+      // Calculate the mean of the Y values
+      // meanMap[ids] = graph->GetMean(1);
+
+      // Print or log the result
+      std::cout << "Graph: " << name << std::endl;
+      std::cout << " -> Mean Y: " << graph->GetMean(2) << std::endl;
+    }
+  }
+
+  // Close the file
+  file.Close();
+  // delete file;
+}
+
 void StraightTrackAlignment::getHitPosition(Hit hit, LocalTrackFit track, double &x, double &y) {
   const DetGeometry &geom = task.geometry.get(hit.id);
   const auto dirData = geom.getDirectionData(hit.dirIdx);

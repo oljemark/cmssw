@@ -273,6 +273,8 @@ protected:
 
   /// saves a ROOT file with diagnostic plots
   void saveDiagnostics() const;
+
+  void collectMeanDelta(const std::string &sourceFile);
 };
 
 #endif
