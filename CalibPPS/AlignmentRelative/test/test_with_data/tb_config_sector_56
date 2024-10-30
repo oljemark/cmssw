@@ -5,8 +5,8 @@ sector="56"
 z0="+217000"
 rps="103,104,105,123,124,125"
 
-# nothing to exclude
-excludePlanes=""
+# 124.8, 124.9
+excludePlanes="2007236608,2007269376"
 
 # event selection
 minimumHitsPerProjectionPerRP=3
@@ -17,7 +17,7 @@ requireAtLeast3PotsInOverlap="True"
 additionalAcceptedRPSets=""
 
 # even number limit
-#maxEvents="-1" # process all events
+# maxEvents="-1" # process all events
 maxEvents="1E4"
 
 # iteration settings
@@ -36,15 +36,15 @@ final_constraints_units="101,121"
 useEqualMeanUMeanVRotZConstraints="True"
 
 # diagonistics
-iterationsWithDiagnostics="1"
+iterationsWithDiagnostics="5"
 
 # input settings
-reco_dir="/eos/totem/data/offline/2018/450GeV/beta11/ZeroBias/version1"
-# no offsets
-horizontalOffsets=""
+reco_dir="/eos/user/j/jaczajka/documents/datasets/zeroBias2023_v3"
+horizontalOffsets="'103:1.295', '123:2.179'"
+# horizontalOffsets=""
 
 # geometry settings
-geometry="CalibPPS/AlignmentRelative/test/test_with_data"
+geometry="CalibPPS/AlignmentRelative/run/Zero_bias_2023_V2"
 
 initial_alignment=()
 
@@ -54,10 +54,7 @@ label=""  # for non-standard settings, e.g. ",test"
 
 NewDataSet
 tasks=(
-	324579.1-25
-	324579.26-50
-	324579.51-75
-	324579.76-99
+	369591.0-200
 )
 
 SubmitTrackBasedAlignment

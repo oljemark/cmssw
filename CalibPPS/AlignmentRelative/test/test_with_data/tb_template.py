@@ -2,13 +2,14 @@ import FWCore.ParameterSet.Config as cms
 
 from Configuration.StandardSequences.Eras import eras
 from Configuration.AlCa.GlobalTag import GlobalTag
+
 process = cms.Process("trackBasedAlignment", eras.Run2_2018)
 
 # =================== GlobalTag ===================
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
-process.GlobalTag.globaltag = '101X_dataRun2_HLT_v7'
-# process.prefer("GlobalTag")
+process.GlobalTag.globaltag = '130X_dataRun3_Prompt_v3'
 # =================== GlobalTag ===================
+
 # minimum of logs
 process.MessageLogger = cms.Service("MessageLogger",
   statistics = cms.untracked.vstring(),
@@ -26,14 +27,14 @@ $inputFiles
     ),
     lumisToProcess = cms.untracked.VLuminosityBlockRange($lsList),
     inputCommands = cms.untracked.vstring(
-      "drop *",
-      "keep TotemRPRecHitedmDetSetVector_*_*_*",
-      "keep CTPPSPixelRecHitedmDetSetVector_*_*_*",
+      # "drop *",
+      # "keep TotemRPRecHitedmDetSetVector_*_*_*",
+      # "keep CTPPSPixelRecHitedmDetSetVector_*_*_*",
     )
 )
 
 # geometry
-process.load("Geometry.VeryForwardGeometry.geometryRPFromDD_2018_cfi")
+process.load("Geometry.VeryForwardGeometry.geometryRPFromDD_2022_cfi")
 process.ctppsGeometryESModule.buildMisalignedGeometry = cms.bool(True)
 del(process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles[-1])
 process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Beam_Cent.xml")
@@ -42,6 +43,7 @@ process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Be
 process.load("CalibPPS.ESProducers.ctppsRPAlignmentCorrectionsDataESSourceXML_cfi")
 process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = cms.vstring($alignmentFiles)
 process.prefer("ctppsRPAlignmentCorrectionsDataESSourceXML")
+
 
 # reco modules
 process.load("RecoPPS.Local.totemRPLocalReconstruction_cff")
@@ -54,7 +56,7 @@ process.ctppsLocalTrackLiteProducer.includeDiamonds = False
 # aligner
 process.load("CalibPPS.AlignmentRelative.ppsStraightTrackAligner_cfi")
 
-process.ppsStraightTrackAligner.verbosity = 1
+process.ppsStraightTrackAligner.verbosity = 5
 
 process.ppsStraightTrackAligner.tagUVPatternsStrip = cms.InputTag("totemRPUVPatternFinder")
 process.ppsStraightTrackAligner.tagDiamondHits = cms.InputTag("")
@@ -117,6 +119,5 @@ process.p = cms.Path(
   * process.totemRPLocalTrackFitter
   * process.ctppsPixelLocalTracks
   * process.ctppsLocalTrackLiteProducer
-
   * process.ppsStraightTrackAligner
 )
