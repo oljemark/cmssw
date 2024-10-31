@@ -7,6 +7,8 @@ rps="3,4,5,23,24,25"
 
 # planes 4.4, 23.5
 # excludePlanes="1981939712,2023555072"
+# planes 4.4, (23.5 in 2018 pixels only)
+excludePlanes="1981939712"
 
 # event selection
 minimumHitsPerProjectionPerRP=3
@@ -18,7 +20,7 @@ additionalAcceptedRPSets=""
 
 # even number limit
 #maxEvents="-1" # process all events
-maxEvents="-1"
+maxEvents="1E4"
 
 # iteration settings
 iterations=5
@@ -39,10 +41,12 @@ useEqualMeanUMeanVRotZConstraints="True"
 iterationsWithDiagnostics="5"
 
 # input settings
-reco_dir="/eos/user/j/jaczajka/documents/datasets/leszek-frici-dataset"
+reco_dir="/ZeroBias1/Run2023C-PromptReco-v4/AOD run=369591"
+# no offsets
+horizontalOffsets=""
 
 # geometry settings
-geometry="CalibPPS/AlignmentRelative/run/leszek_data"
+geometry="CalibPPS/AlignmentRelative/test/test_with_data"
 
 initial_alignment=()
 
@@ -52,7 +56,7 @@ label=""  # for non-standard settings, e.g. ",test"
 
 NewDataSet
 tasks=(
-	369591.0-200
+	369591.0-10
 	# 324579.26-50
 	# 324579.51-75
 	# 324579.76-99

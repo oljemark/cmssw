@@ -39,12 +39,12 @@ useEqualMeanUMeanVRotZConstraints="True"
 iterationsWithDiagnostics="5"
 
 # input settings
-reco_dir="/eos/user/j/jaczajka/documents/datasets/zeroBias2023_v3"
+reco_dir="/ZeroBias1/Run2023C-PromptReco-v4/AOD run=369591"
 horizontalOffsets="'103:1.295', '123:2.179'"
 # horizontalOffsets=""
 
 # geometry settings
-geometry="CalibPPS/AlignmentRelative/run/Zero_bias_2023_V2"
+geometry="CalibPPS/AlignmentRelative/test/test_with_data"
 
 initial_alignment=()
 
@@ -54,7 +54,7 @@ label=""  # for non-standard settings, e.g. ",test"
 
 NewDataSet
 tasks=(
-	369591.0-200
+	369591.0-10
 )
 
 SubmitTrackBasedAlignment

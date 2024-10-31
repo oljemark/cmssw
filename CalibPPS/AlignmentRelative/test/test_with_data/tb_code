@@ -44,7 +44,6 @@ function InitJobDir()
     job_dir_rel="$job_id"
 
 	rm -rf "$job_dir"
-
 	mkdir -p "$job_dir"
 }
 
@@ -120,8 +119,8 @@ function AddInputFiles()
     # query the relevant storage
 	if [[ "$reco_dir" == "/eos/"* ]]
 	then
-		prefix="root://eosuser.cern.ch/"
-		file_list_raw=`eos $prefix ls "$reco_dir" | grep "run_${run}.*.root"`
+		prefix="root://eostotem.cern.ch/"
+		file_list_raw=`eos ls "$reco_dir" | grep "run_${run}.*.root"`
 	fi
 
 	if [[ "$reco_dir" == "/castor/"* ]]
@@ -130,13 +129,11 @@ function AddInputFiles()
 		file_list_raw=`nsls "$reco_dir" | grep "run_${run}.*.root"`
 	fi
 
-	# if [[ "$reco_dir" == "/store/"* ]]
-	# then
-	# 	echo "Here!"
-	# 	prefix="root://eoscms.cern.ch//eos/cms/"
-	# 	file_list_raw=`eos root://eoscms.cern.ch/ ls "/eos/cms$reco_dir" | grep "*.root"`
-	# 	echo "file_list_raw: $file_list_raw"
-	# fi
+	if [[ "$reco_dir" == "/ZeroBias"* ]]
+	then
+		prefix="Z"
+		file_list_raw=`dasgoclient -query="file dataset=$reco_dir" | grep ".root"`
+	fi
 
 	if [ "$prefix" == "" ]
 	then
@@ -152,7 +149,12 @@ function AddInputFiles()
             file_list="$file_list,\n"
         fi
 
-        file_list="$file_list        '$prefix$reco_dir/$file'"
+	if [ "$prefix" == "Z" ]
+	then
+		file_list="$file_list        '$file'"
+	else
+	        file_list="$file_list        '$prefix$reco_dir/$file'"
+	fi
     done
 }
 

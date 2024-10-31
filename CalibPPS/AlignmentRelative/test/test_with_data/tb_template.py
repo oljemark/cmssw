@@ -3,7 +3,7 @@ import FWCore.ParameterSet.Config as cms
 from Configuration.StandardSequences.Eras import eras
 from Configuration.AlCa.GlobalTag import GlobalTag
 
-process = cms.Process("trackBasedAlignment", eras.Run2_2018)
+process = cms.Process("trackBasedAlignment", eras.Run3)
 
 # =================== GlobalTag ===================
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
