@@ -1451,9 +1451,9 @@ void StraightTrackAlignment::saveDiagnostics() const {
         combinedIsolated->Add(residuaHistograms.at(id).hit_pattern_isolated, "AP");
       }
 
-      combinedIsolated->Draw();
-      combinedIsolatedCanvas->BuildLegend();
-      combinedIsolatedCanvas->Write();
+      combinedIsolated->Write();
+      // combinedIsolatedCanvas->BuildLegend();
+      // combinedIsolatedCanvas->Write();
 
       if (residuaHistograms.find(triplet[2]) == residuaHistograms.end())
         continue;
