@@ -39,7 +39,7 @@ useEqualMeanUMeanVRotZConstraints="True"
 iterationsWithDiagnostics="5"
 
 # input settings
-reco_dir="/ZeroBias1/Run2023C-PromptReco-v4/AOD run=369591"
+reco_dir="/ZeroBias1/Run2023C-PromptReco-v4/AOD run=369585"
 horizontalOffsets="'103:1.295', '123:2.179'"
 # horizontalOffsets=""
 
@@ -54,7 +54,7 @@ label=""  # for non-standard settings, e.g. ",test"
 
 NewDataSet
 tasks=(
-	369591.0-10
+	369585.0-10
 )
 
 SubmitTrackBasedAlignment
