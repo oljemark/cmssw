@@ -27,6 +27,7 @@ $inputFiles
     ),
     lumisToProcess = cms.untracked.VLuminosityBlockRange($lsList),
     inputCommands = cms.untracked.vstring(
+        "keep *",
       # "drop *",
       # "keep TotemRPRecHitedmDetSetVector_*_*_*",
       # "keep CTPPSPixelRecHitedmDetSetVector_*_*_*",
@@ -42,7 +43,10 @@ process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Be
 # initial alignments
 process.load("CalibPPS.ESProducers.ctppsRPAlignmentCorrectionsDataESSourceXML_cfi")
 process.ctppsRPAlignmentCorrectionsDataESSourceXML.RealFiles = cms.vstring($alignmentFiles)
-process.prefer("ctppsRPAlignmentCorrectionsDataESSourceXML")
+process.ctppsRPAlignmentCorrectionsDataESSourceXML.verbosity = 1
+
+process.alignPref=cms.ESPrefer("CTPPSRPAlignmentCorrectionsDataESSourceXML","ctppsRPAlignmentCorrectionsDataESSourceXML",RPRealAlignmentRecord=cms.vstring("CTPPSRPAlignmentCorrectionsData"))
+
 
 
 # reco modules
