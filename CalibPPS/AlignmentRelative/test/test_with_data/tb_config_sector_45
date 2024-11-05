@@ -20,7 +20,7 @@ additionalAcceptedRPSets=""
 
 # even number limit
 #maxEvents="-1" # process all events
-maxEvents="2E5"
+maxEvents="4E5"
 
 # iteration settings
 iterations=5
@@ -41,7 +41,7 @@ useEqualMeanUMeanVRotZConstraints="True"
 iterationsWithDiagnostics="5"
 
 # input settings
-reco_dir="/ZeroBias1/Run2023C-PromptReco-v4/AOD run=369585"
+reco_dir="/ZeroBias1/Run2023C-PromptReco-v4/AOD run=369596"
 # no offsets
 horizontalOffsets=""
 
@@ -56,7 +56,7 @@ label=""  # for non-standard settings, e.g. ",test"
 
 NewDataSet
 tasks=(
-	369585.0-10
+	369596.0-20
 	# 324579.26-50
 	# 324579.51-75
 	# 324579.76-99
