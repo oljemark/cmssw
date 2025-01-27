@@ -1,7 +1,7 @@
 #!/bin/sh
 job_home="/afs/cern.ch/user/f/foljemar/tmptst/j2/CMSSW_13_0_7_TOTEM/src/CalibPPS/AlignmentRelative/test/test_with_data/data/369585.0-40/3,4,5,23,24,25-excl1981939712/ev=4E5,pl=3,units=2,ovlp=f,3rpsInO=t/s+sr,std,1rotzIt=0,eMuMvRot=t"
 source "/cvmfs/cms.cern.ch/cmsset_default.sh"
-cd "/afs/cern.ch/user/f/foljemar/tmptst/j2/CMSSW_13_0_7_TOTEM"
+cd ""
 eval `scram runtime -sh`
 
 export CMSSW_SEARCH_PATH="$CMSSW_SEARCH_PATH:/afs/cern.ch/user/f/foljemar/tmptst/j2/CMSSW_13_0_7_TOTEM/src/CalibPPS/AlignmentRelative/test/test_with_data"
