@@ -7,8 +7,8 @@ rps="3,4,5,23,24,25"
 
 # planes 4.4, 23.5
 # excludePlanes="1981939712,2023555072"
-# planes 4.4, (23.5 in 2018 pixels only)
-excludePlanes="1981939712"
+# planes 4.4, (23.2 & 23.4 in 2023 pixels only)
+excludePlanes="1981939712,2023358464,2023489536"
 
 # event selection
 minimumHitsPerProjectionPerRP=3
@@ -24,12 +24,12 @@ maxEvents="4E5"
 
 # iteration settings
 iterations=5
-optimize=("s" "sr" "sr")
+optimize=("s" "s" "sr")
 iterationsWithOneRotZPerPot=0
-maxResidualToSigma=(30 20 10 3)
-chiSqPerNdfCut=(500 200 50 5)
+maxResidualToSigma=(30 10 10 3)
+chiSqPerNdfCut=(500 50 50 5)
 maxTrackAx=("0.5E-3")
-maxTrackAy=("2.5E-3")
+maxTrackAy=("0.5E-3")
 
 # constraint settings
 constraintsType="standard"
@@ -43,7 +43,7 @@ iterationsWithDiagnostics="5"
 # input settings
 reco_dir="/ZeroBias1/Run2023C-PromptReco-v4/AOD run=369585"
 # no offsets
-horizontalOffsets="'3:-3.087', '23:-3.121'"
+horizontalOffsets="'3:-2.777', '23:-3.121'"
 
 # geometry settings
 geometry="CalibPPS/AlignmentRelative/test/test_with_data"
