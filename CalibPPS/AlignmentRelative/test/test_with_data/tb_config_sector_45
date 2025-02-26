@@ -26,8 +26,8 @@ maxEvents="4E5"
 iterations=5
 optimize=("s" "s" "sr")
 iterationsWithOneRotZPerPot=0
-maxResidualToSigma=(30 10 10 3)
-chiSqPerNdfCut=(500 50 50 5)
+maxResidualToSigma=(30 20 10 3)
+chiSqPerNdfCut=(500 200 50 5)
 maxTrackAx=("0.5E-3")
 maxTrackAy=("0.5E-3")
 
