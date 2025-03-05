@@ -1401,17 +1401,11 @@ void StraightTrackAlignment::saveDiagnostics() const {
 
     gDirectory = commonDir->mkdir("plots per RP station");
 
-    // std::vector<std::array<unsigned int, 3>> triplets = {
-    //     {{1998585856, 1999110144, 2031616000}},
-    //     {{2006974464, 2007498752, 2040004608}},
-    //     {{2014838784, 1981808640, 1982332928}},
-    //     {{2023227392, 1990197248, 1990721536}}
-    // };
     std::vector<std::array<unsigned int, 3>> triplets = {
         {{1998749696, 1999273984, 2031812608}},
         {{2007138304, 2007662592, 2040201216}},
         {{2014969856, 1981972480, 1982496768}},
-        {{2023424000, 1990361088, 1990885376}},
+        {{2023292928, 1990361088, 1990885376}},
     };
 
     for (const auto &triplet : triplets) {
