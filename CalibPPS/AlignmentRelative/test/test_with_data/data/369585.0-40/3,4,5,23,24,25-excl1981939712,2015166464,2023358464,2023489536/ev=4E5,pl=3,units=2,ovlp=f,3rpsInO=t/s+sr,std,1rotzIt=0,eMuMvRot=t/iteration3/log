@@ -1,243 +1,256 @@
-04-Mar-2025 12:29:14 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:29:15 CET pre-events
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root?xrdcl.requuid=780f8ac0-ebb5-4e74-bfdb-b90708d27ab3.
+05-Mar-2025 22:59:52 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 22:59:53 CET pre-events
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root?xrdcl.requuid=8bb9e6f0-6aff-4e5b-913f-5ecadedce902.
 %MSG
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:29:15 CET pre-events
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root?tried=&xrdcl.requuid=c004cafa-b7d6-4583-823b-d5bdf06f19b2.
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 22:59:53 CET pre-events
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root?tried=&xrdcl.requuid=12dd2881-fa6e-4e52-942d-5caf113d4bb3.
 %MSG
-04-Mar-2025 12:29:15 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root
-04-Mar-2025 12:29:19 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root
-strip 1981808640 (  4.0) z = +4020.3000 mm │ shift: x =  -2.599 mm, y = +16.754 mm │ dir1: -0.799, +0.602, +0.000 │ dir2: +0.602, +0.799, +0.000 │ V-det
-strip 1981841408 (  4.1) z = +4015.7000 mm │ shift: x =  -1.566 mm, y = +17.007 mm │ dir1: +0.602, +0.799, +0.000 │ dir2: -0.799, +0.602, +0.000 │ U-det
-strip 1981874176 (  4.2) z = +4011.3000 mm │ shift: x =  -2.574 mm, y = +16.788 mm │ dir1: -0.799, +0.602, +0.000 │ dir2: +0.602, +0.799, +0.000 │ V-det
-strip 1981906944 (  4.3) z = +4006.7000 mm │ shift: x =  -1.542 mm, y = +16.989 mm │ dir1: +0.602, +0.799, +0.000 │ dir2: -0.799, +0.602, +0.000 │ U-det
-strip 1981972480 (  4.5) z = +3997.7000 mm │ shift: x =  -1.518 mm, y = +16.971 mm │ dir1: +0.602, +0.799, +0.000 │ dir2: -0.799, +0.602, +0.000 │ U-det
-strip 1982005248 (  4.6) z = +3993.3000 mm │ shift: x =  -2.502 mm, y = +16.884 mm │ dir1: -0.799, +0.602, +0.000 │ dir2: +0.602, +0.799, +0.000 │ V-det
-strip 1982038016 (  4.7) z = +3988.7000 mm │ shift: x =  -1.494 mm, y = +16.952 mm │ dir1: +0.602, +0.799, +0.000 │ dir2: -0.799, +0.602, +0.000 │ U-det
-strip 1982070784 (  4.8) z = +3984.3000 mm │ shift: x =  -2.490 mm, y = +16.900 mm │ dir1: -0.799, +0.602, +0.000 │ dir2: +0.602, +0.799, +0.000 │ V-det
-strip 1982103552 (  4.9) z = +3979.7000 mm │ shift: x =  -1.496 mm, y = +16.954 mm │ dir1: +0.602, +0.799, +0.000 │ dir2: -0.799, +0.602, +0.000 │ U-det
-strip 1982332928 (  5.0) z = +4020.3000 mm │ shift: x =  +3.523 mm, y = -16.457 mm │ dir1: +0.799, -0.602, +0.000 │ dir2: -0.602, -0.799, +0.000 │ V-det
-strip 1982365696 (  5.1) z = +4015.7000 mm │ shift: x =  +2.611 mm, y = -16.550 mm │ dir1: -0.602, -0.799, +0.000 │ dir2: +0.799, -0.602, +0.000 │ U-det
-strip 1982398464 (  5.2) z = +4011.3000 mm │ shift: x =  +3.561 mm, y = -16.407 mm │ dir1: +0.799, -0.602, +0.000 │ dir2: -0.602, -0.799, +0.000 │ V-det
-strip 1982431232 (  5.3) z = +4006.7000 mm │ shift: x =  +2.585 mm, y = -16.530 mm │ dir1: -0.602, -0.799, +0.000 │ dir2: +0.799, -0.602, +0.000 │ U-det
-strip 1982464000 (  5.4) z = +4002.3000 mm │ shift: x =  +3.593 mm, y = -16.364 mm │ dir1: +0.799, -0.602, +0.000 │ dir2: -0.602, -0.799, +0.000 │ V-det
-strip 1982496768 (  5.5) z = +3997.7000 mm │ shift: x =  +2.568 mm, y = -16.518 mm │ dir1: -0.602, -0.799, +0.000 │ dir2: +0.799, -0.602, +0.000 │ U-det
-strip 1982529536 (  5.6) z = +3993.3000 mm │ shift: x =  +3.594 mm, y = -16.363 mm │ dir1: +0.799, -0.602, +0.000 │ dir2: -0.602, -0.799, +0.000 │ V-det
-strip 1982562304 (  5.7) z = +3988.7000 mm │ shift: x =  +2.528 mm, y = -16.487 mm │ dir1: -0.602, -0.799, +0.000 │ dir2: +0.799, -0.602, +0.000 │ U-det
-strip 1982595072 (  5.8) z = +3984.3000 mm │ shift: x =  +3.657 mm, y = -16.279 mm │ dir1: +0.799, -0.602, +0.000 │ dir2: -0.602, -0.799, +0.000 │ V-det
-strip 1982627840 (  5.9) z = +3979.7000 mm │ shift: x =  +2.547 mm, y = -16.501 mm │ dir1: -0.602, -0.799, +0.000 │ dir2: +0.799, -0.602, +0.000 │ U-det
-strip 1990197248 ( 24.0) z = -2979.7000 mm │ shift: x =  +0.001 mm, y = +15.104 mm │ dir1: -0.707, +0.707, +0.000 │ dir2: +0.707, +0.707, +0.000 │ V-det
-strip 1990230016 ( 24.1) z = -2984.3000 mm │ shift: x =  +1.171 mm, y = +15.049 mm │ dir1: +0.707, +0.707, +0.000 │ dir2: -0.707, +0.707, +0.000 │ U-det
-strip 1990262784 ( 24.2) z = -2988.7000 mm │ shift: x =  +0.033 mm, y = +15.136 mm │ dir1: -0.707, +0.707, +0.000 │ dir2: +0.707, +0.707, +0.000 │ V-det
-strip 1990295552 ( 24.3) z = -2993.3000 mm │ shift: x =  +1.114 mm, y = +15.106 mm │ dir1: +0.707, +0.707, +0.000 │ dir2: -0.707, +0.707, +0.000 │ U-det
-strip 1990328320 ( 24.4) z = -2997.7000 mm │ shift: x =  +0.040 mm, y = +15.143 mm │ dir1: -0.707, +0.707, +0.000 │ dir2: +0.707, +0.707, +0.000 │ V-det
-strip 1990361088 ( 24.5) z = -3002.3000 mm │ shift: x =  +1.050 mm, y = +15.171 mm │ dir1: +0.707, +0.707, +0.000 │ dir2: -0.707, +0.707, +0.000 │ U-det
-strip 1990393856 ( 24.6) z = -3006.7000 mm │ shift: x =  +0.062 mm, y = +15.165 mm │ dir1: -0.707, +0.707, +0.000 │ dir2: +0.707, +0.707, +0.000 │ V-det
-strip 1990426624 ( 24.7) z = -3011.3000 mm │ shift: x =  +1.054 mm, y = +15.167 mm │ dir1: +0.707, +0.707, +0.000 │ dir2: -0.707, +0.707, +0.000 │ U-det
-strip 1990459392 ( 24.8) z = -3015.7000 mm │ shift: x =  +0.089 mm, y = +15.192 mm │ dir1: -0.707, +0.707, +0.000 │ dir2: +0.707, +0.707, +0.000 │ V-det
-strip 1990492160 ( 24.9) z = -3020.3000 mm │ shift: x =  +0.975 mm, y = +15.246 mm │ dir1: +0.707, +0.707, +0.000 │ dir2: -0.707, +0.707, +0.000 │ U-det
-strip 1990721536 ( 25.0) z = -2979.7000 mm │ shift: x =  +0.639 mm, y = -16.070 mm │ dir1: +0.707, -0.707, +0.000 │ dir2: -0.707, -0.707, +0.000 │ V-det
-strip 1990754304 ( 25.1) z = -2984.3000 mm │ shift: x =  -0.288 mm, y = -16.130 mm │ dir1: -0.707, -0.707, +0.000 │ dir2: +0.707, -0.707, +0.000 │ U-det
-strip 1990787072 ( 25.2) z = -2988.7000 mm │ shift: x =  +0.674 mm, y = -16.036 mm │ dir1: +0.707, -0.707, +0.000 │ dir2: -0.707, -0.707, +0.000 │ V-det
-strip 1990819840 ( 25.3) z = -2993.3000 mm │ shift: x =  -0.354 mm, y = -16.064 mm │ dir1: -0.707, -0.707, +0.000 │ dir2: +0.707, -0.707, +0.000 │ U-det
-strip 1990852608 ( 25.4) z = -2997.7000 mm │ shift: x =  +0.657 mm, y = -16.053 mm │ dir1: +0.707, -0.707, +0.000 │ dir2: -0.707, -0.707, +0.000 │ V-det
-strip 1990885376 ( 25.5) z = -3002.3000 mm │ shift: x =  -0.375 mm, y = -16.044 mm │ dir1: -0.707, -0.707, +0.000 │ dir2: +0.707, -0.707, +0.000 │ U-det
-strip 1990918144 ( 25.6) z = -3006.7000 mm │ shift: x =  +0.668 mm, y = -16.042 mm │ dir1: +0.707, -0.707, +0.000 │ dir2: -0.707, -0.707, +0.000 │ V-det
-strip 1990950912 ( 25.7) z = -3011.3000 mm │ shift: x =  -0.375 mm, y = -16.044 mm │ dir1: -0.707, -0.707, +0.000 │ dir2: +0.707, -0.707, +0.000 │ U-det
-strip 1990983680 ( 25.8) z = -3015.7000 mm │ shift: x =  +0.660 mm, y = -16.050 mm │ dir1: +0.707, -0.707, +0.000 │ dir2: -0.707, -0.707, +0.000 │ V-det
-strip 1991016448 ( 25.9) z = -3020.3000 mm │ shift: x =  -0.449 mm, y = -15.969 mm │ dir1: -0.707, -0.707, +0.000 │ dir2: +0.707, -0.707, +0.000 │ U-det
-pixel 2014838784 (  3.0) z = +4453.9114 mm │ shift: x = +11.646 mm, y =  +1.863 mm │ dir1: +0.139, -0.990, +0.000 │ dir2: +0.931, +0.131, +0.342 │ 
-pixel 2014904320 (  3.1) z = +4449.8674 mm │ shift: x = +11.689 mm, y =  +1.764 mm │ dir1: +0.139, -0.990, +0.000 │ dir2: +0.931, +0.131, +0.342 │ 
-pixel 2014969856 (  3.2) z = +4445.8234 mm │ shift: x = +11.698 mm, y =  +1.890 mm │ dir1: +0.139, -0.990, +0.000 │ dir2: +0.931, +0.131, +0.342 │ 
-pixel 2015035392 (  3.3) z = +4441.7794 mm │ shift: x = +11.737 mm, y =  +1.822 mm │ dir1: +0.139, -0.990, +0.000 │ dir2: +0.931, +0.131, +0.342 │ 
-pixel 2015100928 (  3.4) z = +4437.7354 mm │ shift: x = +11.780 mm, y =  +1.933 mm │ dir1: +0.139, -0.990, +0.000 │ dir2: +0.931, +0.131, +0.342 │ 
-pixel 2023227392 ( 23.0) z = -2546.0886 mm │ shift: x = +11.919 mm, y =  +0.822 mm │ dir1: +0.000, -1.000, +0.000 │ dir2: +0.940, +0.000, +0.342 │ 
-pixel 2023292928 ( 23.1) z = -2550.1326 mm │ shift: x = +11.913 mm, y =  +0.800 mm │ dir1: +0.000, -1.000, +0.000 │ dir2: +0.940, +0.000, +0.342 │ 
-pixel 2023424000 ( 23.3) z = -2558.2206 mm │ shift: x = +11.939 mm, y =  +0.952 mm │ dir1: +0.000, -1.000, +0.000 │ dir2: +0.940, +0.000, +0.342 │ 
-pixel 2023555072 ( 23.5) z = -2566.3086 mm │ shift: x = +12.127 mm, y =  +1.035 mm │ dir1: +0.000, -1.000, +0.000 │ dir2: +0.940, +0.000, +0.342 │ 
-04-Mar-2025 12:30:55 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root
-04-Mar-2025 12:30:55 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:30:56 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root?xrdcl.requuid=8667b09c-bf95-4bc2-ab41-535ce05c3a1f.
+05-Mar-2025 22:59:53 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root
+05-Mar-2025 22:59:57 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root
+strip 1981808640 (  4.0) z = +4020.3000 mm │ shift: x =  -2.655 mm, y = +17.288 mm │ dir1: -0.799, +0.602, +0.000 │ dir2: +0.602, +0.799, +0.000 │ V-det
+strip 1981841408 (  4.1) z = +4015.7000 mm │ shift: x =  -1.617 mm, y = +17.540 mm │ dir1: +0.602, +0.799, +0.000 │ dir2: -0.799, +0.602, +0.000 │ U-det
+strip 1981874176 (  4.2) z = +4011.3000 mm │ shift: x =  -2.629 mm, y = +17.322 mm │ dir1: -0.799, +0.602, +0.000 │ dir2: +0.602, +0.799, +0.000 │ V-det
+strip 1981906944 (  4.3) z = +4006.7000 mm │ shift: x =  -1.595 mm, y = +17.524 mm │ dir1: +0.602, +0.799, +0.000 │ dir2: -0.799, +0.602, +0.000 │ U-det
+strip 1981972480 (  4.5) z = +3997.7000 mm │ shift: x =  -1.572 mm, y = +17.507 mm │ dir1: +0.602, +0.799, +0.000 │ dir2: -0.799, +0.602, +0.000 │ U-det
+strip 1982005248 (  4.6) z = +3993.3000 mm │ shift: x =  -2.555 mm, y = +17.421 mm │ dir1: -0.799, +0.602, +0.000 │ dir2: +0.602, +0.799, +0.000 │ V-det
+strip 1982038016 (  4.7) z = +3988.7000 mm │ shift: x =  -1.550 mm, y = +17.489 mm │ dir1: +0.602, +0.799, +0.000 │ dir2: -0.799, +0.602, +0.000 │ U-det
+strip 1982070784 (  4.8) z = +3984.3000 mm │ shift: x =  -2.542 mm, y = +17.438 mm │ dir1: -0.799, +0.602, +0.000 │ dir2: +0.602, +0.799, +0.000 │ V-det
+strip 1982103552 (  4.9) z = +3979.7000 mm │ shift: x =  -1.553 mm, y = +17.492 mm │ dir1: +0.602, +0.799, +0.000 │ dir2: -0.799, +0.602, +0.000 │ U-det
+strip 1982332928 (  5.0) z = +4020.3000 mm │ shift: x =  +3.538 mm, y = -16.396 mm │ dir1: +0.799, -0.602, +0.000 │ dir2: -0.602, -0.799, +0.000 │ V-det
+strip 1982365696 (  5.1) z = +4015.7000 mm │ shift: x =  +2.621 mm, y = -16.488 mm │ dir1: -0.602, -0.799, +0.000 │ dir2: +0.799, -0.602, +0.000 │ U-det
+strip 1982398464 (  5.2) z = +4011.3000 mm │ shift: x =  +3.575 mm, y = -16.347 mm │ dir1: +0.799, -0.602, +0.000 │ dir2: -0.602, -0.799, +0.000 │ V-det
+strip 1982431232 (  5.3) z = +4006.7000 mm │ shift: x =  +2.597 mm, y = -16.470 mm │ dir1: -0.602, -0.799, +0.000 │ dir2: +0.799, -0.602, +0.000 │ U-det
+strip 1982464000 (  5.4) z = +4002.3000 mm │ shift: x =  +3.606 mm, y = -16.305 mm │ dir1: +0.799, -0.602, +0.000 │ dir2: -0.602, -0.799, +0.000 │ V-det
+strip 1982496768 (  5.5) z = +3997.7000 mm │ shift: x =  +2.581 mm, y = -16.458 mm │ dir1: -0.602, -0.799, +0.000 │ dir2: +0.799, -0.602, +0.000 │ U-det
+strip 1982529536 (  5.6) z = +3993.3000 mm │ shift: x =  +3.607 mm, y = -16.304 mm │ dir1: +0.799, -0.602, +0.000 │ dir2: -0.602, -0.799, +0.000 │ V-det
+strip 1982562304 (  5.7) z = +3988.7000 mm │ shift: x =  +2.542 mm, y = -16.429 mm │ dir1: -0.602, -0.799, +0.000 │ dir2: +0.799, -0.602, +0.000 │ U-det
+strip 1982595072 (  5.8) z = +3984.3000 mm │ shift: x =  +3.669 mm, y = -16.222 mm │ dir1: +0.799, -0.602, +0.000 │ dir2: -0.602, -0.799, +0.000 │ V-det
+strip 1982627840 (  5.9) z = +3979.7000 mm │ shift: x =  +2.563 mm, y = -16.445 mm │ dir1: -0.602, -0.799, +0.000 │ dir2: +0.799, -0.602, +0.000 │ U-det
+strip 1990197248 ( 24.0) z = -2979.7000 mm │ shift: x =  -0.281 mm, y = +17.696 mm │ dir1: -0.707, +0.707, +0.000 │ dir2: +0.707, +0.707, +0.000 │ V-det
+strip 1990230016 ( 24.1) z = -2984.3000 mm │ shift: x =  +0.894 mm, y = +17.641 mm │ dir1: +0.707, +0.707, +0.000 │ dir2: -0.707, +0.707, +0.000 │ U-det
+strip 1990262784 ( 24.2) z = -2988.7000 mm │ shift: x =  -0.248 mm, y = +17.729 mm │ dir1: -0.707, +0.707, +0.000 │ dir2: +0.707, +0.707, +0.000 │ V-det
+strip 1990295552 ( 24.3) z = -2993.3000 mm │ shift: x =  +0.835 mm, y = +17.699 mm │ dir1: +0.707, +0.707, +0.000 │ dir2: -0.707, +0.707, +0.000 │ U-det
+strip 1990328320 ( 24.4) z = -2997.7000 mm │ shift: x =  -0.241 mm, y = +17.737 mm │ dir1: -0.707, +0.707, +0.000 │ dir2: +0.707, +0.707, +0.000 │ V-det
+strip 1990361088 ( 24.5) z = -3002.3000 mm │ shift: x =  +0.769 mm, y = +17.766 mm │ dir1: +0.707, +0.707, +0.000 │ dir2: -0.707, +0.707, +0.000 │ U-det
+strip 1990393856 ( 24.6) z = -3006.7000 mm │ shift: x =  -0.218 mm, y = +17.760 mm │ dir1: -0.707, +0.707, +0.000 │ dir2: +0.707, +0.707, +0.000 │ V-det
+strip 1990426624 ( 24.7) z = -3011.3000 mm │ shift: x =  +0.772 mm, y = +17.762 mm │ dir1: +0.707, +0.707, +0.000 │ dir2: -0.707, +0.707, +0.000 │ U-det
+strip 1990459392 ( 24.8) z = -3015.7000 mm │ shift: x =  -0.189 mm, y = +17.788 mm │ dir1: -0.707, +0.707, +0.000 │ dir2: +0.707, +0.707, +0.000 │ V-det
+strip 1990492160 ( 24.9) z = -3020.3000 mm │ shift: x =  +0.692 mm, y = +17.842 mm │ dir1: +0.707, +0.707, +0.000 │ dir2: -0.707, +0.707, +0.000 │ U-det
+strip 1990721536 ( 25.0) z = -2979.7000 mm │ shift: x =  +1.196 mm, y = -17.346 mm │ dir1: +0.707, -0.707, +0.000 │ dir2: -0.707, -0.707, +0.000 │ V-det
+strip 1990754304 ( 25.1) z = -2984.3000 mm │ shift: x =  +0.266 mm, y = -17.404 mm │ dir1: -0.707, -0.707, +0.000 │ dir2: +0.707, -0.707, +0.000 │ U-det
+strip 1990787072 ( 25.2) z = -2988.7000 mm │ shift: x =  +1.230 mm, y = -17.312 mm │ dir1: +0.707, -0.707, +0.000 │ dir2: -0.707, -0.707, +0.000 │ V-det
+strip 1990819840 ( 25.3) z = -2993.3000 mm │ shift: x =  +0.200 mm, y = -17.339 mm │ dir1: -0.707, -0.707, +0.000 │ dir2: +0.707, -0.707, +0.000 │ U-det
+strip 1990852608 ( 25.4) z = -2997.7000 mm │ shift: x =  +1.213 mm, y = -17.329 mm │ dir1: +0.707, -0.707, +0.000 │ dir2: -0.707, -0.707, +0.000 │ V-det
+strip 1990885376 ( 25.5) z = -3002.3000 mm │ shift: x =  +0.181 mm, y = -17.320 mm │ dir1: -0.707, -0.707, +0.000 │ dir2: +0.707, -0.707, +0.000 │ U-det
+strip 1990918144 ( 25.6) z = -3006.7000 mm │ shift: x =  +1.223 mm, y = -17.319 mm │ dir1: +0.707, -0.707, +0.000 │ dir2: -0.707, -0.707, +0.000 │ V-det
+strip 1990950912 ( 25.7) z = -3011.3000 mm │ shift: x =  +0.182 mm, y = -17.321 mm │ dir1: -0.707, -0.707, +0.000 │ dir2: +0.707, -0.707, +0.000 │ U-det
+strip 1990983680 ( 25.8) z = -3015.7000 mm │ shift: x =  +1.215 mm, y = -17.327 mm │ dir1: +0.707, -0.707, +0.000 │ dir2: -0.707, -0.707, +0.000 │ V-det
+strip 1991016448 ( 25.9) z = -3020.3000 mm │ shift: x =  +0.109 mm, y = -17.248 mm │ dir1: -0.707, -0.707, +0.000 │ dir2: +0.707, -0.707, +0.000 │ U-det
+pixel 2014838784 (  3.0) z = +4453.9114 mm │ shift: x = +11.318 mm, y =  +4.326 mm │ dir1: +0.139, -0.990, +0.000 │ dir2: +0.931, +0.131, +0.342 │ 
+pixel 2014904320 (  3.1) z = +4449.8674 mm │ shift: x = +11.361 mm, y =  +4.226 mm │ dir1: +0.139, -0.990, +0.000 │ dir2: +0.931, +0.131, +0.342 │ 
+pixel 2014969856 (  3.2) z = +4445.8234 mm │ shift: x = +11.369 mm, y =  +4.352 mm │ dir1: +0.139, -0.990, +0.000 │ dir2: +0.931, +0.131, +0.342 │ 
+pixel 2015035392 (  3.3) z = +4441.7794 mm │ shift: x = +11.408 mm, y =  +4.284 mm │ dir1: +0.139, -0.990, +0.000 │ dir2: +0.931, +0.131, +0.342 │ 
+pixel 2015100928 (  3.4) z = +4437.7354 mm │ shift: x = +11.452 mm, y =  +4.395 mm │ dir1: +0.139, -0.990, +0.000 │ dir2: +0.931, +0.131, +0.342 │ 
+pixel 2023227392 ( 23.0) z = -2546.0886 mm │ shift: x = +11.645 mm, y =  +2.626 mm │ dir1: +0.000, -1.000, +0.000 │ dir2: +0.940, +0.000, +0.342 │ 
+pixel 2023292928 ( 23.1) z = -2550.1326 mm │ shift: x = +11.637 mm, y =  +2.603 mm │ dir1: +0.000, -1.000, +0.000 │ dir2: +0.940, +0.000, +0.342 │ 
+pixel 2023424000 ( 23.3) z = -2558.2206 mm │ shift: x = +11.663 mm, y =  +2.754 mm │ dir1: +0.000, -1.000, +0.000 │ dir2: +0.940, +0.000, +0.342 │ 
+pixel 2023555072 ( 23.5) z = -2566.3086 mm │ shift: x = +11.853 mm, y =  +2.838 mm │ dir1: +0.000, -1.000, +0.000 │ dir2: +0.940, +0.000, +0.342 │ 
+05-Mar-2025 23:01:38 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1b9d5007-f599-419d-bb85-15ee78ee54fc.root
+05-Mar-2025 23:01:38 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:01:39 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root?xrdcl.requuid=f6f77fe2-8c0d-4de6-bb52-e8d439159c97.
 %MSG
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:30:56 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root?tried=&xrdcl.requuid=61b234b7-f90c-466d-9cfb-c7c5110b6175.
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:01:39 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root?tried=&xrdcl.requuid=d4c2ecc8-8dd3-44c2-864d-904c16e2c340.
 %MSG
-04-Mar-2025 12:30:56 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root
-04-Mar-2025 12:30:58 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root
-04-Mar-2025 12:31:05 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root
-04-Mar-2025 12:31:05 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:31:06 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root?xrdcl.requuid=e00008d6-f0c6-4776-be5b-d11ce85c7e8f.
+05-Mar-2025 23:01:39 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root
+05-Mar-2025 23:01:41 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root
+05-Mar-2025 23:01:48 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/3d42ecab-f3d1-44e8-ba97-a80ad031fca1.root
+05-Mar-2025 23:01:48 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:01:49 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root?xrdcl.requuid=e4ce5e6b-1a4c-491f-ac47-196b6f6cb204.
 %MSG
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:31:06 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root?tried=&xrdcl.requuid=36175852-d73f-49d7-a9f8-a3298d033dae.
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:01:49 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root?tried=&xrdcl.requuid=41288feb-4151-426f-9cc6-a378a1dee1b9.
 %MSG
-04-Mar-2025 12:31:06 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root
-04-Mar-2025 12:31:08 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root
-04-Mar-2025 12:31:13 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root
-04-Mar-2025 12:31:13 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:31:14 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root?xrdcl.requuid=c13e2ce0-b68e-4e59-a202-3b554d0c4020.
+05-Mar-2025 23:01:49 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root
+05-Mar-2025 23:01:51 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root
+05-Mar-2025 23:01:56 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/db1017a0-672a-451c-90a8-16d78ad0b205.root
+05-Mar-2025 23:01:56 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:01:57 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root?xrdcl.requuid=e09aebdf-cbbc-4b76-b7a1-541ab4d706bc.
 %MSG
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:31:14 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root?tried=&xrdcl.requuid=a63f9b6c-4064-49de-ba9d-976294869c59.
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:01:57 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root?tried=&xrdcl.requuid=c1634375-cee2-4c4d-9df5-47751dea1260.
 %MSG
-04-Mar-2025 12:31:14 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root
-04-Mar-2025 12:31:15 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root
-04-Mar-2025 12:31:54 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root
-04-Mar-2025 12:31:54 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:31:55 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root?xrdcl.requuid=e8d01e2d-9f43-4dbb-889a-f2d8fc8f79e7.
+05-Mar-2025 23:01:57 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root
+05-Mar-2025 23:01:58 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root
+05-Mar-2025 23:02:39 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/863d0329-2be8-4ebf-aa17-24956cd34d2c.root
+05-Mar-2025 23:02:39 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:02:40 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root?xrdcl.requuid=1132a3b8-bc33-4628-8647-0acab753d939.
 %MSG
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:31:55 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root?tried=&xrdcl.requuid=72839f5b-54f8-48e9-bf46-755a07862630.
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:02:40 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root?tried=&xrdcl.requuid=65450611-bf65-48f4-a5f6-6daaf913ea95.
 %MSG
-04-Mar-2025 12:31:55 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root
-04-Mar-2025 12:31:57 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root
-04-Mar-2025 12:32:13 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root
-04-Mar-2025 12:32:13 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:32:14 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root?xrdcl.requuid=da0b0dfe-6054-4ae1-b343-9f847f9204b4.
+05-Mar-2025 23:02:40 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root
+05-Mar-2025 23:02:42 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root
+05-Mar-2025 23:02:59 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/d32ea43b-2198-4be6-8f67-32516fd2278c.root
+05-Mar-2025 23:02:59 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:03:00 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root?xrdcl.requuid=5bdcf018-cd59-4534-81f8-fc40b1a243c9.
 %MSG
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:32:14 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root?tried=&xrdcl.requuid=555c1278-33b8-4987-9317-a66e886ac3e2.
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:03:00 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root?tried=&xrdcl.requuid=719f4fca-0fad-4c91-9cb1-b44190be35b2.
 %MSG
-04-Mar-2025 12:32:14 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root
-04-Mar-2025 12:32:16 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root
-04-Mar-2025 12:33:08 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root
-04-Mar-2025 12:33:08 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:33:09 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root?xrdcl.requuid=400e858d-1aef-4cc0-a3e7-5247909db28b.
+05-Mar-2025 23:03:00 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root
+05-Mar-2025 23:03:01 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root
+05-Mar-2025 23:03:58 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/83b45783-d37f-4b7e-9927-bc7926736048.root
+05-Mar-2025 23:03:58 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:03:59 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root?xrdcl.requuid=c35294b9-036f-4169-a69e-e3f7a660b98f.
 %MSG
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:33:09 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root?tried=&xrdcl.requuid=8fde665a-8550-4234-b4a6-ed79110d1a7e.
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:03:59 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root?tried=&xrdcl.requuid=aa27c228-a1ab-42f3-a66a-8dfe9fb17a82.
 %MSG
-04-Mar-2025 12:33:09 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root
-04-Mar-2025 12:33:10 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root
-04-Mar-2025 12:35:06 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root
-04-Mar-2025 12:35:06 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:35:07 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root?xrdcl.requuid=fefef05d-45c0-4fc4-a6c5-3bb9d3256ffc.
+05-Mar-2025 23:03:59 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root
+05-Mar-2025 23:04:01 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root
+05-Mar-2025 23:06:11 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/68919351-ea7f-4a1e-8e51-94ccb7a7afc4.root
+05-Mar-2025 23:06:11 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:06:12 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root?xrdcl.requuid=71f10b3e-7af9-41b4-a28c-7122dfb9e515.
 %MSG
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:35:07 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root?tried=&xrdcl.requuid=4ef1b9f5-d4cb-453b-bf9e-fd80878d5486.
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:06:12 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root?tried=&xrdcl.requuid=05470577-106e-49ac-8f57-ee4cde6459ce.
 %MSG
-04-Mar-2025 12:35:07 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root
-04-Mar-2025 12:35:08 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root
-04-Mar-2025 12:36:12 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root
-04-Mar-2025 12:36:12 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:36:13 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root?xrdcl.requuid=dd211d51-d2b5-43fc-aa0b-1ab4748d871b.
+05-Mar-2025 23:06:12 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root
+05-Mar-2025 23:06:13 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root
+[2025-03-05 23:07:11.742508 +0100][Error  ][PostMaster        ] [hip-pool7.csc.fi:21819] Forcing error on disconnect: [ERROR] Operation interrupted.
+05-Mar-2025 23:07:21 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/929235c7-f6b0-4e13-b35a-779c1703617a.root
+05-Mar-2025 23:07:21 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:07:22 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root?xrdcl.requuid=21343692-b3d7-4b16-9a94-53e18b95c636.
 %MSG
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:36:13 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root?tried=&xrdcl.requuid=bddad8c1-b2e4-403c-b24f-b1c5793deabe.
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:07:22 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root?tried=&xrdcl.requuid=85882a1f-99a4-4338-90fb-6914b6c31d1c.
 %MSG
-04-Mar-2025 12:36:13 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root
-04-Mar-2025 12:36:14 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root
-[2025-03-04 12:36:28.528713 +0100][Error  ][PostMaster        ] [hip-pool7.csc.fi:21819] Forcing error on disconnect: [ERROR] Operation interrupted.
-04-Mar-2025 12:37:22 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root
-04-Mar-2025 12:37:22 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:37:23 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root?xrdcl.requuid=d44aa0ed-083a-4c79-aea8-9cf2afeef978.
+05-Mar-2025 23:07:22 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root
+05-Mar-2025 23:07:23 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root
+[2025-03-05 23:08:14.530317 +0100][Error  ][PostMaster        ] [hip-pool8.csc.fi:21482] Forcing error on disconnect: [ERROR] Operation interrupted.
+05-Mar-2025 23:08:34 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/1a4263a4-28d9-4172-8ff0-14a13d279d59.root
+05-Mar-2025 23:08:34 CET  Initiating request to open file root://eoscms.cern.ch//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:08:35 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root?xrdcl.requuid=52666b90-082e-4ef9-bb48-fa61c64ba1f2.
 %MSG
-%MSG-w XrdAdaptorInternal:  file_open 04-Mar-2025 12:37:23 CET PostProcessEvent
-Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root?tried=&xrdcl.requuid=33b3a480-cc42-48fd-b8c6-e6f79dbc073a.
+%MSG-w XrdAdaptorInternal:  file_open 05-Mar-2025 23:08:35 CET PostProcessEvent
+Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root?tried=&xrdcl.requuid=011b11d2-cc2e-4cb4-aa7f-c0ceec60f028.
 %MSG
-04-Mar-2025 12:37:23 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root
-04-Mar-2025 12:37:24 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root
-[2025-03-04 12:37:28.052757 +0100][Error  ][PostMaster        ] [hip-pool8.csc.fi:21482] Forcing error on disconnect: [ERROR] Operation interrupted.
-04-Mar-2025 12:38:19 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root
+05-Mar-2025 23:08:35 CET  Initiating request to open file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root
+05-Mar-2025 23:08:37 CET  Successfully opened file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root
+----- Begin Fatal Exception 05-Mar-2025 23:09:21 CET-----------------------
+An exception of category 'BadExceptionType' occurred while
+   [0] Processing  Event run: 369585 lumi: 28 event: 23445268 stream: 0
+   [1] Running path 'p'
+   [2] Calling method for module PPSStraightTrackAligner/'ppsStraightTrackAligner'
+Exception Message:
+A const char* was thrown as an exception.
+StraightTrackAlignment: Number of tracks processed reached maximum
+----- End Fatal Exception -------------------------------------------------
+05-Mar-2025 23:09:21 CET  Closed file root://xrootd-cms.infn.it//store/data/Run2023C/ZeroBias1/AOD/PromptReco-v4/000/369/585/00000/574a3c79-5364-42f1-a163-bff297ff2a42.root
 ----------------------------------------------------------------------------------------------------
 
 >> StraightTrackAlignment::Finish
-	events total = 1558546
-	events fitted = 771197
-	events selected = 378200
+	events total = 1511485
+	events fitted = 761540
+	events selected = 400000
 
 * events per RP set:
                     set of RPs      fitted  selected
-                             3 :     93905         0
-                          3, 4 :      3578         0
-                      3, 4, 23 :         1         0
-                      3, 4, 24 :        44        44
-                          3, 5 :      7323         0
-                      3, 5, 23 :        27        22
-                  3, 5, 23, 25 :         9         9
-                      3, 5, 24 :         9         0
-                      3, 5, 25 :       476       467
-                         3, 23 :    105492     89972
-                     3, 23, 24 :     13626     12912
-                     3, 23, 25 :        74        31
-                         3, 24 :     11750         0
-                         3, 25 :      8960         0
-                             4 :     45075         0
-                         4, 23 :      2491         0
-                     4, 23, 24 :       715       707
-                     4, 23, 25 :         2         0
-                         4, 24 :     98784     98584
-                         4, 25 :      1958         0
-                             5 :     60515         0
-                         5, 23 :      3836         0
-                     5, 23, 24 :        16         0
-                     5, 23, 25 :        43        43
-                         5, 24 :      1272         0
-                         5, 25 :    176038    175409
-                            23 :     29723         0
-                        23, 24 :      2090         0
-                        23, 25 :      1197         0
-                            24 :     34286         0
-                            25 :     67882         0
+                             3 :     90538         0
+                          3, 4 :      5315         0
+                      3, 4, 23 :      1134      1100
+                  3, 4, 23, 24 :      8154      8119
+                  3, 4, 23, 25 :         1         0
+                      3, 4, 24 :      7164      7146
+                      3, 4, 25 :         8         0
+                          3, 5 :      7742         0
+                      3, 5, 23 :      9888      9850
+                  3, 5, 23, 24 :         1         0
+                  3, 5, 23, 25 :     11021     10997
+                      3, 5, 24 :        57         0
+                      3, 5, 25 :      2723      2650
+                         3, 23 :     87506     85117
+                     3, 23, 24 :      6768      6711
+                     3, 23, 25 :       836       829
+                         3, 24 :      4289         0
+                         3, 25 :      4975         0
+                             4 :     43809         0
+                         4, 23 :      2406         0
+                     4, 23, 24 :       707       689
+                     4, 23, 25 :         7         0
+                         4, 24 :     95892     95691
+                         4, 25 :      1919         0
+                             5 :     57631         0
+                         5, 23 :      3554         0
+                     5, 23, 24 :        74         0
+                     5, 23, 25 :      1190      1182
+                         5, 24 :      1256         0
+                         5, 25 :    170526    169919
+                            23 :     29595         0
+                        23, 24 :      2364         0
+                        23, 25 :      1594         0
+                            24 :     33794         0
+                            25 :     67102         0
 
 * hits per plane:
-    strip 1981808640 (  4.0) : 99574
-    strip 1981841408 (  4.1) : 99535
-    strip 1981874176 (  4.2) : 99524
-    strip 1981906944 (  4.3) : 99434
-    strip 1981972480 (  4.5) : 99427
-    strip 1982005248 (  4.6) : 99443
-    strip 1982038016 (  4.7) : 98899
-    strip 1982070784 (  4.8) : 97531
-    strip 1982103552 (  4.9) : 97611
-    strip 1982332928 (  5.0) : 165341
-    strip 1982365696 (  5.1) : 167043
-    strip 1982398464 (  5.2) : 171028
-    strip 1982431232 (  5.3) : 170157
-    strip 1982464000 (  5.4) : 176045
-    strip 1982496768 (  5.5) : 176005
-    strip 1982529536 (  5.6) : 176167
-    strip 1982562304 (  5.7) : 176561
-    strip 1982595072 (  5.8) : 176451
-    strip 1982627840 (  5.9) : 176619
-    strip 1990197248 ( 24.0) : 112104
-    strip 1990230016 ( 24.1) : 111524
-    strip 1990262784 ( 24.2) : 111702
-    strip 1990295552 ( 24.3) : 111134
-    strip 1990328320 ( 24.4) : 111680
-    strip 1990361088 ( 24.5) : 109814
-    strip 1990393856 ( 24.6) : 109479
-    strip 1990426624 ( 24.7) : 109816
-    strip 1990459392 ( 24.8) : 109081
-    strip 1990492160 ( 24.9) : 107184
-    strip 1990721536 ( 25.0) : 172942
-    strip 1990754304 ( 25.1) : 172838
-    strip 1990787072 ( 25.2) : 171738
-    strip 1990819840 ( 25.3) : 175289
-    strip 1990852608 ( 25.4) : 175168
-    strip 1990885376 ( 25.5) : 175670
-    strip 1990918144 ( 25.6) : 175693
-    strip 1990950912 ( 25.7) : 175539
-    strip 1990983680 ( 25.8) : 175738
-    strip 1991016448 ( 25.9) : 176231
-    pixel 2014838784 (  3.0) : 196563
-    pixel 2014904320 (  3.1) : 196092
-    pixel 2014969856 (  3.2) : 195740
-    pixel 2015035392 (  3.3) : 189886
-    pixel 2015100928 (  3.4) : 187837
-    pixel 2023227392 ( 23.0) : 192462
-    pixel 2023292928 ( 23.1) : 191930
-    pixel 2023424000 ( 23.3) : 191398
-    pixel 2023555072 ( 23.5) : 181675
+    strip 1981808640 (  4.0) : 112942
+    strip 1981841408 (  4.1) : 112918
+    strip 1981874176 (  4.2) : 112948
+    strip 1981906944 (  4.3) : 112841
+    strip 1981972480 (  4.5) : 112848
+    strip 1982005248 (  4.6) : 112855
+    strip 1982038016 (  4.7) : 112280
+    strip 1982070784 (  4.8) : 110470
+    strip 1982103552 (  4.9) : 110721
+    strip 1982332928 (  5.0) : 183154
+    strip 1982365696 (  5.1) : 185026
+    strip 1982398464 (  5.2) : 189294
+    strip 1982431232 (  5.3) : 188376
+    strip 1982464000 (  5.4) : 194707
+    strip 1982496768 (  5.5) : 194676
+    strip 1982529536 (  5.6) : 194838
+    strip 1982562304 (  5.7) : 195255
+    strip 1982595072 (  5.8) : 195110
+    strip 1982627840 (  5.9) : 195322
+    strip 1990197248 ( 24.0) : 118489
+    strip 1990230016 ( 24.1) : 118469
+    strip 1990262784 ( 24.2) : 118306
+    strip 1990295552 ( 24.3) : 117723
+    strip 1990328320 ( 24.4) : 118124
+    strip 1990361088 ( 24.5) : 117429
+    strip 1990393856 ( 24.6) : 116299
+    strip 1990426624 ( 24.7) : 117242
+    strip 1990459392 ( 24.8) : 115626
+    strip 1990492160 ( 24.9) : 113587
+    strip 1990721536 ( 25.0) : 182222
+    strip 1990754304 ( 25.1) : 182146
+    strip 1990787072 ( 25.2) : 180999
+    strip 1990819840 ( 25.3) : 184942
+    strip 1990852608 ( 25.4) : 184772
+    strip 1990885376 ( 25.5) : 185269
+    strip 1990918144 ( 25.6) : 185238
+    strip 1990950912 ( 25.7) : 185127
+    strip 1990983680 ( 25.8) : 185301
+    strip 1991016448 ( 25.9) : 185849
+    pixel 2014838784 (  3.0) : 264117
+    pixel 2014904320 (  3.1) : 263516
+    pixel 2014969856 (  3.2) : 262866
+    pixel 2015035392 (  3.3) : 256286
+    pixel 2015100928 (  3.4) : 251742
+    pixel 2023227392 ( 23.0) : 247792
+    pixel 2023292928 ( 23.1) : 247201
+    pixel 2023424000 ( 23.3) : 246599
+    pixel 2023555072 ( 23.5) : 227510
 
 >> JanAlignmentAlgorithm::Analyze
 	sensors: 48
@@ -246,7 +259,7 @@ Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run202
 
 * S matrix:
 	dimension = 105
-	maximum asymmetry: 2.622604E-05	(ratio to maximum element 6.812947E-16)
+	maximum asymmetry: 7.363642E-05	(ratio to maximum element 1.777217E-15)
 
 >> StraightTrackAlignment::Finish > 10 constraints built
 	ShR: unit 1, MeanX=0
@@ -261,219 +274,219 @@ Failed to open file at URL root://eoscms.cern.ch:1094//eos/cms/store/data/Run202
 	RotZ: RP 25, MeanU = MeanV
 >> JanAlignmentAlgorithm::Solve
 
-* eigen values of CS and S matrices (events = 378200)
+* eigen values of CS and S matrices (events = 400000)
    #          CS    norm. CS               S     norm. S
-   0   +4.90E+10   +1.29E+05       +4.90E+10   +1.29E+05
-   1   +4.89E+10   +1.29E+05       +4.89E+10   +1.29E+05
-   2   +4.69E+10   +1.24E+05       +4.69E+10   +1.24E+05
-   3   +4.47E+10   +1.18E+05       +4.47E+10   +1.18E+05
-   4   +4.15E+10   +1.10E+05       +4.15E+10   +1.10E+05
-   5   +4.15E+10   +1.10E+05       +4.15E+10   +1.10E+05
-   6   +4.14E+10   +1.10E+05       +4.14E+10   +1.10E+05
-   7   +4.14E+10   +1.09E+05       +4.14E+10   +1.09E+05
-   8   +4.13E+10   +1.09E+05       +4.13E+10   +1.09E+05
-   9   +4.07E+10   +1.08E+05       +4.07E+10   +1.08E+05
-  10   +4.05E+10   +1.07E+05       +4.05E+10   +1.07E+05
-  11   +4.04E+10   +1.07E+05       +4.04E+10   +1.07E+05
-  12   +4.04E+10   +1.07E+05       +4.04E+10   +1.07E+05
-  13   +4.03E+10   +1.07E+05       +4.03E+10   +1.07E+05
-  14   +3.89E+10   +1.03E+05       +3.89E+10   +1.03E+05
-  15   +3.82E+10   +1.01E+05       +3.82E+10   +1.01E+05
-  16   +2.75E+10   +7.28E+04       +2.75E+10   +7.28E+04
-  17   +2.73E+10   +7.22E+04       +2.73E+10   +7.22E+04
-  18   +2.71E+10   +7.16E+04       +2.71E+10   +7.16E+04
-  19   +2.66E+10   +7.03E+04       +2.66E+10   +7.03E+04
-  20   +2.65E+10   +7.01E+04       +2.65E+10   +7.01E+04
-  21   +2.59E+10   +6.84E+04       +2.59E+10   +6.84E+04
-  22   +2.58E+10   +6.83E+04       +2.58E+10   +6.83E+04
-  23   +2.57E+10   +6.81E+04       +2.57E+10   +6.81E+04
-  24   +2.57E+10   +6.80E+04       +2.57E+10   +6.80E+04
-  25   +2.57E+10   +6.79E+04       +2.57E+10   +6.79E+04
-  26   +2.56E+10   +6.77E+04       +2.56E+10   +6.77E+04
-  27   +2.53E+10   +6.68E+04       +2.53E+10   +6.68E+04
-  28   +2.30E+10   +6.07E+04       +2.30E+10   +6.07E+04
-  29   +2.30E+10   +6.07E+04       +2.30E+10   +6.07E+04
-  30   +2.22E+10   +5.87E+04       +2.22E+10   +5.87E+04
-  31   +4.82E+09   +1.27E+04       +4.82E+09   +1.27E+04
-  32   +4.76E+09   +1.26E+04       +4.76E+09   +1.26E+04
-  33   +4.44E+09   +1.17E+04       +4.44E+09   +1.17E+04
-  34   +4.06E+09   +1.07E+04       +4.06E+09   +1.07E+04
-  35   +4.02E+09   +1.06E+04       +4.02E+09   +1.06E+04
-  36   +3.92E+09   +1.04E+04       +3.92E+09   +1.04E+04
-  37   +3.87E+09   +1.02E+04       +3.87E+09   +1.02E+04
-  38   +2.96E+08   +7.83E+02       +2.96E+08   +7.83E+02
-  39   +7.31E+07   +1.93E+02       +7.31E+07   +1.93E+02
-  40   +7.16E+07   +1.89E+02       +7.16E+07   +1.89E+02
-  41   +7.02E+07   +1.85E+02       +7.02E+07   +1.85E+02
-  42   +6.93E+07   +1.83E+02       +6.93E+07   +1.83E+02
-  43   +6.51E+07   +1.72E+02       +6.51E+07   +1.72E+02
-  44   +6.46E+07   +1.71E+02       +6.46E+07   +1.71E+02
-  45   +5.82E+07   +1.54E+02       +5.82E+07   +1.54E+02
-  46   +5.13E+07   +1.36E+02       +5.13E+07   +1.36E+02
-  47   +4.07E+07   +1.08E+02       +4.07E+07   +1.08E+02
-  48   +4.07E+07   +1.08E+02       +4.07E+07   +1.08E+02
-  49   +4.04E+07   +1.07E+02       +4.04E+07   +1.07E+02
-  50   +4.03E+07   +1.06E+02       +4.03E+07   +1.06E+02
-  51   +4.03E+07   +1.06E+02       +4.03E+07   +1.06E+02
-  52   +4.00E+07   +1.06E+02       +4.00E+07   +1.06E+02
-  53   +3.98E+07   +1.05E+02       +3.98E+07   +1.05E+02
-  54   +3.97E+07   +1.05E+02       +3.97E+07   +1.05E+02
-  55   +3.84E+07   +1.01E+02       +3.84E+07   +1.01E+02
-  56   +3.83E+07   +1.01E+02       +3.83E+07   +1.01E+02
-  57   +3.83E+07   +1.01E+02       +3.83E+07   +1.01E+02
-  58   +3.80E+07   +1.01E+02       +3.80E+07   +1.01E+02
-  59   +3.78E+07   +1.00E+02       +3.78E+07   +1.00E+02
-  60   +3.78E+07   +1.00E+02       +3.78E+07   +1.00E+02
-  61   +3.78E+07   +9.99E+01       +3.78E+07   +9.99E+01
-  62   +3.78E+07   +9.99E+01       +3.78E+07   +9.99E+01
-  63   +3.28E+07   +8.67E+01       +3.28E+07   +8.67E+01
-  64   +3.27E+07   +8.63E+01       +3.27E+07   +8.63E+01
-  65   +3.25E+07   +8.58E+01       +3.25E+07   +8.58E+01
-  66   +3.24E+07   +8.56E+01       +3.24E+07   +8.56E+01
-  67   +3.23E+07   +8.54E+01       +3.23E+07   +8.54E+01
-  68   +3.17E+07   +8.38E+01       +3.17E+07   +8.38E+01
-  69   +3.14E+07   +8.32E+01       +3.14E+07   +8.32E+01
-  70   +3.11E+07   +8.23E+01       +3.11E+07   +8.23E+01
-  71   +2.98E+07   +7.89E+01       +2.98E+07   +7.89E+01
-  72   +2.95E+07   +7.80E+01       +2.95E+07   +7.80E+01
-  73   +2.94E+07   +7.78E+01       +2.94E+07   +7.78E+01
-  74   +2.93E+07   +7.75E+01       +2.93E+07   +7.75E+01
-  75   +2.91E+07   +7.69E+01       +2.91E+07   +7.69E+01
-  76   +2.86E+07   +7.56E+01       +2.86E+07   +7.56E+01
-  77   +2.85E+07   +7.54E+01       +2.85E+07   +7.54E+01
-  78   +2.26E+07   +5.98E+01       +2.26E+07   +5.98E+01
-  79   +2.26E+07   +5.97E+01       +2.26E+07   +5.97E+01
-  80   +2.25E+07   +5.95E+01       +2.25E+07   +5.95E+01
-  81   +2.24E+07   +5.92E+01       +2.24E+07   +5.92E+01
-  82   +2.10E+07   +5.55E+01       +2.10E+07   +5.55E+01
-  83   +1.96E+07   +5.18E+01       +1.96E+07   +5.18E+01
-  84   +1.91E+07   +5.06E+01       +1.91E+07   +5.06E+01
-  85   +1.67E+07   +4.41E+01       +1.67E+07   +4.41E+01
-  86   +5.28E+06   +1.40E+01       +5.27E+06   +1.39E+01
-  87   +4.50E+06   +1.19E+01       +4.50E+06   +1.19E+01
-  88   +2.22E+06   +5.88E+00       +2.20E+06   +5.83E+00
-  89   +1.92E+06   +5.08E+00       +1.89E+06   +5.01E+00
-  90   +4.52E+05   +1.20E+00       +3.69E+05   +9.77E-01
-  91   +3.43E+05   +9.07E-01       +2.92E+05   +7.72E-01
-  92   +1.87E+05   +4.96E-01       +5.11E+04   +1.35E-01
-  93   +1.56E+05   +4.13E-01       +1.61E+04   +4.26E-02
-  94   +1.54E+05   +4.07E-01       +7.87E+03   +2.08E-02
-  95   +1.53E+05   +4.03E-01       +3.35E+03   +8.86E-03
-  96   +1.47E+05   +3.90E-01       +1.47E+03   +3.90E-03
-  97   +3.68E+04   +9.73E-02       +3.20E+02   +8.47E-04
-  98   +3.36E+04   +8.89E-02       +1.03E+02   +2.72E-04
-  99   +1.41E+04   +3.74E-02       +2.40E+01   +6.36E-05
- 100   +1.29E+04   +3.42E-02       +7.85E-04   +2.08E-09 (S)
- 101   +6.01E+03   +1.59E-02       +6.09E-04   +1.61E-09 (S)
- 102   +2.32E+03   +6.12E-03       +5.42E-04   +1.43E-09 (S)
- 103   +1.38E+03   +3.65E-03       +2.42E-04   +6.40E-10 (S)
- 104   +1.10E+02   +2.92E-04       +2.90E-05   +7.67E-11 (S)
- 105   -1.12E+04   -2.97E-02    
- 106   -3.14E+04   -8.31E-02    
- 107   -4.03E+04   -1.07E-01    
- 108   -6.07E+04   -1.60E-01    
- 109   -8.06E+04   -2.13E-01    
- 110   -1.47E+05   -3.90E-01    
- 111   -1.52E+05   -4.03E-01    
- 112   -1.54E+05   -4.07E-01    
- 113   -1.56E+05   -4.13E-01    
- 114   -1.88E+05   -4.98E-01    
+   0   +5.17E+10   +1.29E+05       +5.17E+10   +1.29E+05
+   1   +5.17E+10   +1.29E+05       +5.17E+10   +1.29E+05
+   2   +4.99E+10   +1.25E+05       +4.99E+10   +1.25E+05
+   3   +4.95E+10   +1.24E+05       +4.95E+10   +1.24E+05
+   4   +4.95E+10   +1.24E+05       +4.95E+10   +1.24E+05
+   5   +4.90E+10   +1.23E+05       +4.90E+10   +1.23E+05
+   6   +4.77E+10   +1.19E+05       +4.77E+10   +1.19E+05
+   7   +4.76E+10   +1.19E+05       +4.76E+10   +1.19E+05
+   8   +4.75E+10   +1.19E+05       +4.75E+10   +1.19E+05
+   9   +4.75E+10   +1.19E+05       +4.75E+10   +1.19E+05
+  10   +4.64E+10   +1.16E+05       +4.64E+10   +1.16E+05
+  11   +4.53E+10   +1.13E+05       +4.53E+10   +1.13E+05
+  12   +4.18E+10   +1.04E+05       +4.18E+10   +1.04E+05
+  13   +4.17E+10   +1.04E+05       +4.17E+10   +1.04E+05
+  14   +4.10E+10   +1.03E+05       +4.10E+10   +1.03E+05
+  15   +4.07E+10   +1.02E+05       +4.07E+10   +1.02E+05
+  16   +3.08E+10   +7.69E+04       +3.08E+10   +7.69E+04
+  17   +3.07E+10   +7.68E+04       +3.07E+10   +7.68E+04
+  18   +2.97E+10   +7.43E+04       +2.97E+10   +7.43E+04
+  19   +2.94E+10   +7.34E+04       +2.94E+10   +7.34E+04
+  20   +2.93E+10   +7.33E+04       +2.93E+10   +7.33E+04
+  21   +2.88E+10   +7.19E+04       +2.88E+10   +7.19E+04
+  22   +2.86E+10   +7.14E+04       +2.86E+10   +7.14E+04
+  23   +2.76E+10   +6.90E+04       +2.76E+10   +6.90E+04
+  24   +2.74E+10   +6.86E+04       +2.74E+10   +6.86E+04
+  25   +2.72E+10   +6.79E+04       +2.72E+10   +6.79E+04
+  26   +2.61E+10   +6.52E+04       +2.61E+10   +6.52E+04
+  27   +2.60E+10   +6.51E+04       +2.60E+10   +6.51E+04
+  28   +2.59E+10   +6.48E+04       +2.59E+10   +6.48E+04
+  29   +2.59E+10   +6.47E+04       +2.59E+10   +6.47E+04
+  30   +2.55E+10   +6.38E+04       +2.55E+10   +6.38E+04
+  31   +6.89E+09   +1.72E+04       +6.89E+09   +1.72E+04
+  32   +6.79E+09   +1.70E+04       +6.79E+09   +1.70E+04
+  33   +6.31E+09   +1.58E+04       +6.31E+09   +1.58E+04
+  34   +6.13E+09   +1.53E+04       +6.13E+09   +1.53E+04
+  35   +6.07E+09   +1.52E+04       +6.07E+09   +1.52E+04
+  36   +5.97E+09   +1.49E+04       +5.97E+09   +1.49E+04
+  37   +5.91E+09   +1.48E+04       +5.91E+09   +1.48E+04
+  38   +4.51E+09   +1.13E+04       +4.51E+09   +1.13E+04
+  39   +2.84E+09   +7.09E+03       +2.84E+09   +7.09E+03
+  40   +2.49E+09   +6.22E+03       +2.49E+09   +6.22E+03
+  41   +1.35E+09   +3.38E+03       +1.35E+09   +3.38E+03
+  42   +5.18E+08   +1.30E+03       +5.18E+08   +1.30E+03
+  43   +3.24E+08   +8.11E+02       +3.24E+08   +8.11E+02
+  44   +2.28E+08   +5.69E+02       +2.28E+08   +5.69E+02
+  45   +1.98E+08   +4.94E+02       +1.98E+08   +4.94E+02
+  46   +1.16E+08   +2.90E+02       +1.16E+08   +2.90E+02
+  47   +9.78E+07   +2.44E+02       +9.78E+07   +2.44E+02
+  48   +9.58E+07   +2.40E+02       +9.58E+07   +2.40E+02
+  49   +9.41E+07   +2.35E+02       +9.41E+07   +2.35E+02
+  50   +9.30E+07   +2.32E+02       +9.30E+07   +2.32E+02
+  51   +8.32E+07   +2.08E+02       +8.32E+07   +2.08E+02
+  52   +8.25E+07   +2.06E+02       +8.25E+07   +2.06E+02
+  53   +7.23E+07   +1.81E+02       +7.23E+07   +1.81E+02
+  54   +6.96E+07   +1.74E+02       +6.96E+07   +1.74E+02
+  55   +5.57E+07   +1.39E+02       +5.57E+07   +1.39E+02
+  56   +5.56E+07   +1.39E+02       +5.56E+07   +1.39E+02
+  57   +5.48E+07   +1.37E+02       +5.48E+07   +1.37E+02
+  58   +5.39E+07   +1.35E+02       +5.39E+07   +1.35E+02
+  59   +4.95E+07   +1.24E+02       +4.95E+07   +1.24E+02
+  60   +4.94E+07   +1.24E+02       +4.94E+07   +1.24E+02
+  61   +4.87E+07   +1.22E+02       +4.87E+07   +1.22E+02
+  62   +4.83E+07   +1.21E+02       +4.83E+07   +1.21E+02
+  63   +4.25E+07   +1.06E+02       +4.25E+07   +1.06E+02
+  64   +4.25E+07   +1.06E+02       +4.25E+07   +1.06E+02
+  65   +4.25E+07   +1.06E+02       +4.25E+07   +1.06E+02
+  66   +4.25E+07   +1.06E+02       +4.25E+07   +1.06E+02
+  67   +4.25E+07   +1.06E+02       +4.25E+07   +1.06E+02
+  68   +4.24E+07   +1.06E+02       +4.24E+07   +1.06E+02
+  69   +4.24E+07   +1.06E+02       +4.24E+07   +1.06E+02
+  70   +4.22E+07   +1.06E+02       +4.22E+07   +1.06E+02
+  71   +4.01E+07   +1.00E+02       +4.01E+07   +1.00E+02
+  72   +3.99E+07   +9.97E+01       +3.99E+07   +9.97E+01
+  73   +3.97E+07   +9.93E+01       +3.97E+07   +9.93E+01
+  74   +3.93E+07   +9.82E+01       +3.93E+07   +9.82E+01
+  75   +3.86E+07   +9.66E+01       +3.86E+07   +9.66E+01
+  76   +3.81E+07   +9.53E+01       +3.81E+07   +9.53E+01
+  77   +3.81E+07   +9.52E+01       +3.81E+07   +9.52E+01
+  78   +3.80E+07   +9.51E+01       +3.80E+07   +9.51E+01
+  79   +3.79E+07   +9.48E+01       +3.79E+07   +9.48E+01
+  80   +3.79E+07   +9.47E+01       +3.79E+07   +9.47E+01
+  81   +3.69E+07   +9.22E+01       +3.69E+07   +9.22E+01
+  82   +3.68E+07   +9.20E+01       +3.68E+07   +9.20E+01
+  83   +3.51E+07   +8.78E+01       +3.51E+07   +8.78E+01
+  84   +3.51E+07   +8.77E+01       +3.51E+07   +8.77E+01
+  85   +3.47E+07   +8.69E+01       +3.47E+07   +8.69E+01
+  86   +3.34E+07   +8.35E+01       +3.34E+07   +8.35E+01
+  87   +3.33E+07   +8.33E+01       +3.33E+07   +8.33E+01
+  88   +3.31E+07   +8.28E+01       +3.31E+07   +8.28E+01
+  89   +3.30E+07   +8.24E+01       +3.30E+07   +8.24E+01
+  90   +2.82E+07   +7.06E+01       +2.82E+07   +7.06E+01
+  91   +2.76E+07   +6.91E+01       +2.76E+07   +6.91E+01
+  92   +2.50E+07   +6.25E+01       +2.50E+07   +6.25E+01
+  93   +4.31E+06   +1.08E+01       +4.31E+06   +1.08E+01
+  94   +2.89E+06   +7.22E+00       +2.89E+06   +7.22E+00
+  95   +1.67E+06   +4.16E+00       +1.66E+06   +4.16E+00
+  96   +8.23E+05   +2.06E+00       +8.19E+05   +2.05E+00
+  97   +2.41E+05   +6.01E-01       +2.39E+05   +5.96E-01
+  98   +1.63E+05   +4.07E-01       +9.22E+04   +2.30E-01
+  99   +1.62E+05   +4.06E-01       +7.43E+01   +1.86E-04
+ 100   +1.60E+05   +3.99E-01       +8.85E-02   +2.21E-07 (W)
+ 101   +1.55E+05   +3.89E-01       +6.68E-02   +1.67E-07 (W)
+ 102   +9.81E+04   +2.45E-01       +6.37E-04   +1.59E-09 (S)
+ 103   +2.09E+04   +5.21E-02       +2.81E-04   +7.03E-10 (S)
+ 104   +1.92E+04   +4.79E-02       +2.58E-05   +6.45E-11 (S)
+ 105   -1.62E+03   -4.04E-03    
+ 106   -2.35E+03   -5.89E-03    
+ 107   -2.54E+03   -6.36E-03    
+ 108   -8.13E+03   -2.03E-02    
+ 109   -2.02E+04   -5.06E-02    
+ 110   -2.15E+04   -5.37E-02    
+ 111   -1.56E+05   -3.89E-01    
+ 112   -1.60E+05   -4.00E-01    
+ 113   -1.62E+05   -4.06E-01    
+ 114   -1.63E+05   -4.08E-01    
 
 * CS has no weak modes
->> JanAlignmentAlgorithm::Solve > WARNING: C matrix has 10, while E matrix 5 columns.
-EM max = 7.256917E-04, EM2 max = 7.256917E-04, EM2 - EM max = 7.576221E-05
-max = 9.057220E-03
+>> JanAlignmentAlgorithm::Solve > WARNING: C matrix has 10, while E matrix 3 columns.
+EM max = 6.124638E-04, EM2 max = 1.925034E-07, EM2 - EM max = 6.124631E-04
+max = 6.147185E-04
 
 * Lambda (from the contribution of singular modes to MV)
-	0 (     ShR: unit 1, MeanX=0)	  +5.3E-02 +-    6.2E-04
-	1 (     ShR: unit 1, MeanY=0)	  +5.7E-03 +-    1.5E-04
-	2 (    ShR: unit 21, MeanX=0)	  -5.3E-02 +-    6.3E-04
-	3 (    ShR: unit 21, MeanY=0)	  -3.8E-03 +-    1.6E-04
-	4 (     RotZ: unit 1, Mean=0)	  -4.8E-01 +-    1.7E-01
-	5 (    RotZ: unit 21, Mean=0)	  +5.0E-01 +-    1.7E-01
-	6 (RotZ: RP 4, MeanU = MeanV)	  +2.7E+00 +-    1.2E+00
-	7 (RotZ: RP 5, MeanU = MeanV)	  -3.0E+01 +-    1.6E+00
-	8 (RotZ: RP 24, MeanU = MeanV)	  +1.2E+02 +-    8.7E+00
-	9 (RotZ: RP 25, MeanU = MeanV)	  +1.5E+00 +-    6.0E-01
+	0 (     ShR: unit 1, MeanX=0)	  +1.4E-01 +-    1.8E-03
+	1 (     ShR: unit 1, MeanY=0)	  +1.1E-02 +-    1.3E-03
+	2 (    ShR: unit 21, MeanX=0)	  -1.4E-01 +-    1.8E-03
+	3 (    ShR: unit 21, MeanY=0)	  -5.5E-03 +-    1.2E-03
+	4 (     RotZ: unit 1, Mean=0)	  -1.2E+00 +-    3.1E-01
+	5 (    RotZ: unit 21, Mean=0)	  +1.2E+00 +-    3.1E-01
+	6 (RotZ: RP 4, MeanU = MeanV)	  +5.2E+02 +-    2.5E+01
+	7 (RotZ: RP 5, MeanU = MeanV)	  +5.2E+02 +-    2.0E+01
+	8 (RotZ: RP 24, MeanU = MeanV)	  +1.9E+02 +-    2.1E+01
+	9 (RotZ: RP 25, MeanU = MeanV)	  +1.2E+02 +-    1.1E+01
 
 >> StraightTrackAlignment::Finish > Print
 ═════════════════════════╬══════════════════╬══════════════════╬══════════════════╬
                          ║       ShR1       ║       ShR2       ║       RotZ       ║
                          ║               Jan║               Jan║               Jan║
 ═════════════════════════╬══════════════════╬══════════════════╬══════════════════╬
-strip 1981808640 (  4.0) ║    +0.0 ±     0.0║  -703.2 ±    26.9║    +8.6 ±     1.6║
-strip 1981841408 (  4.1) ║    +0.0 ±     0.0║  -593.6 ±    24.4║    +6.4 ±     1.6║
-strip 1981874176 (  4.2) ║    +0.0 ±     0.0║  -682.9 ±    26.9║    +6.3 ±     1.6║
-strip 1981906944 (  4.3) ║    +0.0 ±     0.0║  -590.8 ±    24.3║    +6.6 ±     1.6║
-strip 1981972480 (  4.5) ║    +0.0 ±     0.0║  -591.1 ±    24.3║    +6.5 ±     1.6║
-strip 1982005248 (  4.6) ║    +0.0 ±     0.0║  -674.2 ±    26.8║    +5.5 ±     1.6║
-strip 1982038016 (  4.7) ║    +0.0 ±     0.0║  -588.3 ±    24.3║    +6.7 ±     1.6║
-strip 1982070784 (  4.8) ║    +0.0 ±     0.0║  -673.4 ±    26.8║    +5.5 ±     1.6║
-strip 1982103552 (  4.9) ║    +0.0 ±     0.0║  -593.2 ±    24.2║    +6.1 ±     1.6║
+strip 1981808640 (  4.0) ║    +0.0 ±     0.0║   -17.5 ±     0.3║    +2.5 ±     0.0║
+strip 1981841408 (  4.1) ║    +0.0 ±     0.0║    +5.2 ±     0.2║    +0.3 ±     0.0║
+strip 1981874176 (  4.2) ║    +0.0 ±     0.0║    +3.7 ±     0.3║    +0.2 ±     0.0║
+strip 1981906944 (  4.3) ║    +0.0 ±     0.0║    +6.9 ±     0.2║    +0.5 ±     0.0║
+strip 1981972480 (  4.5) ║    +0.0 ±     0.0║    +5.7 ±     0.2║    +0.4 ±     0.0║
+strip 1982005248 (  4.6) ║    +0.0 ±     0.0║   +10.9 ±     0.3║    -0.6 ±     0.0║
+strip 1982038016 (  4.7) ║    +0.0 ±     0.0║    +7.5 ±     0.2║    +0.6 ±     0.0║
+strip 1982070784 (  4.8) ║    +0.0 ±     0.0║   +11.5 ±     0.3║    -0.6 ±     0.0║
+strip 1982103552 (  4.9) ║    +0.0 ±     0.0║    +2.3 ±     0.2║    -0.0 ±     0.0║
 ═════════════════════════╬══════════════════╬══════════════════╬══════════════════╬
-strip 1982332928 (  5.0) ║    +0.0 ±     0.0║  -295.8 ±    12.2║    -6.0 ±     0.9║
-strip 1982365696 (  5.1) ║    +0.0 ±     0.0║  -314.5 ±    14.6║    -6.0 ±     0.9║
-strip 1982398464 (  5.2) ║    +0.0 ±     0.0║  -288.9 ±    12.1║    -6.7 ±     0.8║
-strip 1982431232 (  5.3) ║    +0.0 ±     0.0║  -321.5 ±    14.6║    -6.9 ±     0.8║
-strip 1982464000 (  5.4) ║    +0.0 ±     0.0║  -274.5 ±    12.1║    -8.2 ±     0.8║
-strip 1982496768 (  5.5) ║    +0.0 ±     0.0║  -327.2 ±    14.6║    -7.6 ±     0.8║
-strip 1982529536 (  5.6) ║    +0.0 ±     0.0║  -278.5 ±    12.1║    -7.7 ±     0.8║
-strip 1982562304 (  5.7) ║    +0.0 ±     0.0║  -329.3 ±    14.5║    -7.9 ±     0.8║
-strip 1982595072 (  5.8) ║    +0.0 ±     0.0║  -271.4 ±    12.1║    -8.5 ±     0.8║
-strip 1982627840 (  5.9) ║    +0.0 ±     0.0║  -336.0 ±    14.5║    -8.7 ±     0.8║
+strip 1982332928 (  5.0) ║    +0.0 ±     0.0║   -16.2 ±     0.2║    +3.4 ±     0.0║
+strip 1982365696 (  5.1) ║    +0.0 ±     0.0║   +20.5 ±     0.3║    +3.4 ±     0.0║
+strip 1982398464 (  5.2) ║    +0.0 ±     0.0║   -10.5 ±     0.2║    +2.7 ±     0.0║
+strip 1982431232 (  5.3) ║    +0.0 ±     0.0║   +12.2 ±     0.3║    +2.5 ±     0.0║
+strip 1982464000 (  5.4) ║    +0.0 ±     0.0║    +2.8 ±     0.2║    +1.2 ±     0.0║
+strip 1982496768 (  5.5) ║    +0.0 ±     0.0║    +5.5 ±     0.3║    +1.8 ±     0.0║
+strip 1982529536 (  5.6) ║    +0.0 ±     0.0║    -1.3 ±     0.2║    +1.7 ±     0.0║
+strip 1982562304 (  5.7) ║    +0.0 ±     0.0║    +2.3 ±     0.3║    +1.5 ±     0.0║
+strip 1982595072 (  5.8) ║    +0.0 ±     0.0║    +5.2 ±     0.2║    +1.0 ±     0.0║
+strip 1982627840 (  5.9) ║    +0.0 ±     0.0║    -5.2 ±     0.3║    +0.7 ±     0.0║
 ═════════════════════════╬══════════════════╬══════════════════╬══════════════════╬
-strip 1990197248 ( 24.0) ║    +0.0 ±     0.0║   -34.4 ±     5.2║   +10.3 ±     0.6║
-strip 1990230016 ( 24.1) ║    +0.0 ±     0.0║   +54.1 ±     3.9║   +10.8 ±     0.6║
-strip 1990262784 ( 24.2) ║    +0.0 ±     0.0║   -35.9 ±     5.2║   +10.6 ±     0.6║
-strip 1990295552 ( 24.3) ║    +0.0 ±     0.0║   +50.4 ±     3.9║   +10.3 ±     0.6║
-strip 1990328320 ( 24.4) ║    +0.0 ±     0.0║   -35.4 ±     5.2║   +10.6 ±     0.6║
-strip 1990361088 ( 24.5) ║    +0.0 ±     0.0║   +57.6 ±     3.9║   +11.0 ±     0.6║
-strip 1990393856 ( 24.6) ║    +0.0 ±     0.0║   -29.6 ±     5.2║   +10.0 ±     0.6║
-strip 1990426624 ( 24.7) ║    +0.0 ±     0.0║   +52.5 ±     3.9║   +10.3 ±     0.6║
-strip 1990459392 ( 24.8) ║    +0.0 ±     0.0║   -32.7 ±     5.3║   +10.4 ±     0.6║
-strip 1990492160 ( 24.9) ║    +0.0 ±     0.0║   +46.0 ±     3.9║    +9.5 ±     0.6║
+strip 1990197248 ( 24.0) ║    +0.0 ±     0.0║    -3.2 ±     0.4║    +1.5 ±     0.1║
+strip 1990230016 ( 24.1) ║    +0.0 ±     0.0║    +7.5 ±     0.2║    +1.9 ±     0.1║
+strip 1990262784 ( 24.2) ║    +0.0 ±     0.0║    -5.4 ±     0.4║    +1.7 ±     0.1║
+strip 1990295552 ( 24.3) ║    +0.0 ±     0.0║    +3.2 ±     0.2║    +1.4 ±     0.1║
+strip 1990328320 ( 24.4) ║    +0.0 ±     0.0║    -5.2 ±     0.4║    +1.7 ±     0.1║
+strip 1990361088 ( 24.5) ║    +0.0 ±     0.0║    +9.7 ±     0.2║    +2.2 ±     0.1║
+strip 1990393856 ( 24.6) ║    +0.0 ±     0.0║    -0.7 ±     0.4║    +1.2 ±     0.1║
+strip 1990426624 ( 24.7) ║    +0.0 ±     0.0║    +3.7 ±     0.2║    +1.5 ±     0.1║
+strip 1990459392 ( 24.8) ║    +0.0 ±     0.0║    -4.2 ±     0.4║    +1.6 ±     0.1║
+strip 1990492160 ( 24.9) ║    +0.0 ±     0.0║    -4.1 ±     0.2║    +0.6 ±     0.1║
 ═════════════════════════╬══════════════════╬══════════════════╬══════════════════╬
-strip 1990721536 ( 25.0) ║    +0.0 ±     0.0║   +34.0 ±     4.5║   -16.5 ±     1.1║
-strip 1990754304 ( 25.1) ║    +0.0 ±     0.0║    +3.2 ±     5.2║   -17.2 ±     1.1║
-strip 1990787072 ( 25.2) ║    +0.0 ±     0.0║   +36.9 ±     4.5║   -16.8 ±     1.1║
-strip 1990819840 ( 25.3) ║    +0.0 ±     0.0║   +16.8 ±     5.2║   -15.7 ±     1.1║
-strip 1990852608 ( 25.4) ║    +0.0 ±     0.0║   +35.6 ±     4.5║   -16.6 ±     1.1║
-strip 1990885376 ( 25.5) ║    +0.0 ±     0.0║   +12.1 ±     5.2║   -16.3 ±     1.1║
-strip 1990918144 ( 25.6) ║    +0.0 ±     0.0║   +33.6 ±     4.5║   -16.4 ±     1.1║
-strip 1990950912 ( 25.7) ║    +0.0 ±     0.0║    +7.4 ±     5.3║   -16.9 ±     1.1║
-strip 1990983680 ( 25.8) ║    +0.0 ±     0.0║   +37.4 ±     4.5║   -16.8 ±     1.1║
-strip 1991016448 ( 25.9) ║    +0.0 ±     0.0║    +9.1 ±     5.3║   -16.8 ±     1.1║
+strip 1990721536 ( 25.0) ║    +0.0 ±     0.0║    -4.6 ±     0.2║    +1.2 ±     0.1║
+strip 1990754304 ( 25.1) ║    +0.0 ±     0.0║    -7.8 ±     0.4║    +0.6 ±     0.1║
+strip 1990787072 ( 25.2) ║    +0.0 ±     0.0║    -2.4 ±     0.2║    +1.0 ±     0.1║
+strip 1990819840 ( 25.3) ║    +0.0 ±     0.0║    +5.9 ±     0.4║    +2.0 ±     0.1║
+strip 1990852608 ( 25.4) ║    +0.0 ±     0.0║    -4.1 ±     0.2║    +1.2 ±     0.1║
+strip 1990885376 ( 25.5) ║    +0.0 ±     0.0║    +0.3 ±     0.4║    +1.4 ±     0.1║
+strip 1990918144 ( 25.6) ║    +0.0 ±     0.0║    -6.5 ±     0.2║    +1.5 ±     0.1║
+strip 1990950912 ( 25.7) ║    +0.0 ±     0.0║    -4.5 ±     0.4║    +0.9 ±     0.1║
+strip 1990983680 ( 25.8) ║    +0.0 ±     0.0║    -3.0 ±     0.2║    +1.1 ±     0.1║
+strip 1991016448 ( 25.9) ║    +0.0 ±     0.0║    -3.6 ±     0.4║    +1.0 ±     0.1║
 ═════════════════════════╬══════════════════╬══════════════════╬══════════════════╬
-pixel 2014838784 (  3.0) ║  -467.4 ±    19.8║    -5.2 ±     6.7║    +1.5 ±     0.8║
-pixel 2014904320 (  3.1) ║  -470.5 ±    19.8║    -6.7 ±     6.6║    +2.2 ±     0.8║
-pixel 2014969856 (  3.2) ║  -466.5 ±    19.7║    -4.7 ±     6.7║    +1.3 ±     0.8║
-pixel 2015035392 (  3.3) ║  -458.7 ±    19.7║    -0.7 ±     6.7║    -0.3 ±     0.8║
-pixel 2015100928 (  3.4) ║  -460.2 ±    19.8║    -1.8 ±     6.7║    +0.1 ±     0.8║
+pixel 2014838784 (  3.0) ║    +1.0 ±     0.1║    -5.9 ±     0.3║    -1.9 ±     0.0║
+pixel 2014904320 (  3.1) ║    -2.5 ±     0.1║    -8.1 ±     0.3║    -1.1 ±     0.0║
+pixel 2014969856 (  3.2) ║    +1.1 ±     0.1║    -5.8 ±     0.3║    -1.9 ±     0.0║
+pixel 2015035392 (  3.3) ║   +10.0 ±     0.1║    -1.1 ±     0.3║    -3.7 ±     0.0║
+pixel 2015100928 (  3.4) ║    +7.8 ±     0.1║    -2.1 ±     0.3║    -3.3 ±     0.0║
 ═════════════════════════╬══════════════════╬══════════════════╬══════════════════╬
-pixel 2023227392 ( 23.0) ║   -27.9 ±     3.5║   +71.0 ±     6.0║    +7.8 ±     0.5║
-pixel 2023292928 ( 23.1) ║    -0.9 ±     3.5║   +79.9 ±     6.0║    +3.1 ±     0.5║
-pixel 2023424000 ( 23.3) ║   -11.7 ±     3.5║   +76.5 ±     6.0║    +5.0 ±     0.5║
-pixel 2023555072 ( 23.5) ║   -34.9 ±     3.6║   +68.9 ±     5.9║    +9.0 ±     0.5║
+pixel 2023227392 ( 23.0) ║    -4.5 ±     0.2║    -0.1 ±     0.4║    -1.1 ±     0.0║
+pixel 2023292928 ( 23.1) ║   +21.0 ±     0.2║    +9.6 ±     0.4║    -5.7 ±     0.0║
+pixel 2023424000 ( 23.3) ║   +11.0 ±     0.2║    +6.5 ±     0.4║    -3.9 ±     0.0║
+pixel 2023555072 ( 23.5) ║    -9.6 ±     0.2║    -1.3 ±     0.4║    -0.1 ±     0.0║
 ═════════════════════════╬══════════════════╬══════════════════╬══════════════════╬
                          ║               Jan║               Jan║               Jan║
                          ║       ShR1       ║       ShR2       ║       RotZ       ║
 ═════════════════════════╬══════════════════╬══════════════════╬══════════════════╬
 >> Factorizing results of Jan algorithm
 * processing RP 1981808640 (4)
-    m_sh_x = (574.5 +- 467.0) um, m_sh_y = (-2113.4 +- 481.6) um, m_sh_z = (0.0 +- 0.3) mm
-    m_rot_x = (0.0 +- 333.3) mrad, m_rot_y = (0.0 +- 333.3)  mrad, m_rot_z = (6.5 +- 333.3) mrad
+    m_sh_x = (456.5 +- 467.0) um, m_sh_y = (-670.5 +- 481.6) um, m_sh_z = (0.0 +- 0.3) mm
+    m_rot_x = (0.0 +- 333.3) mrad, m_rot_y = (0.0 +- 333.3)  mrad, m_rot_z = (0.4 +- 333.3) mrad
 * processing RP 1982332928 (5)
-    m_sh_x = (562.4 +- 447.2) um, m_sh_y = (1222.3 +- 447.2) um, m_sh_z = (0.0 +- 0.3) mm
-    m_rot_x = (0.0 +- 316.2) mrad, m_rot_y = (0.0 +- 316.2)  mrad, m_rot_z = (-7.4 +- 316.2) mrad
+    m_sh_x = (674.1 +- 447.2) um, m_sh_y = (859.4 +- 447.2) um, m_sh_z = (0.0 +- 0.3) mm
+    m_rot_x = (0.0 +- 316.2) mrad, m_rot_y = (0.0 +- 316.2)  mrad, m_rot_z = (2.0 +- 316.2) mrad
 * processing RP 1990197248 (24)
-    m_sh_x = (498.4 +- 447.2) um, m_sh_y = (-2807.3 +- 447.2) um, m_sh_z = (0.0 +- 0.3) mm
-    m_rot_x = (0.0 +- 316.2) mrad, m_rot_y = (0.0 +- 316.2)  mrad, m_rot_z = (10.4 +- 316.2) mrad
+    m_sh_x = (273.0 +- 447.2) um, m_sh_y = (-226.3 +- 447.2) um, m_sh_z = (0.0 +- 0.3) mm
+    m_rot_x = (0.0 +- 316.2) mrad, m_rot_y = (0.0 +- 316.2)  mrad, m_rot_z = (1.5 +- 316.2) mrad
 * processing RP 1990721536 (25)
-    m_sh_x = (127.5 +- 447.2) um, m_sh_y = (1486.2 +- 447.2) um, m_sh_z = (0.0 +- 0.3) mm
-    m_rot_x = (0.0 +- 316.2) mrad, m_rot_y = (0.0 +- 316.2)  mrad, m_rot_z = (-16.6 +- 316.2) mrad
+    m_sh_x = (703.0 +- 447.2) um, m_sh_y = (246.4 +- 447.2) um, m_sh_z = (0.0 +- 0.3) mm
+    m_rot_x = (0.0 +- 316.2) mrad, m_rot_y = (0.0 +- 316.2)  mrad, m_rot_z = (1.2 +- 316.2) mrad
 * processing RP 2014838784 (3)
-    m_sh_x = (-1380.2 +- 447.2) um, m_sh_y = (887.8 +- 447.2) um, m_sh_z = (0.0 +- 0.4) mm
-    m_rot_x = (0.0 +- 447.2) mrad, m_rot_y = (0.0 +- 447.2)  mrad, m_rot_z = (1.0 +- 447.2) mrad
+    m_sh_x = (-1216.2 +- 447.2) um, m_sh_y = (-160.6 +- 447.2) um, m_sh_z = (0.0 +- 0.4) mm
+    m_rot_x = (0.0 +- 447.2) mrad, m_rot_y = (0.0 +- 447.2)  mrad, m_rot_z = (-2.4 +- 447.2) mrad
 * processing RP 2023227392 (23)
-    m_sh_x = (-625.9 +- 500.0) um, m_sh_y = (1321.2 +- 500.0) um, m_sh_z = (0.0 +- 0.5) mm
-    m_rot_x = (0.0 +- 500.0) mrad, m_rot_y = (0.0 +- 500.0)  mrad, m_rot_z = (6.2 +- 500.0) mrad
+    m_sh_x = (-975.9 +- 500.0) um, m_sh_y = (-20.1 +- 500.0) um, m_sh_z = (0.0 +- 0.5) mm
+    m_rot_x = (0.0 +- 500.0) mrad, m_rot_y = (0.0 +- 500.0)  mrad, m_rot_z = (-2.7 +- 500.0) mrad
