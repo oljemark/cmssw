@@ -1,0 +1,41 @@
+#!/bin/sh
+job_home="/afs/cern.ch/user/f/foljemar/tmptst/j2/CMSSW_13_0_7_TOTEM/src/CalibPPS/AlignmentRelative/test/test_with_data/data/369596.0-40/3,4,5,23,24,25-excl1981939712,2015166464,2023358464,2023489536,1990197248,1990230016,1990262784,1990295552/ev=4E5,pl=3,units=2,ovlp=f,3rpsInO=t/s+sr,std,1rotzIt=0,eMuMvRot=t"
+source "/cvmfs/cms.cern.ch/cmsset_default.sh"
+cd "/afs/cern.ch/user/f/foljemar/tmptst/j2/CMSSW_13_0_7_TOTEM"
+eval `scram runtime -sh`
+
+export CMSSW_SEARCH_PATH="$CMSSW_SEARCH_PATH:/afs/cern.ch/user/f/foljemar/tmptst/j2/CMSSW_13_0_7_TOTEM/src/CalibPPS/AlignmentRelative/test/test_with_data"
+export CMSSW_DATA_PATH="/afs"
+
+job_dir="/afs/cern.ch/user/f/foljemar/tmptst/j2/CMSSW_13_0_7_TOTEM/src/CalibPPS/AlignmentRelative/test/test_with_data/data/369596.0-40/3,4,5,23,24,25-excl1981939712,2015166464,2023358464,2023489536,1990197248,1990230016,1990262784,1990295552/ev=4E5,pl=3,units=2,ovlp=f,3rpsInO=t/s+sr,std,1rotzIt=0,eMuMvRot=t"
+
+cd "$job_home"
+
+### iteration 1 ###
+echo "* iteration 1"
+date > "$job_dir/iteration1/timestamp"
+cmsRun "$job_dir/iteration1/cfg.py" &> "$job_dir/iteration1/log"
+
+### iteration 2 ###
+echo "* iteration 2"
+date > "$job_dir/iteration2/timestamp"
+cmsRun "$job_dir/iteration2/cfg.py" &> "$job_dir/iteration2/log"
+
+### iteration 3 ###
+echo "* iteration 3"
+date > "$job_dir/iteration3/timestamp"
+cmsRun "$job_dir/iteration3/cfg.py" &> "$job_dir/iteration3/log"
+
+### iteration 4 ###
+echo "* iteration 4"
+date > "$job_dir/iteration4/timestamp"
+cmsRun "$job_dir/iteration4/cfg.py" &> "$job_dir/iteration4/log"
+
+### iteration 5 ###
+echo "* iteration 5"
+date > "$job_dir/iteration5/timestamp"
+cmsRun "$job_dir/iteration5/cfg.py" &> "$job_dir/iteration5/log"
+
+echo "iterations finished"
+
+touch "$job_dir/finished"
