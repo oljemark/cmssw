@@ -81,7 +81,7 @@ process.ppsStraightTrackAligner.maxEvents = int(4E5)
 process.ppsStraightTrackAligner.rpIds = [3,4,5,23,24,25]
 process.ppsStraightTrackAligner.excludePlanes = cms.vuint32(1981939712,2015166464,2023358464,2023489536)
 process.ppsStraightTrackAligner.z0 = -217000
-process.ppsStraightTrackAligner.horizontalOffsets = cms.vstring('3:-3.077', '23:-3.221')
+process.ppsStraightTrackAligner.horizontalOffsets = cms.vstring('3:-3.277', '23:-3.221')
 
 process.ppsStraightTrackAligner.maxResidualToSigma = 5
 process.ppsStraightTrackAligner.minimumHitsPerProjectionPerRP = 3
