@@ -8,6 +8,7 @@ rps="3,4,5,23,24,25"
 # planes 4.4, 23.5
 # excludePlanes="1981939712,2023555072"
 # planes 4.4, (003.5, 23.2 & 23.4 in 2023 pixels only)
+# add planes 024.0-024.3
 excludePlanes="1981939712,2015166464,2023358464,2023489536"
 
 # event selection
@@ -41,7 +42,7 @@ useEqualMeanUMeanVRotZConstraints="True"
 iterationsWithDiagnostics="5"
 
 # input settings
-reco_dir="/ZeroBias1/Run2023C-PromptReco-v4/AOD run=369585"
+reco_dir="/ZeroBias1/Run2023C-PromptReco-v4/AOD run=369596"
 # no offsets
 horizontalOffsets="'3:-3.277', '23:-3.221'"
 
@@ -56,7 +57,7 @@ label=""  # for non-standard settings, e.g. ",test"
 
 NewDataSet
 tasks=(
-	369585.0-40
+	369596.0-40
 	# 324579.26-50
 	# 324579.51-75
 	# 324579.76-99
