@@ -129,7 +129,7 @@ process.ppsStraightTrackAligner.algorithms = cms.vstring("Jan")
 
 process.ppsStraightTrackAligner.JanAlignmentAlgorithm.stopOnSingularModes = False
 
-results_dir="/afs/cern.ch/user/f/foljemar/tmptst/j2/CMSSW_13_0_7_TOTEM/src/CalibPPS/AlignmentRelative/test/test_with_data/data/369596.0-40/103,104,105,123,124,125-excl2007236608,2007269376/ev=4E5,pl=3,units=2,ovlp=f,3rpsInO=t/s+sr,std,1rotzIt=0,eMuMvRot=t/iteration5"
+results_dir="/afs/cern.ch/user/f/foljemar/tmptst/J3/CMSSW_13_0_7_TOTEM/src/CalibPPS/AlignmentRelative/test/test_with_data/data/369596.0-40/103,104,105,123,124,125-excl2007236608,2007269376/ev=4E5,pl=3,units=2,ovlp=f,3rpsInO=t/s+sr,std,1rotzIt=0,eMuMvRot=t/iteration5"
 
 process.ppsStraightTrackAligner.taskDataFileName = "" # results_dir + "/task_data.root"
 
