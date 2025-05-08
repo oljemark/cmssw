@@ -44,7 +44,7 @@ iterationsWithDiagnostics="5"
 # input settings
 reco_dir="/ZeroBias1/Run2023C-PromptReco-v4/AOD run=369596"
 # no offsets
-horizontalOffsets="'3:-6.782', '23:-6.412'"
+horizontalOffsets="'3:-0.572', '23:-1.030'"
 
 # geometry settings
 geometry="CalibPPS/AlignmentRelative/test/test_with_data"
