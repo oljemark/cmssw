@@ -35,7 +35,7 @@ $inputFiles
 )
 
 # geometry
-process.load("Geometry.VeryForwardGeometry.geometryRPFromDD_2022_cfi")
+process.load("Geometry.VeryForwardGeometry.geometryRPFromDD_2023D_cfi")
 process.ctppsGeometryESModule.buildMisalignedGeometry = cms.bool(True)
 del(process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles[-1])
 process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("$geometry/RP_Dist_Beam_Cent.xml")
