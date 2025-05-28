@@ -61,7 +61,7 @@ process.source = cms.Source("PoolSource",
 )
 
 # geometry
-process.load("Geometry.VeryForwardGeometry.geometryRPFromDD_2022_cfi")
+process.load("Geometry.VeryForwardGeometry.geometryRPFromDD_2023D_cfi")
 process.ctppsGeometryESModule.buildMisalignedGeometry = cms.bool(True)
 del(process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles[-1])
 process.XMLIdealGeometryESSource_CTPPS.geomXMLFiles.append("CalibPPS/AlignmentRelative/test/test_with_data/RP_Dist_Beam_Cent.xml")
@@ -129,7 +129,7 @@ process.ppsStraightTrackAligner.algorithms = cms.vstring("Jan")
 
 process.ppsStraightTrackAligner.JanAlignmentAlgorithm.stopOnSingularModes = False
 
-results_dir="/afs/cern.ch/user/f/foljemar/tmptst/j2/CMSSW_13_0_7_TOTEM/src/CalibPPS/AlignmentRelative/test/test_with_data/data/369596.0-40/3,4,5,23,24,25-excl1981939712,2015166464,2023358464,2023489536,1990197248,1990230016,1990262784,1990295552/ev=4E5,pl=3,units=2,ovlp=f,3rpsInO=t/s+sr,std,1rotzIt=0,eMuMvRot=t/iteration2"
+results_dir="/afs/cern.ch/user/f/foljemar/tmptst/J3/CMSSW_13_0_7_TOTEM/src/CalibPPS/AlignmentRelative/test/test_with_data/data/369596.0-40/3,4,5,23,24,25-excl1981939712,2015166464,2023358464,2023489536,1990197248,1990230016,1990262784,1990295552/ev=4E5,pl=3,units=2,ovlp=f,3rpsInO=t/s+sr,std,1rotzIt=0,eMuMvRot=t/iteration2"
 
 process.ppsStraightTrackAligner.taskDataFileName = "" # results_dir + "/task_data.root"
 
